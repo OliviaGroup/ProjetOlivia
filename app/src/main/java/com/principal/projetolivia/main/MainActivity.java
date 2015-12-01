@@ -1,9 +1,11 @@
-package com.principal.projetolivia;
+package com.principal.projetolivia.main;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.principal.projetolivia.R;
 
 public class MainActivity extends AppCompatActivity {
 

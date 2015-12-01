@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.principal.projetolivia.MainActivityFragment">
+    tools:context=".main.MainActivityFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,7 +29,7 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="match_parent"
-                android:background="@color/app_gray_light" >
+                android:background="@color/normal_white" >
 
                 <ImageView
                     android:id="@+id/android_picture"
@@ -48,7 +48,7 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_margin="10dp"
-                    android:text="Version 1.3"
+                    android:text="Version 0.1"
                     android:textColor="@color/app_blue" />
             </RelativeLayout>
         </LinearLayout>
@@ -59,24 +59,28 @@
             android:layout_weight="30"
             android:background="@color/app_gray" >
 
-            <LinearLayout
-                android:id="@+id/linearLayout1"
-                android:layout_width="256dp"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:orientation="vertical" >
-
-
-
-
-            </LinearLayout>
+            <FrameLayout
+                android:id="@+id/frameLayout1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginBottom="50dp"
+                android:layout_marginLeft="200dp"
+                android:layout_marginRight="200dp"
+                android:layout_marginTop="50dp" >
+                <ListView
+                    android:id="@+id/listViewProfiles"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/normal_white">
+                </ListView>
+            </FrameLayout>
 
 
         </RelativeLayout>
     </LinearLayout>
 
     <com.gc.materialdesign.views.ButtonFloat
-        android:id="@+id/buttonSettingApplication"
+        android:id="@+id/buttonCreateProfile"
         android:layout_width="@dimen/buttonAddProject_Diameter"
         android:layout_height="@dimen/buttonAddProject_Diameter"
         android:layout_alignParentRight="true"

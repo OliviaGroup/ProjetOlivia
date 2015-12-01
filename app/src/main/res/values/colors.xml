@@ -4,10 +4,21 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    // normal colors
+    <color name="normal_white">#ffffff</color>
+    <color name="normal_black">#000000</color>
+    <color name="normal_red">#ff0000</color>
+    <color name="normal_green">#00ff00</color>
+    <color name="normal_blue">#0000ff</color>
+    <color name="normal_yellow">#ffff00</color>
+    <color name="normal_magenta">#ff00ff</color>
+    <color name="normal_cyan">#00ffff</color>
+
+
+    // specific colors app
     <color name="app_blue">#1f3ed9</color>
     <color name="app_gray_light">#b1b1b1</color>
-    <color name="normal_white">#ffffff</color>
-    <color name="app_gray">#848484</color>
 
+    <color name="app_gray">#848484</color>
 
 </resources>
