@@ -1,6 +1,7 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -12,7 +13,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.InputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 /**
  * Created by roosq on 30/11/2015.
@@ -20,6 +25,7 @@ import java.util.List;
 public class user implements Serializable {
 
     // private attr
+
     private String name;
     private int age;
     private List<subject> subjectList;
@@ -59,6 +65,9 @@ public class user implements Serializable {
     }
 
     public void getProfileList() {
+        List<user> userList = new ArrayList<user>();
+        userList.clear();
+
         File dataFile = new File(Environment.getExternalStorageDirectory() + "/OOlivia", "data.json");
 
         try {
@@ -85,7 +94,20 @@ public class user implements Serializable {
             JSONArray users = jObj.getJSONArray("users");
 
             if (users.length() != 0) {
-                JSONObject oneUser = users.getJSONObject(0);
+                for (int i = 0; i < users.length();i++) {
+                    JSONObject jsonUser = users.getJSONObject(i);
+                    String profileName = jsonUser.getString("name");
+                    int profileAge = Integer.parseInt(jsonUser.getString("age"));
+                    JSONArray jsonSubjects = jsonUser.getJSONArray("subjects");
+
+                    List<subject> =
+
+                    for (int j = 0; j < jsonSubjects.length(); j++) {
+
+                    }
+
+                }
+
             }
 
         } catch (JSONException e) {
