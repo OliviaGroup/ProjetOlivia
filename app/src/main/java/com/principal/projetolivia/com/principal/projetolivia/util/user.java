@@ -34,7 +34,21 @@ public class user implements Serializable {
     private static JSONObject jObj = null;
     private static String json = "";
 
-    // constructor
+    // constructors
+    public user(String name, int age) {
+        this.name = name;
+        this.age = age;
+
+        this.subjectList = new ArrayList<subject>();
+        subjectList.clear();
+
+        for (subjectName tempSubjectName :
+                subjectName.values()) {
+            subject tempSubject = new subject(tempSubjectName);
+            subjectList.add(tempSubject);
+        }
+    }
+
     public user(String name, int age, List<subject> subjectListBase) {
         this.name = name;
         this.age = age;
@@ -53,15 +67,6 @@ public class user implements Serializable {
 
     public List<subject> getSubjectList() {
         return subjectList;
-    }
-
-    public int getPointTotal() {
-        int sum = 0;
-        for (subject subject : subjectList
-                ) {
-            sum += subject.getPoint();
-        }
-        return sum;
     }
 
     public void getProfileList() {
@@ -100,7 +105,7 @@ public class user implements Serializable {
                     int profileAge = Integer.parseInt(jsonUser.getString("age"));
                     JSONArray jsonSubjects = jsonUser.getJSONArray("subjects");
 
-                    List<subject> =
+                    List<subject> subjectList = new ArrayList<subject>();
 
                     for (int j = 0; j < jsonSubjects.length(); j++) {
 
