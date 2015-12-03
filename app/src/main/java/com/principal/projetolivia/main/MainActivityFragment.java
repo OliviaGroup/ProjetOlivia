@@ -25,6 +25,8 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_main, container, false);
 
+
+
         buttonAddProfile = (ButtonFloat) rootView.findViewById(R.id.buttonCreateProfile);
         buttonAddProfile.setOnClickListener(new View.OnClickListener() {
             @Override

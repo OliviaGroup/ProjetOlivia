@@ -52,7 +52,8 @@ public class ItemProfileAdapter extends ArrayAdapter<user>{
     private void setupItem(ItemProfileHolder holder) {
         holder.name.setText(holder.user.getName());
         holder.age.setText(R.string.profile_age + " " + holder.user.getAge());
-        holder.age.setText(R.string.profile_score + " " + holder.user.getPointTotal());
+        // TODO : Change value
+        holder.age.setText(R.string.profile_score + " TODO " + 0);
     }
 
     public static class ItemProfileHolder {
