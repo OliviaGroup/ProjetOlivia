@@ -4,9 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/libraries/MaterialDesign/MaterialDesign.iml" filepath="$PROJECT_DIR$/libraries/MaterialDesign/MaterialDesign.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/MaterialViewPager/MaterialViewPager.iml" filepath="$PROJECT_DIR$/libraries/MaterialViewPager/MaterialViewPager.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/MaterialViewPager/MaterialViewPager.iml" filepath="$PROJECT_DIR$/libraries/MaterialViewPager/MaterialViewPager.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProjetOlivia.iml" filepath="$PROJECT_DIR$/ProjetOlivia.iml" />
-      <module fileurl="file://$PROJECT_DIR$/libraries/android-floating-action-button/android-floating-action-button.iml" filepath="$PROJECT_DIR$/libraries/android-floating-action-button/android-floating-action-button.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/android-floating-action-button/android-floating-action-button.iml" filepath="$PROJECT_DIR$/libraries/android-floating-action-button/android-floating-action-button.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libraries/libraries.iml" filepath="$PROJECT_DIR$/libraries/libraries.iml" />

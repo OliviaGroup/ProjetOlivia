@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">OOlivia</string>
+    <string name="app_name">Olivia</string>
     <string name="action_settings">Options</string>
     <string name="profile_age">Age :</string>
     <string name="profile_score">Score :</string>
