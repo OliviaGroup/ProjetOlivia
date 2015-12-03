@@ -32,8 +32,8 @@ public class fileConnector {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        return returnObject;
 
+        return returnObject;
     }
 
     public void setProfileList(Context context, List<user> userList) {

@@ -11,7 +11,7 @@ import com.principal.projetolivia.com.principal.projetolivia.util.user;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public List<user> userList;
+    public static List<user> userList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
