@@ -12,6 +12,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     public static List<user> userList;
+    public static int currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

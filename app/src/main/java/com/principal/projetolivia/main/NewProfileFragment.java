@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.gc.materialdesign.views.ButtonRectangle;
@@ -51,6 +52,12 @@ public class NewProfileFragment extends Fragment {
                 } else {
                     user newUser = new user(textName.getText().toString(), Integer.parseInt(textAge.getText().toString()));
                     MainActivity.userList.add(newUser);
+
+                    View view = getActivity().getCurrentFocus();
+                    if (view != null) {
+                        InputMethodManager imm = (InputMethodManager)getActivity().getSystemService(getActivity().INPUT_METHOD_SERVICE);
+                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
 
                     FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new MainActivityFragment());
                     ft.addToBackStack(getTag());
