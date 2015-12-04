@@ -60,14 +60,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_marginBottom="50dp"
-                android:layout_marginLeft="200dp"
-                android:layout_marginRight="200dp"
+                android:layout_marginLeft="300dp"
+                android:layout_marginRight="300dp"
                 android:layout_marginTop="50dp" >
                 <ListView
                     android:id="@+id/listViewProfiles"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/normal_white">
+                    android:layout_height="match_parent">
                 </ListView>
 
             </FrameLayout>

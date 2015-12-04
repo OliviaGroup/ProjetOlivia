@@ -15,4 +15,7 @@
     <string name="informatics">Informatique</string>
     <string name="physics">Physique</string>
     <string name="no_profiles_found">Aucun profile trouvé, Aller en créer un nouveau !</string>
+    <string name="delete_message">Voulez-vous supprimer le profile sélectionné ?</string>
+    <string name="delete">Supprimer le profile ?</string>
+    <string name="cancel">Annuler</string>
 </resources>

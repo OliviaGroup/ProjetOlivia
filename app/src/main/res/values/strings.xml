@@ -17,4 +17,7 @@
     <string name="biology">Biology</string>
     <string name="astronomy">Astronomy</string>
     <string name="no_profiles_found">No profiles found, go create a new one !</string>
+    <string name="delete">Delete profile ?</string>
+    <string name="delete_message">Do you want delete the selected profile ?</string>
+    <string name="cancel">Cancel</string>
 </resources>
