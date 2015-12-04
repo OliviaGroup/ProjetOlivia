@@ -1,4 +1,2 @@
-include ':app'
-include ':libraries:android-floating-action-button'
-include ':libraries:MaterialDesign'
+include ':libraries:android-floating-action-button', ':libraries:MaterialDesign', ':app', ':libraries'
 include ':libraries:MaterialViewPager'

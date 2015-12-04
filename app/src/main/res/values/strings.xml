@@ -16,4 +16,5 @@
     <string name="chemistry">Chemistry</string>
     <string name="biology">Biology</string>
     <string name="astronomy">Astronomy</string>
+    <string name="no_profiles_found">No profiles found, go create a new one !</string>
 </resources>

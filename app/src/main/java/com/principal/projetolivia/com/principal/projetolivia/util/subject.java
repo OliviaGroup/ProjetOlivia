@@ -1,9 +1,11 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
+import java.io.Serializable;
+
 /**
  * Created by roosq on 30/11/2015.
  */
-public class subject {
+public class subject implements Serializable{
     private subjectName name;
 
     private int playedGames;

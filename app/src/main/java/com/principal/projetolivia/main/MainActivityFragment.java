@@ -43,15 +43,19 @@ public class MainActivityFragment extends Fragment {
         listViewProfiles = (ListView) rootView.findViewById(R.id.listViewProfiles);
 
         fileConnector fileConnector = new fileConnector();
-        MainActivity.userList = fileConnector.getProfileList(getActivity());
-        if (MainActivity.userList.isEmpty()) {
-            MainActivity.userList = new
+        if (MainActivity.userList != null) {
+            fileConnector.setProfileList(getActivity(), MainActivity.userList);
         }
 
+        MainActivity.userList = fileConnector.getProfileList(getActivity());
 
 
-        ItemProfileAdapter adapter = new ItemProfileAdapter(getActivity(), R.layout.item_list_profiles, listProfiles);
+
+
+        ItemProfileAdapter adapter = new ItemProfileAdapter(getActivity(), R.layout.item_list_profiles, MainActivity.userList);
+        //listViewProfiles.setEmptyView(rootView.findViewById(R.id.textIfListEmpty));
         listViewProfiles.setAdapter(adapter);
+
 
         buttonAddProfile = (ButtonFloat) rootView.findViewById(R.id.buttonCreateProfile);
         buttonAddProfile.setOnClickListener(new View.OnClickListener() {
