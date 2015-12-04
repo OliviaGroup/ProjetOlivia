@@ -1,19 +1,14 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.NewProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
     <LinearLayout
-        android:id="@+id/linearLayoutNewProfile"
-        android:layout_width="256dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
         android:orientation="vertical">
 
         <EditText
@@ -45,7 +40,8 @@
             android:layout_height="wrap_content"
             android:background="#ef9105"
             android:text="@string/validate" />
+
     </LinearLayout>
 
 
-</FrameLayout>
+</RelativeLayout>
