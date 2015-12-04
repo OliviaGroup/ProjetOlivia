@@ -69,58 +69,5 @@ public class user implements Serializable {
         return subjectList;
     }
 
-    public void getProfileList() {
-        List<user> userList = new ArrayList<user>();
-        userList.clear();
 
-        File dataFile = new File(Environment.getExternalStorageDirectory() + "/OOlivia", "data.json");
-
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(dataFile));
-            StringBuilder sb = new StringBuilder();
-            String line = null;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line + "\n");
-            }
-            reader.close();
-            json = sb.toString();
-        } catch (Exception e) {
-            Log.e("Buffer Error",
-                    "Error converting result " + e.toString());
-        }
-
-        try {
-            jObj = new JSONObject(json);
-        } catch (Exception e) {
-            Log.e("JSON Parser", "Error parsing data " + e.toString());
-        }
-
-        try {
-            JSONArray users = jObj.getJSONArray("users");
-
-            if (users.length() != 0) {
-                for (int i = 0; i < users.length();i++) {
-                    JSONObject jsonUser = users.getJSONObject(i);
-                    String profileName = jsonUser.getString("name");
-                    int profileAge = Integer.parseInt(jsonUser.getString("age"));
-                    JSONArray jsonSubjects = jsonUser.getJSONArray("subjects");
-
-                    List<subject> subjectList = new ArrayList<subject>();
-
-                    for (int j = 0; j < jsonSubjects.length(); j++) {
-
-                    }
-
-                }
-
-            }
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void setProfileList() {
-
-    }
 }
