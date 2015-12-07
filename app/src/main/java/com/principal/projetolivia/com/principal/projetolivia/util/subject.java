@@ -63,6 +63,10 @@ public class subject implements Serializable{
 
     public int getPercentRightAnswers () {
         int totalAnswers =  rightAnswers + wrongAnswers;
-        return rightAnswers * 100 / totalAnswers;
+        if (totalAnswers != 0) {
+            return rightAnswers * 100 / totalAnswers;
+        } else {
+            return 0;
+        }
     }
 }

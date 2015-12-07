@@ -25,14 +25,15 @@
                 android:id="@+id/textName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16sp" />
+                android:textSize="18sp"
+                android:textColor="@color/normal_black"/>
 
             <TextView
                 android:id="@+id/textAge"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/app_gray"
-                android:textSize="14sp" />
+                android:textSize="14sp"/>
         </LinearLayout>
 
 
@@ -44,7 +45,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="20dp"
-            android:textSize="22sp" />
+            android:textSize="22sp"/>
 
     </RelativeLayout>
 

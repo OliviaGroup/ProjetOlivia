@@ -53,5 +53,14 @@ public class user implements Serializable {
         return subjectList;
     }
 
+    public int getTotalPercentRightAnswers() {
+        int sum = 0;
+        for (subject subject :
+                subjectList) {
+            sum =+ subject.getPercentRightAnswers();
+        }
+        return sum / subjectList.size();
+    }
+
 
 }
