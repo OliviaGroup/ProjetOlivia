@@ -16,9 +16,12 @@
 
 
     // specific colors app
-    <color name="app_blue">#1f3ed9</color>
-    <color name="app_gray_light">#b1b1b1</color>
+    <color name="app_blue">#86cabf</color>
+    <color name="app_purple">#c82b87</color>
+    <color name="app_pink">#e5007d</color>
+    <color name="app_orange">#f3952b</color>
 
+    <color name="app_gray_light">#b1b1b1</color>
     <color name="app_gray">#848484</color>
 
 </resources>
