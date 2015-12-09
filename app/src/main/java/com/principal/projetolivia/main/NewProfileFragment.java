@@ -3,7 +3,6 @@ package com.principal.projetolivia.main;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,7 @@ import android.widget.EditText;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gc.materialdesign.widgets.SnackBar;
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.user;
+import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -33,8 +32,8 @@ public class NewProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_new_profile, container, false);
 
-        textName = (EditText) rootView.findViewById(R.id.textName);
-        textAge = (EditText) rootView.findViewById(R.id.textAge);
+        textName = (EditText) rootView.findViewById(R.id.textNameProfile);
+        textAge = (EditText) rootView.findViewById(R.id.textAgeProfile);
 
         buttonValidation = (ButtonRectangle) rootView.findViewById(R.id.buttonValidation);
         buttonValidation.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +49,7 @@ public class NewProfileFragment extends Fragment {
                     SnackBar snackBar = new SnackBar(getActivity(), getResources().getString(R.string.new_profile_error), null, onClickListener);
                     snackBar.show();
                 } else {
-                    user newUser = new user(textName.getText().toString(), Integer.parseInt(textAge.getText().toString()));
+                    User newUser = new User(textName.getText().toString(), Integer.parseInt(textAge.getText().toString()));
                     MainActivity.userList.add(newUser);
 
                     View view = getActivity().getCurrentFocus();

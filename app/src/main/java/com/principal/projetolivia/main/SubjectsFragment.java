@@ -16,8 +16,7 @@ import com.principal.projetolivia.R;
  */
 public class SubjectsFragment extends Fragment {
 
-    ButtonFloat buttonAddProfile;
-    ListView listViewProfiles;
+    GridView gridViewSubjects;
 
     public SubjectsFragment() {
     }
@@ -27,7 +26,10 @@ public class SubjectsFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_subjects, container, false);
 
+        gridViewSubjects = (GridView) rootView.findViewById(R.id.gridSubjects);
 
+        final ItemSubjectAdapter adapter = new ItemSubjectAdapter(getActivity(), R.layout.item_grid_subjects, MainActivity.userList.get(MainActivity.currentUser).getSubjectList());
+        gridViewSubjects.setAdapter(adapter);
 
         return rootView;
     }

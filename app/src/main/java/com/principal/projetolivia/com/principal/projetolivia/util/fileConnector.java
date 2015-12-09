@@ -18,13 +18,13 @@ public class fileConnector {
     private final String fileName = "data";
 
 
-    public List<user> getProfileList(Context context) {
-        List<user> returnObject = new ArrayList<user>();
+    public List<User> getProfileList(Context context) {
+        List<User> returnObject = new ArrayList<User>();
         returnObject.clear();
         try {
             FileInputStream fis = context.openFileInput(fileName);
             ObjectInputStream is = new ObjectInputStream(fis);
-            returnObject = (List<user>) is.readObject();
+            returnObject = (List<User>) is.readObject();
             is.close();
             fis.close();
         } catch (IOException e) {
@@ -36,7 +36,7 @@ public class fileConnector {
         return returnObject;
     }
 
-    public void setProfileList(Context context, List<user> userList) {
+    public void setProfileList(Context context, List<User> userList) {
         try {
             FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_PRIVATE);
             ObjectOutputStream os = new ObjectOutputStream(fos);

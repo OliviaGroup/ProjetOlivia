@@ -5,15 +5,15 @@ import java.io.Serializable;
 /**
  * Created by roosq on 30/11/2015.
  */
-public class subject implements Serializable{
-    private subjectName name;
+public class Subject implements Serializable{
+    private SubjectName name;
 
     private int playedGames;
     private int hiScore;
     private int rightAnswers;
     private int wrongAnswers;
 
-    public subject(subjectName name, int playedGames, int hiScore, int rightAnswers, int wrongAnswers) {
+    public Subject(SubjectName name, int playedGames, int hiScore, int rightAnswers, int wrongAnswers) {
         this.name = name;
         this.playedGames = playedGames;
         this.hiScore = hiScore;
@@ -21,7 +21,7 @@ public class subject implements Serializable{
         this.wrongAnswers = wrongAnswers;
     }
 
-    public subject(subjectName name) {
+    public Subject(SubjectName name) {
         this.name = name;
         this.playedGames = 0;
         this.hiScore = 0;
@@ -68,5 +68,13 @@ public class subject implements Serializable{
         } else {
             return 0;
         }
+    }
+
+    public SubjectName getName() {
+        return name;
+    }
+
+    public void setName(SubjectName name) {
+        this.name = name;
     }
 }

@@ -6,7 +6,7 @@ import android.content.res.Resources;
 /**
  * Created by roosq on 03/12/2015.
  */
-public enum subjectName {
+public enum SubjectName {
     mathematics,
     informatics,
     physics,
@@ -21,5 +21,17 @@ public enum subjectName {
             return (res.getString(resId));
         }
         return (name());
+    }
+
+    public int getImageResourceId (Context context) {
+        Resources res = context.getResources();
+
+        int resId = res.getIdentifier(this.name() + "_button", "drawable", context.getPackageName());
+
+        if (0 != resId) {
+            return resId;
+        }
+
+        return res.getIdentifier("error_button", "drawable", context.getPackageName());
     }
 }

@@ -9,22 +9,22 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.principal.projetolivia.R;
 
-import com.principal.projetolivia.com.principal.projetolivia.util.user;
+import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.List;
 
 /**
  * Created by roosq on 01/12/2015.
  */
-public class ItemProfileAdapter extends ArrayAdapter<user>{
+public class ItemProfileAdapter extends ArrayAdapter<User>{
 
-    private List<user> items;
-    private int layoutRessourceId;
+    private List<User> items;
+    private int layoutResourceId;
     private Context context;
 
-    public ItemProfileAdapter(Context context, int layoutResourceId, List<user> items) {
+    public ItemProfileAdapter(Context context, int layoutResourceId, List<User> items) {
         super(context, layoutResourceId, items);
-        this.layoutRessourceId = layoutResourceId;
+        this.layoutResourceId = layoutResourceId;
         this.context = context;
         this.items = items;
     }
@@ -32,16 +32,16 @@ public class ItemProfileAdapter extends ArrayAdapter<user>{
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row = convertView;
-        ItemProfileHolder holder = null;
+        ItemProfileHolder holder;
 
         LayoutInflater inflater = ((Activity) context).getLayoutInflater();
-        row = inflater.inflate(layoutRessourceId, parent, false);
+        row = inflater.inflate(layoutResourceId, parent, false);
 
         holder = new ItemProfileHolder();
         holder.user = items.get(position);
-        holder.name = (TextView)row.findViewById(R.id.textName);
-        holder.age = (TextView)row.findViewById(R.id.textAge);
-        holder.point = (TextView)row.findViewById(R.id.textPoint);
+        holder.name = (TextView)row.findViewById(R.id.textNameProfile);
+        holder.age = (TextView)row.findViewById(R.id.textAgeProfile);
+        holder.score = (TextView)row.findViewById(R.id.textScoreProfile);
 
         row.setTag(holder);
 
@@ -52,14 +52,14 @@ public class ItemProfileAdapter extends ArrayAdapter<user>{
     private void setupItem(ItemProfileHolder holder) {
         holder.name.setText(holder.user.getName());
         holder.age.setText(context.getString(R.string.profile_age) + " " + holder.user.getAge());
-        holder.point.setText(context.getString(R.string.profile_score) + " " + holder.user.getTotalPercentRightAnswers() + " %");
+        holder.score.setText(context.getString(R.string.profile_score) + " " + holder.user.getTotalPercentRightAnswers() + " %");
     }
 
     public static class ItemProfileHolder {
-        user user;
+        User user;
         TextView name;
         TextView age;
-        TextView point;
+        TextView score;
     }
 }
 

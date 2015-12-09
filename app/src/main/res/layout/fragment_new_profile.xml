@@ -12,7 +12,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/textName"
+            android:id="@+id/textNameProfile"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -23,7 +23,7 @@
             android:hint="@string/name" />
 
         <EditText
-            android:id="@+id/textAge"
+            android:id="@+id/textAgeProfile"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:ems="10"

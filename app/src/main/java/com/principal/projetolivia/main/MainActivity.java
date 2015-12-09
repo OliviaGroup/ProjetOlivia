@@ -8,12 +8,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.user;
+import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static List<user> userList;
+    public static List<User> userList;
     public static int currentUser;
 
     @Override

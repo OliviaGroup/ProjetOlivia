@@ -1,8 +1,5 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
-import org.json.JSONObject;
-
-import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,30 +7,30 @@ import java.util.List;
 /**
  * Created by roosq on 30/11/2015.
  */
-public class user implements Serializable {
+public class User implements Serializable {
 
     // private attr
 
     private String name;
     private int age;
-    private List<subject> subjectList;
+    private List<Subject> subjectList;
 
     // constructors
-    public user(String name, int age) {
+    public User(String name, int age) {
         this.name = name;
         this.age = age;
 
-        this.subjectList = new ArrayList<subject>();
+        this.subjectList = new ArrayList<Subject>();
         subjectList.clear();
 
-        for (subjectName tempSubjectName :
-                subjectName.values()) {
-            subject tempSubject = new subject(tempSubjectName);
+        for (SubjectName tempSubjectName :
+                SubjectName.values()) {
+            Subject tempSubject = new Subject(tempSubjectName);
             subjectList.add(tempSubject);
         }
     }
 
-    public user(String name, int age, List<subject> subjectListBase) {
+    public User(String name, int age, List<Subject> subjectListBase) {
         this.name = name;
         this.age = age;
 
@@ -49,13 +46,13 @@ public class user implements Serializable {
         return age;
     }
 
-    public List<subject> getSubjectList() {
+    public List<Subject> getSubjectList() {
         return subjectList;
     }
 
     public int getTotalPercentRightAnswers() {
         int sum = 0;
-        for (subject subject :
+        for (Subject subject :
                 subjectList) {
             sum =+ subject.getPercentRightAnswers();
         }
