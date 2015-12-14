@@ -82,6 +82,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
-        materialdesign:animate="false"/>
+        materialdesign:animate="false"
+        materialdesign:iconDrawable="@drawable/ic_input_add"/>
 
 </RelativeLayout>
