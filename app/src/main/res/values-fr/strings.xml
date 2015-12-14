@@ -9,13 +9,13 @@
     <string name="validate">Valider</string>
     <string name="new_profile_error">Une ou plusieurs valeur manquante</string>
     <string name="mathematics">Mathématiques</string>
-    <string name="astronomy">Astronimie</string>
+    <string name="astronomy">Astronomie</string>
     <string name="biology">Biologie</string>
     <string name="chemistry">Chimie</string>
     <string name="informatics">Informatique</string>
     <string name="physics">Physique</string>
-    <string name="no_profiles_found">Aucun profile trouvé, Aller en créer un nouveau !</string>
-    <string name="delete_message">Voulez-vous supprimer le profile sélectionné ?</string>
-    <string name="delete">Supprimer le profile ?</string>
+    <string name="no_profiles_found">Aucun profil trouvé, Allez en créer un nouveau !</string>
+    <string name="delete_message">Voulez-vous supprimer le profil sélectionné ?</string>
+    <string name="delete">Supprimer le profil ?</string>
     <string name="cancel">Annuler</string>
 </resources>

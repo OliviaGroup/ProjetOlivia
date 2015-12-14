@@ -2,27 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.principal.projetolivia.main.SubjectsFragment">
+    tools:context="com.principal.projetolivia.main.GameFragment">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/profile">
-
-        <GridView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numColumns="3"
-            android:id="@+id/gridSubjects"
-            android:gravity="center"
-            android:columnWidth="@dimen/subjects_button_size"
-            android:stretchMode="spacingWidthUniform"
-            android:layout_centerInParent="true">
-
-        </GridView>
-
-    </RelativeLayout>
-
+    
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -33,12 +15,12 @@
         android:paddingBottom="@dimen/subjects_options_vertical_padding"
         android:paddingTop="@dimen/subjects_options_vertical_padding"
         android:background="@color/app_gray_light"
-        android:id="@id/profile">
+        android:id="@+id/inGameInfos">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Marie"
+            android:text="Matière"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"/>
 
