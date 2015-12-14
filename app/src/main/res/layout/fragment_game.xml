@@ -4,7 +4,33 @@
     android:layout_height="match_parent"
     tools:context="com.principal.projetolivia.main.GameFragment">
 
-    
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_above="@+id/inGameInfos">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@color/green"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2"></RelativeLayout>
+
+        </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,7 +41,7 @@
         android:paddingBottom="@dimen/subjects_options_vertical_padding"
         android:paddingTop="@dimen/subjects_options_vertical_padding"
         android:background="@color/app_gray_light"
-        android:id="@+id/inGameInfos">
+        android:id="@id/inGameInfos">
 
         <TextView
             android:layout_width="wrap_content"
