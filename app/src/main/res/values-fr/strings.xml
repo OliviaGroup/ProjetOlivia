@@ -18,4 +18,5 @@
     <string name="delete_message">Voulez-vous supprimer le profil sélectionné ?</string>
     <string name="delete">Supprimer le profil ?</string>
     <string name="cancel">Annuler</string>
+    <string name="change">Changer</string>
 </resources>

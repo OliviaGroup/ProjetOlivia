@@ -3,7 +3,7 @@
     <dimen name="activity_horizontal_margin">0dp</dimen>
     <dimen name="activity_vertical_margin">0dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="buttonAddProject_Diameter">56dp</dimen>
+    <dimen name="buttonAddProject_Diameter">66dp</dimen>
     <dimen name="subjects_options_vertical_padding">5dp</dimen>
 
     <dimen name="subjects_button_size">250dp</dimen>

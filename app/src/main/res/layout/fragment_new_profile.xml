@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     tools:context=".main.NewProfileFragment">
 
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/home_background"
+        android:scaleType="fitXY"/>
+
     <LinearLayout
         android:layout_width="350dp"
         android:layout_height="wrap_content"
@@ -20,26 +26,49 @@
             android:paddingLeft="10dp"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:hint="@string/name" />
+            android:hint="@string/name"/>
 
-        <EditText
-            android:id="@+id/textAgeProfile"
-            android:layout_width="fill_parent"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:minHeight="48dp"
-            android:paddingLeft="10dp"
+            android:orientation="horizontal"
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
-            android:hint="@string/age"
-            android:inputType="number"/>
+            >
+
+            <EditText
+                android:id="@+id/textAgeProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="@string/age"
+                android:paddingLeft="10dp"
+                android:minHeight="48dp"
+                android:layout_weight="1"/>
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/buttonChangeDate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_orange"
+                android:text="@string/change"
+                android:layout_gravity="right"
+                android:padding="5dp"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+
 
         <com.gc.materialdesign.views.ButtonRectangle
             android:id="@+id/buttonValidation"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:background="#ef9105"
-            android:text="@string/validate" />
+            android:background="@color/app_orange"
+            android:text="@string/validate"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
+
 
     </LinearLayout>
 
