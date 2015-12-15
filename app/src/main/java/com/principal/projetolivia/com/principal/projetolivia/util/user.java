@@ -2,6 +2,7 @@ package com.principal.projetolivia.com.principal.projetolivia.util;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -12,13 +13,14 @@ public class User implements Serializable {
     // private attr
 
     private String name;
-    private int age;
+    private Calendar dateOfBirth;
     private List<Subject> subjectList;
 
     // constructors
-    public User(String name, int age) {
+
+    public User(String name, Calendar dateOfBirth) {
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
 
         this.subjectList = new ArrayList<Subject>();
         subjectList.clear();
@@ -30,9 +32,9 @@ public class User implements Serializable {
         }
     }
 
-    public User(String name, int age, List<Subject> subjectListBase) {
+    public User(String name, Calendar dateOfBirth, List<Subject> subjectListBase) {
         this.name = name;
-        this.age = age;
+        this.dateOfBirth = dateOfBirth;
 
         this.subjectList = subjectListBase;
     }
@@ -43,7 +45,8 @@ public class User implements Serializable {
     }
 
     public int getAge() {
-        return age;
+        int temp = Calendar.getInstance().get(Calendar.YEAR) - dateOfBirth.get(Calendar.YEAR);
+        return temp;
     }
 
     public List<Subject> getSubjectList() {
@@ -57,6 +60,10 @@ public class User implements Serializable {
             sum =+ subject.getPercentRightAnswers();
         }
         return sum / subjectList.size();
+    }
+
+    public void setDateOfBirth(Calendar dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
 

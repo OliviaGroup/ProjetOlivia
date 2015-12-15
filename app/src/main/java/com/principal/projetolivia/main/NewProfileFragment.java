@@ -86,7 +86,7 @@ public class NewProfileFragment extends Fragment {
                     SnackBar snackBar = new SnackBar(getActivity(), getResources().getString(R.string.new_profile_error), null, onClickListener);
                     snackBar.show();
                 } else {
-                    User newUser = new User(textName.getText().toString(), Integer.parseInt(textAge.getText().toString()));
+                    User newUser = new User(textName.getText().toString(), myCalendar);
                     MainActivity.userList.add(newUser);
 
                     View view = getActivity().getCurrentFocus();
