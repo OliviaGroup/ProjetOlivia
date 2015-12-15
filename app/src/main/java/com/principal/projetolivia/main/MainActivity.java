@@ -6,8 +6,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.List;
@@ -27,6 +29,9 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
         setContentView(R.layout.activity_main);
+
+        CropImageView mainBackground = (CropImageView)(ImageView) this.findViewById(R.id.mainBackground);
+        mainBackground.setOffset(1, 1);
     }
 
     @Override

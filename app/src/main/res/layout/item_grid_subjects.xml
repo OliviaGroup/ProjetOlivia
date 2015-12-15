@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text=" "
-        android:textColor="@color/normal_white"
+        android:textColor="@color/normal_black"
         android:textSize="22sp" />
 
     <TextView
@@ -29,11 +29,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
+        android:layout_marginRight="15dp"
         android:text=" "
-        android:textColor="@color/normal_white"
+        android:textColor="@color/normal_black"
         android:textSize="20sp"
-        android:paddingBottom="3dp"/>
+        android:paddingBottom="3dp"
+        android:textAlignment="textEnd"
+        android:gravity="end"/>
 
 </RelativeLayout>
 

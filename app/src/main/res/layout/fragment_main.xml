@@ -5,12 +5,6 @@
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     tools:context=".main.MainActivityFragment">
 
-    <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/home_background"
-        android:scaleType="fitXY" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

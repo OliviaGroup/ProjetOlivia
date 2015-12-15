@@ -9,6 +9,13 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/profile">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/subjects_background"
+            android:scaleType="fitXY"
+            android:id="@+id/subjectsBackground"/>
+
         <GridView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,7 +39,7 @@
         android:paddingLeft="20dp"
         android:paddingBottom="@dimen/subjects_options_vertical_padding"
         android:paddingTop="@dimen/subjects_options_vertical_padding"
-        android:background="@color/app_gray_light"
+        android:background="#7aa552"
         android:id="@id/profile">
 
         <TextView
