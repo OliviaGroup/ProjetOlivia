@@ -45,9 +45,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Marie"
+            android:text="User"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:id="@+id/userName"
+            android:clickable="true"/>
 
         <ImageButton
             android:layout_width="30dp"

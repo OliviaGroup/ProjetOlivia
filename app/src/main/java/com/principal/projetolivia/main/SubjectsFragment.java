@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
@@ -43,6 +44,19 @@ public class SubjectsFragment extends Fragment {
         final ItemSubjectAdapter adapter = new ItemSubjectAdapter(getActivity(), R.layout.item_grid_subjects, MainActivity.userList.get(MainActivity.currentUser).getSubjectList());
         gridViewSubjects.setAdapter(adapter);
 
+        TextView userName = (TextView) rootView.findViewById(R.id.userName);
+        userName.setText(MainActivity.userList.get(MainActivity.currentUser).getName());
+        userName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new ProfileFragment());
+                ft.addToBackStack(getTag());
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.commit();
+            }
+        });
+
         return rootView;
     }
+
 }

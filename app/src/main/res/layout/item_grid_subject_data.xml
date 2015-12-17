@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageOlivia"
+            android:src="@drawable/olivia_diplomee"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textNameSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Matière"
+                android:textSize="18sp"
+                android:layout_marginBottom="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textScoreSubject"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="score"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textPlayedGamesSubject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="played games"
+                        />
+
+                    <TextView
+                        android:id="@+id/textRightAnswersSubject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="right answers"
+                        />
+
+                    <TextView
+                        android:id="@+id/textWrongAnswersSubject"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="wrong answers"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textHiScoreSubject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="high score"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>
