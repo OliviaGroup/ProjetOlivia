@@ -10,13 +10,16 @@ import android.widget.ImageView;
 
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
+import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+    public static List<Question> questionList;
     public static List<User> userList;
     public static int currentUser;
+    public static int currentSubject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

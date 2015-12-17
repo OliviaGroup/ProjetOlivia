@@ -32,7 +32,7 @@ public class SubjectsFragment extends Fragment {
         gridViewSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                MainActivity.currentUser = position;
+                MainActivity.currentSubject = position;
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new GameFragment());
                 ft.addToBackStack(getTag());
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);

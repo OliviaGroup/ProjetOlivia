@@ -17,6 +17,8 @@ import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.fileConnector;
 
+import java.io.InputStream;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -35,10 +37,14 @@ public class MainActivityFragment extends Fragment {
 
         listViewProfiles = (ListView) rootView.findViewById(R.id.listViewProfiles);
 
-        fileConnector fileConnector = new fileConnector();
+        InputStream is = getResources().openRawResource(R.raw.questions);
+
+        fileConnector fileConnector = new fileConnector(is);
         if (MainActivity.userList != null) {
             fileConnector.setProfileList(getActivity(), MainActivity.userList);
         }
+
+        MainActivity.questionList = fileConnector.getQuestionList();
 
         MainActivity.userList = fileConnector.getProfileList(getActivity());
 

@@ -1,42 +1,36 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
-import android.renderscript.Element;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
+
 
 /**
  * Created by roosq on 15/12/2015.
  */
-public class Math {
-    private int minQuestionElementValueSumSub;
-    private int maxQuestionElementValueSumSub;
-    private int minQuestionElementValueMulDiv;
-    private int maxQuestionElementValueMulDiv;
+public class MathGenerator {
+    private int minQuestionElementValueSumSub = 1;
+    private int maxQuestionElementValueSumSub = 100;
+    private int minQuestionElementValueMulDiv = 1;
+    private int maxQuestionElementValueMulDiv = 10;
 
     private final Random randomGenerator = new Random();
 
     private int leftNumber;
     private int rightNumber;
-    private Operator operator;
+    private MathOperator operator;
     private int result;
+    private int[] results = new int[4];
 
-    public Math(int minQuestionElementValueSumSub, int maxQuestionElementValueSumSub, int minQuestionElementValueMulDiv, int maxQuestionElementValueMulDiv) {
-        this.minQuestionElementValueSumSub = minQuestionElementValueSumSub;
-        this.maxQuestionElementValueSumSub = maxQuestionElementValueSumSub;
-        this.minQuestionElementValueMulDiv = minQuestionElementValueMulDiv;
-        this.maxQuestionElementValueMulDiv = maxQuestionElementValueMulDiv;
+    public MathGenerator() {
     }
 
     public void calculationGenerator() {
-        operator = Operator.values()[randomGenerator.nextInt(Operator.values().length)];
+        operator = MathOperator.values()[randomGenerator.nextInt(MathOperator.values().length)];
 
-        if (operator == Operator.PLUS || operator == Operator.MINUS) {
+        if (operator == MathOperator.PLUS || operator == MathOperator.MINUS) {
             leftNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
             rightNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
 
-            if (operator == Operator.MINUS && leftNumber < rightNumber) {
+            if (operator == MathOperator.MINUS && leftNumber < rightNumber) {
                 do {
                     leftNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
                     rightNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
@@ -47,7 +41,7 @@ public class Math {
             leftNumber = getRandomIntergerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
             rightNumber = getRandomIntergerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
 
-            if (operator == Operator.DIVIDER) {
+            if (operator == MathOperator.DIVIDER) {
                 if (leftNumber < rightNumber) {
                     do {
                         leftNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
@@ -55,7 +49,7 @@ public class Math {
                     } while (leftNumber < rightNumber);
                 }
                 double tempResultDouble = leftNumber / rightNumber;
-                int tempResultInt = (int)tempResultDouble;
+                int tempResultInt = (int) tempResultDouble;
                 leftNumber = tempResultInt * rightNumber;
             }
         }
@@ -73,6 +67,16 @@ public class Math {
             case DIVIDER:
                 result = leftNumber / rightNumber;
         }
+
+        for (int i = 0; i < 3; i++) {
+            int falseResult;
+            do {
+                falseResult = getRandomIntergerFromRange(result - 20, result + 20);
+            } while (falseResult == result && falseResult < 0);
+
+            results[i] = falseResult;
+        }
+        results[getRandomIntergerFromRange(0, 3)] = result;
     }
 
     private int getRandomIntergerFromRange(int min, int max) {
@@ -83,22 +87,11 @@ public class Math {
         return result;
     }
 
+    public int[] getResults() {
+        return results;
+    }
+
     public String getOperation() {
         return leftNumber + " " + operator.getDisplayValue() + " " + rightNumber;
-    }
-}
-
-enum Operator {
-
-    PLUS("+"), MINUS("-"), MULTIPLIER("*"), DIVIDER("/");
-
-    private String displayValue;
-
-    Operator(String displayValue) {
-        this.displayValue = displayValue;
-    }
-
-    public String getDisplayValue() {
-        return displayValue;
     }
 }
