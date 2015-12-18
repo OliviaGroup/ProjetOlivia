@@ -38,8 +38,7 @@ public class ProfileFragment extends Fragment {
         profileAgeText.setText(MainActivity.userList.get(MainActivity.currentUser).getAge() + " ans");
 
         gridProfile = (GridView) rootView.findViewById(R.id.gridProfile);
-        MainActivity.userList.get(MainActivity.currentUser).getSubjectList().get(3).setRightAnswers(3);
-        MainActivity.userList.get(MainActivity.currentUser).getSubjectList().get(3).setWrongAnswers(7);
+
         Collections.sort(MainActivity.userList.get(MainActivity.currentUser).getSubjectList());
         final ItemSubjectDataAdapter adapter = new ItemSubjectDataAdapter(getActivity(), R.layout.item_grid_subject_data, MainActivity.userList.get(MainActivity.currentUser).getSubjectList());
         gridProfile.setAdapter(adapter);
