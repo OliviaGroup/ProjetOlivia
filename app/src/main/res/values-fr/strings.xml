@@ -19,7 +19,7 @@
     <string name="delete">Supprimer le profil ?</string>
     <string name="cancel">Annuler</string>
     <string name="change">Changer</string>
-    <string name="profile_playedGames">Parties :</string>
+    <string name="profile_playedGames">Parties jouées :</string>
     <string name="profile_hiScore">Meilleure partie :</string>
     <string name="profile_rightAnswers">Réponses justes :</string>
     <string name="profile_wrongAnswers">Réponses fausses :</string>

@@ -31,14 +31,22 @@
     </LinearLayout>
 
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
     <GridView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numColumns="3"
-        android:id="@+id/gridProfile"
-        android:gravity="center"
+        android:numColumns="2"
         android:columnWidth="400dp"
+        android:id="@+id/gridProfile"
         android:stretchMode="spacingWidthUniform"
-        android:layout_centerInParent="true"></GridView>
+        android:layout_centerInParent="true"
+        android:gravity="center"></GridView>
+</RelativeLayout>
+
+
+
 
 </LinearLayout>
