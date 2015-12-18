@@ -28,10 +28,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Matière"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="center_horizontal"
                 android:textStyle="italic"
+                android:textColor="@color/normal_white"
                 />
 
             <LinearLayout
@@ -62,6 +63,7 @@
                         android:layout_height="wrap_content"
                         android:text="played games"
                         android:layout_gravity="center_horizontal"
+                        android:textColor="@color/normal_white"
                         />
 
                     <TextView
@@ -70,6 +72,7 @@
                         android:layout_height="wrap_content"
                         android:text="right answers"
                         android:layout_gravity="center_horizontal"
+                        android:textColor="@color/normal_white"
                         />
 
                     <TextView
@@ -78,6 +81,7 @@
                         android:layout_height="wrap_content"
                         android:text="wrong answers"
                         android:layout_gravity="center_horizontal"
+                        android:textColor="@color/normal_white"
                         />
 
                 </LinearLayout>
@@ -89,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:text="high score"
                 android:layout_gravity="center_horizontal"
+                android:textColor="@color/normal_white"
                 />
 
         </LinearLayout>

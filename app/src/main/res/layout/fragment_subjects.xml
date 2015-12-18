@@ -53,7 +53,10 @@
 
         <ImageButton
             android:layout_width="30dp"
-            android:layout_height="30dp" />
+            android:layout_height="30dp"
+            android:src="@drawable/options"
+            android:background="@null"
+            android:scaleType="fitXY"/>
     </RelativeLayout>
 
 </RelativeLayout>
