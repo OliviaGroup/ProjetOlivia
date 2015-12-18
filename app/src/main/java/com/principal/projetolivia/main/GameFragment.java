@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.gc.materialdesign.views.ButtonRectangle;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.*;
 
