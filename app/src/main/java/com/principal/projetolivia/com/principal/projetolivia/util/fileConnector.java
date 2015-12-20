@@ -2,20 +2,27 @@ package com.principal.projetolivia.com.principal.projetolivia.util;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.util.Log;
 import android.util.Xml;
 
 import com.principal.projetolivia.main.MainActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -66,37 +73,38 @@ public class fileConnector {
 
     public List<Question> getQuestionList() {
         List<Question> questions = new ArrayList<>();
-
-
-
-
-
+        String json = null;
+        JSONObject jObj = null;
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(fileQuestion, "UTF-8"), 8);
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+            fileQuestion.close();
+            json = sb.toString();
+        } catch (Exception e) {
+            Log.e("Buffer Error",
+                    "Error converting result " + e.toString());
+        }
 
         try {
-            XmlPullParser parser = Xml.newPullParser();
-            parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
-            parser.setInput(fileQuestion, null);
-            try {
-                parser.nextTag();
-                readFeed(parser);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } catch (XmlPullParserException e) {
+            jObj = new JSONObject(json);
+        } catch (Exception e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+        }
+
+        try {
+            JSONArray questionJSON = jObj.getJSONArray("questions");
+
+            String plop = questionJSON.toString();
+        }catch (JSONException e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
             e.printStackTrace();
         }
 
 
         return questions;
-    }
-
-    private void readFeed(XmlPullParser parser) throws XmlPullParserException, IOException {
-        List<Question> questions = new ArrayList<>();
-
-        parser.require(XmlPullParser.START_TAG, ns, "questions");
-        while (parser.next() != XmlPullParser.END_TAG) {
-            String temp = parser.getName();
-            String temps = temp;
-        }
     }
 }

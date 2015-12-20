@@ -34,4 +34,17 @@ public enum SubjectName {
 
         return res.getIdentifier("error_button", "drawable", context.getPackageName());
     }
+
+    public int getImageOliviaId (Context context) {
+        Resources res = context.getResources();
+
+        int resId = res.getIdentifier("olivia_"+this.name(), "drawable", context.getPackageName());
+
+        if (0 != resId) {
+            return resId;
+        }
+
+        return res.getIdentifier("olivia_simple", "drawable", context.getPackageName());
+    }
+
 }

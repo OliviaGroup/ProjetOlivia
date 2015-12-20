@@ -1,0 +1,265 @@
+{
+  "questions": {
+    "question": [{
+      "-good_answer": "3",
+      "-key": "Qu’est-ce qui stock les données ?",
+      "-subject": "informatics",
+      "answer": [
+        "Ecran",
+        "Souris",
+        "Disque dur",
+        "Clavier"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "Lequel de ces éléments est un port ?",
+      "-subject": "informatics",
+      "answer": [
+        "USB",
+        "Lecteur CD",
+        "Camera",
+        "Micro"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "Avec quoi un PC se connecte-t-il à internet ?",
+      "-subject": "informatics",
+      "answer": [
+        "Wifi",
+        "Bluetooth",
+        "Infrarouge",
+        "Google"
+      ]
+    }, {
+      "-good_answer": "2",
+      "-key": "En informatique, un virus c’est un programme ",
+      "-subject": "informatics",
+      "answer": [
+        "Permettant d’envoyer des courriels",
+        "Malveillant",
+        "Malade",
+        "Permettant de réparer un ordinateur"
+      ]
+    }, {
+      "-good_answer": "2",
+      "-key": "Comment s'appelle la barre qui est tout en bas de l'écran ?",
+      "-subject": "informatics",
+      "answer": [
+        "La barre espace",
+        "La barre des tâches",
+        "La barre du bas",
+        "La barre de fer"
+      ]
+    }, {
+      "-good_answer": "4",
+      "-key": "Si je n’ai pas internet sur mon ordinateur je ne peux pas :",
+      "-subject": "informatics",
+      "answer": [
+        "Ecrire un texte",
+        "Ecouter de la musique",
+        "Regarder une série",
+        "Faire une recherche"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "Laquelle de ces propositions est un des cinq éléments ?",
+      "-subject": "informatics",
+      "answer": [
+        "Eau",
+        "Sel",
+        "Aluminium",
+        "Sucre"
+      ]
+    }, {
+      "-good_answer": "3",
+      "-key": "Qu’est-ce qui te tiens au sol ?",
+      "-subject": "informatics",
+      "answer": [
+        "Le magnétisme",
+        "Tes pieds",
+        "La gravité",
+        "Le soleil"
+      ]
+    }, {
+      "-good_answer": "2",
+      "-key": "Une pile peut-être considérer comme :",
+      "-subject": "informatics",
+      "answer": [
+        "Un condensateur",
+        "Un générateur",
+        "Une résistance",
+        "Un transistor"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "En physique, le poids est",
+      "-subject": "informatics",
+      "answer": [
+        "Une force",
+        "Une faiblesse",
+        "Une unité",
+        "Une plante"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "Que signifient les lettres D.E.L",
+      "-subject": "informatics",
+      "answer": [
+        "Diode Electro Luminescente",
+        "Dimension Electronique Libre",
+        "Développement Environnemental Légal",
+        "Déploiement Equilibré de Luxe"
+      ]
+    }, {
+      "-good_answer": "4",
+      "-key": "Le jus de citron est",
+      "-subject": "informatics",
+      "answer": [
+        "Neutre",
+        "Basique",
+        "Métallique",
+        "Acide"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "NaCl est :",
+      "-subject": "informatics",
+      "answer": [
+        "Formule chimique",
+        "Une équation",
+        "Une anagramme",
+        "Un électron"
+      ]
+    }, {
+      "-good_answer": "2",
+      "-key": "Qu’est-ce qui tombe au sol lorsque les nuages sont trop lourds ?",
+      "-subject": "informatics",
+      "answer": [
+        "Le ciel",
+        "La pluie",
+        "Le tonnerre",
+        "Des cordes"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "L’état solide de l’eau est",
+      "-subject": "informatics",
+      "answer": [
+        "Glacé",
+        "Le cristal",
+        "Liquide",
+        "La vapeur"
+      ]
+    }, {
+      "-good_answer": "4",
+      "-key": "A température ambiante, l’eau est :",
+      "-subject": "informatics",
+      "answer": [
+        "Vaseuse",
+        "Solide",
+        "Gazeuse",
+        "Liquide"
+      ]
+    }, {
+      "-good_answer": "2",
+      "-key": "Les poissons respirent par :",
+      "-subject": "informatics",
+      "answer": [
+        "Des poumons",
+        "Des branchies",
+        "Le nez",
+        "Les écailles"
+      ]
+    }, {
+      "-good_answer": "3",
+      "-key": "Que forment les fleurs des arbres pollinisés ?",
+      "-subject": "informatics",
+      "answer": [
+        "Des feuilles",
+        "Des épines",
+        "Des fruits",
+        "Du miel"
+      ]
+    }, {
+      "-good_answer": "2",
+      "-key": "Les plumes des oiseaux leur sont utiles pour :",
+      "-subject": "informatics",
+      "answer": [
+        "Etre doux",
+        "Protéger du froid",
+        "Etre plus lourd",
+        "S’accrocher aux arbres"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "Les grenouilles sont des",
+      "-subject": "informatics",
+      "answer": [
+        "Batraciens",
+        "Acariens",
+        "Serrariens",
+        "Marsiens"
+      ]
+    }, {
+      "-good_answer": "3",
+      "-key": "Les humains sont",
+      "-subject": "informatics",
+      "answer": [
+        "Reptiles",
+        "Ovipares",
+        "Vivipares",
+        "Vampirares"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "Quel est le surnom de la planète terre",
+      "-subject": "informatics",
+      "answer": [
+        "La planète bleue",
+        "La planète des humains",
+        "La mère de la Lune",
+        "La planète rouge"
+      ]
+    }, {
+      "-good_answer": "4",
+      "-key": "Comment s’appelle la planète qui a des anneaux",
+      "-subject": "informatics",
+      "answer": [
+        "Jupiter",
+        "Mercure",
+        "Vénus",
+        "Saturne"
+      ]
+    }, {
+      "-good_answer": "2",
+      "-key": "Qu’est-ce que la Lune",
+      "-subject": "informatics",
+      "answer": [
+        "Une planète",
+        "Un satellite",
+        "Une comète",
+        "Une étoile"
+      ]
+    }, {
+      "-good_answer": "1",
+      "-key": "Comment s’appelle notre galaxie ?",
+      "-subject": "informatics",
+      "answer": [
+        "La voie lactée",
+        "La voie ferrée",
+        "La voie aérienne",
+        "La voie enchantée"
+      ]
+    }, {
+      "-good_answer": "3",
+      "-key": "En astronomie, la casserole est",
+      "-subject": "informatics",
+      "answer": [
+        "Un extra-terrestre qui chante mal",
+        "Un récipient",
+        "Une constellation",
+        "Une galaxie"
+      ]
+    }]
+  }
+}
