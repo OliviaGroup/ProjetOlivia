@@ -40,7 +40,7 @@ public class ItemSubjectDataAdapter extends ArrayAdapter<Subject> {
         holder = new ItemSubjectDataHolder();
         holder.subject = items.get(position);
         holder.name = (TextView) row.findViewById(R.id.textNameSubject);
-        holder.score = (TextView) row.findViewById(R.id.textScoreSubject);
+        holder.score = (com.github.lzyzsd.circleprogress.DonutProgress) row.findViewById(R.id.scoreSubject);
         holder.playedGames = (TextView) row.findViewById(R.id.textPlayedGamesSubject);
         holder.hiScore = (TextView) row.findViewById(R.id.textHiScoreSubject);
         holder.rightAnswers = (TextView) row.findViewById(R.id.textRightAnswersSubject);
@@ -55,7 +55,7 @@ public class ItemSubjectDataAdapter extends ArrayAdapter<Subject> {
 
     private void setupItem(ItemSubjectDataHolder holder) {
         holder.name.setText(holder.subject.getName().getLabel(context));
-        holder.score.setText(holder.subject.getPercentRightAnswers() + " %");
+        holder.score.setProgress(holder.subject.getPercentRightAnswers());
         holder.playedGames.setText(context.getString(R.string.profile_playedGames) + " " + holder.subject.getPlayedGames());
         holder.hiScore.setText(context.getString(R.string.profile_hiScore) + " " + holder.subject.getHiScore() + " pts");
         holder.rightAnswers.setText(context.getString(R.string.profile_rightAnswers) + " " + holder.subject.getRightAnswers());
@@ -66,7 +66,7 @@ public class ItemSubjectDataAdapter extends ArrayAdapter<Subject> {
     public static class ItemSubjectDataHolder {
         Subject subject;
         TextView name;
-        TextView score;
+        com.github.lzyzsd.circleprogress.DonutProgress score;
         TextView playedGames;
         TextView hiScore;
         TextView rightAnswers;

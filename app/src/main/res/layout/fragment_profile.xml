@@ -1,44 +1,62 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.principal.projetolivia.main.ProfileFragment"
-    android:background="@color/normal_white"
-    android:orientation="vertical">
+    tools:context="com.principal.projetolivia.main.ProfileFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/stats_olivia"
+        android:scaleType="fitXY"
+        android:id="@+id/statsBackground"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="50dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/profileNameText"
-            android:text="UserName"
-            android:textSize="25sp"/>
+            android:orientation="horizontal"
+            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp">
 
-        <TextView
-            android:id="@+id/profileAgeText"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="22 ans"
-            android:textSize="15sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profileNameText"
+                android:text="UserName"
+                android:textSize="25sp"/>
+
+            <TextView
+                android:id="@+id/profileAgeText"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22 ans"
+                android:textSize="15sp"/>
+        </LinearLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <GridView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numColumns="2"
+                android:columnWidth="400dp"
+                android:id="@+id/gridProfile"
+                android:stretchMode="spacingWidthUniform"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                ></GridView>
+        </RelativeLayout>
     </LinearLayout>
 
-
-    <GridView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:numColumns="3"
-        android:id="@+id/gridProfile"
-        android:gravity="center"
-        android:columnWidth="400dp"
-        android:stretchMode="spacingWidthUniform"
-        android:layout_centerInParent="true"></GridView>
-
-</LinearLayout>
+</RelativeLayout>

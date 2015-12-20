@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by roosq on 30/11/2015.
  */
-public class Subject implements Serializable{
+public class Subject implements Serializable, java.lang.Comparable{
     private SubjectName name;
 
     private int playedGames;
@@ -76,5 +76,13 @@ public class Subject implements Serializable{
 
     public void setName(SubjectName name) {
         this.name = name;
+    }
+
+    public int compareTo(Object other) {
+        int nombre1 = ((Subject) other).getPercentRightAnswers();
+        int nombre2 = this.getPercentRightAnswers();
+        if (nombre1 > nombre2)  return 1;
+        else if(nombre1 == nombre2) return 0;
+        else return -1;
     }
 }

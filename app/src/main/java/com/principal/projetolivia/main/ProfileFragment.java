@@ -12,6 +12,11 @@ import android.widget.GridView;
 import android.widget.TextView;
 
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -36,8 +41,16 @@ public class ProfileFragment extends Fragment {
         profileAgeText.setText(MainActivity.userList.get(MainActivity.currentUser).getAge() + " ans");
 
         gridProfile = (GridView) rootView.findViewById(R.id.gridProfile);
+        MainActivity.userList.get(MainActivity.currentUser).getSubjectList().get(3).setRightAnswers(3);
+        MainActivity.userList.get(MainActivity.currentUser).getSubjectList().get(3).setWrongAnswers(7);
 
-        final ItemSubjectDataAdapter adapter = new ItemSubjectDataAdapter(getActivity(), R.layout.item_grid_subject_data, MainActivity.userList.get(MainActivity.currentUser).getSubjectList());
+        List<Subject> subjectsListByScoreOrder = new ArrayList<Subject>();
+        for (Subject subject : MainActivity.userList.get(MainActivity.currentUser).getSubjectList()){
+            subjectsListByScoreOrder.add(subject);
+        }
+
+        Collections.sort(subjectsListByScoreOrder);
+        final ItemSubjectDataAdapter adapter = new ItemSubjectDataAdapter(getActivity(), R.layout.item_grid_subject_data, subjectsListByScoreOrder);
         gridProfile.setAdapter(adapter);
 
         return rootView;
