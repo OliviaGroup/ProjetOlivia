@@ -36,7 +36,7 @@ public class fileConnector {
 
     private static final String ns = null;
 
-    public fileConnector (InputStream fileQuestion) {
+    public fileConnector(InputStream fileQuestion) {
         this.fileQuestion = fileQuestion;
     }
 
@@ -96,10 +96,25 @@ public class fileConnector {
         }
 
         try {
-            JSONArray questionJSON = jObj.getJSONArray("questions");
+            JSONArray questionJSON = jObj.getJSONArray("question");
 
-            String plop = questionJSON.toString();
-        }catch (JSONException e) {
+            questions.clear();
+            for (int i = 0; i < questionJSON.length(); i++) {
+                JSONObject jsonObject = questionJSON.getJSONObject(i);
+                String tempQuestion = jsonObject.getString("key");
+                int tempGoodAnswer = Integer.parseInt(jsonObject.getString("good_answer"));
+                SubjectName tempSubjectName = SubjectName.valueOf(jsonObject.getString("subject"));
+                JSONArray answerJSON = jsonObject.getJSONArray("answer");
+                List<String> tempAnswers = new ArrayList<>();
+                tempAnswers.clear();
+                for (int j = 0; j < answerJSON.length(); j++) {
+                    String tempAnswer = answerJSON.getString(j);
+                    tempAnswers.add(tempAnswer);
+                }
+                Question question = new Question(tempQuestion, tempGoodAnswer, tempAnswers, tempSubjectName);
+                questions.add(question);
+            }
+        } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
             e.printStackTrace();
         }
