@@ -27,14 +27,15 @@
                     android:id="@+id/question"/>
 
                 <GridView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:numColumns="3"
                     android:id="@+id/gridGame"
                     android:gravity="center"
                     android:columnWidth="@dimen/subjects_button_size"
                     android:stretchMode="spacingWidthUniform"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true"
+                    android:layout_weight="1"/>
 
             </LinearLayout>
 

@@ -11,9 +11,12 @@ import android.widget.ImageView;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
+import com.principal.projetolivia.com.principal.projetolivia.util.SubjectName;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static List<Question> questionList;
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_main);
 
-        CropImageView mainBackground = (CropImageView)(ImageView) this.findViewById(R.id.mainBackground);
+        CropImageView mainBackground = (CropImageView) (ImageView) this.findViewById(R.id.mainBackground);
         mainBackground.setOffset(1, 1);
     }
 
@@ -57,5 +60,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public static Question getOneQuestionOnSubject(SubjectName subjectName) {
+        List<Question> subjectQuestions = new ArrayList<>();
+        subjectQuestions.clear();
+
+        for (Question question : questionList) {
+            if (question.getSubject() == subjectName) {
+                subjectQuestions.add(question);
+            }
+        }
+
+        Random random = new Random();
+
+        return subjectQuestions.get(random.nextInt(subjectQuestions.size()));
     }
 }

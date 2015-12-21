@@ -69,7 +69,7 @@
     {
       "good_answer": "1",
       "key": "Laquelle de ces propositions est un des cinq éléments ?",
-      "subject": "informatics",
+      "subject": "physics",
       "answer": [
         "Eau",
         "Sel",
@@ -80,7 +80,7 @@
     {
       "good_answer": "3",
       "key": "Qu’estce qui te tiens au sol ?",
-      "subject": "informatics",
+      "subject": "physics",
       "answer": [
         "Le magnétisme",
         "Tes pieds",
@@ -90,8 +90,8 @@
     },
     {
       "good_answer": "2",
-      "key": "Une pile peutêtre considérer comme :",
-      "subject": "informatics",
+      "key": "Une pile peut être considérer comme :",
+      "subject": "physics",
       "answer": [
         "Un condensateur",
         "Un générateur",
@@ -102,7 +102,7 @@
     {
       "good_answer": "1",
       "key": "En physique, le poids est",
-      "subject": "informatics",
+      "subject": "physics",
       "answer": [
         "Une force",
         "Une faiblesse",
@@ -113,7 +113,7 @@
     {
       "good_answer": "1",
       "key": "Que signifient les lettres D.E.L",
-      "subject": "informatics",
+      "subject": "physics",
       "answer": [
         "Diode Electro Luminescente",
         "Dimension Electronique Libre",
@@ -124,7 +124,7 @@
     {
       "good_answer": "4",
       "key": "Le jus de citron est",
-      "subject": "informatics",
+      "subject": "chemistry",
       "answer": [
         "Neutre",
         "Basique",
@@ -135,7 +135,7 @@
     {
       "good_answer": "1",
       "key": "NaCl est :",
-      "subject": "informatics",
+      "subject": "chemistry",
       "answer": [
         "Formule chimique",
         "Une équation",
@@ -146,7 +146,7 @@
     {
       "good_answer": "2",
       "key": "Qu’estce qui tombe au sol lorsque les nuages sont trop lourds ?",
-      "subject": "informatics",
+      "subject": "chemistry",
       "answer": [
         "Le ciel",
         "La pluie",
@@ -157,7 +157,7 @@
     {
       "good_answer": "1",
       "key": "L’état solide de l’eau est",
-      "subject": "informatics",
+      "subject": "chemistry",
       "answer": [
         "Glacé",
         "Le cristal",
@@ -168,7 +168,7 @@
     {
       "good_answer": "4",
       "key": "A température ambiante, l’eau est :",
-      "subject": "informatics",
+      "subject": "chemistry",
       "answer": [
         "Vaseuse",
         "Solide",
@@ -179,7 +179,7 @@
     {
       "good_answer": "2",
       "key": "Les poissons respirent par :",
-      "subject": "informatics",
+      "subject": "biology",
       "answer": [
         "Des poumons",
         "Des branchies",
@@ -190,7 +190,7 @@
     {
       "good_answer": "3",
       "key": "Que forment les fleurs des arbres pollinisés ?",
-      "subject": "informatics",
+      "subject": "biology",
       "answer": [
         "Des feuilles",
         "Des épines",
@@ -201,7 +201,7 @@
     {
       "good_answer": "2",
       "key": "Les plumes des oiseaux leur sont utiles pour :",
-      "subject": "informatics",
+      "subject": "biology",
       "answer": [
         "Etre doux",
         "Protéger du froid",
@@ -212,7 +212,7 @@
     {
       "good_answer": "1",
       "key": "Les grenouilles sont des",
-      "subject": "informatics",
+      "subject": "biology",
       "answer": [
         "Batraciens",
         "Acariens",
@@ -223,7 +223,7 @@
     {
       "good_answer": "3",
       "key": "Les humains sont",
-      "subject": "informatics",
+      "subject": "biology",
       "answer": [
         "Reptiles",
         "Ovipares",
@@ -234,7 +234,7 @@
     {
       "good_answer": "1",
       "key": "Quel est le surnom de la planète terre",
-      "subject": "informatics",
+      "subject": "astronomy",
       "answer": [
         "La planète bleue",
         "La planète des humains",
@@ -245,7 +245,7 @@
     {
       "good_answer": "4",
       "key": "Comment s’appelle la planète qui a des anneaux",
-      "subject": "informatics",
+      "subject": "astronomy",
       "answer": [
         "Jupiter",
         "Mercure",
@@ -255,8 +255,8 @@
     },
     {
       "good_answer": "2",
-      "key": "Qu’estce que la Lune",
-      "subject": "informatics",
+      "key": "Qu’est ce que la Lune",
+      "subject": "astronomy",
       "answer": [
         "Une planète",
         "Un satellite",
@@ -267,7 +267,7 @@
     {
       "good_answer": "1",
       "key": "Comment s’appelle notre galaxie ?",
-      "subject": "informatics",
+      "subject": "astronomy",
       "answer": [
         "La voie lactée",
         "La voie ferrée",
@@ -278,7 +278,7 @@
     {
       "good_answer": "3",
       "key": "En astronomie, la casserole est",
-      "subject": "informatics",
+      "subject": "astronomy",
       "answer": [
         "Un extraterrestre qui chante mal",
         "Un récipient",

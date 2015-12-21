@@ -1,5 +1,7 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 
@@ -18,7 +20,7 @@ public class MathGenerator {
     private int rightNumber;
     private MathOperator operator;
     private int result;
-    private int[] results = new int[4];
+    private List<String> results = new ArrayList<>();
 
     public MathGenerator() {
     }
@@ -27,25 +29,25 @@ public class MathGenerator {
         operator = MathOperator.values()[randomGenerator.nextInt(MathOperator.values().length)];
 
         if (operator == MathOperator.PLUS || operator == MathOperator.MINUS) {
-            leftNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
-            rightNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
+            leftNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
+            rightNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
 
             if (operator == MathOperator.MINUS && leftNumber < rightNumber) {
                 do {
-                    leftNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
-                    rightNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
+                    leftNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
+                    rightNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
                 } while (leftNumber < rightNumber);
             }
 
         } else {
-            leftNumber = getRandomIntergerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
-            rightNumber = getRandomIntergerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
+            leftNumber = getRandomIntegerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
+            rightNumber = getRandomIntegerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
 
             if (operator == MathOperator.DIVIDER) {
                 if (leftNumber < rightNumber) {
                     do {
-                        leftNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
-                        rightNumber = getRandomIntergerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
+                        leftNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
+                        rightNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
                     } while (leftNumber < rightNumber);
                 }
                 double tempResultDouble = leftNumber / rightNumber;
@@ -71,23 +73,23 @@ public class MathGenerator {
         for (int i = 0; i < 3; i++) {
             int falseResult;
             do {
-                falseResult = getRandomIntergerFromRange(result - 20, result + 20);
+                falseResult = getRandomIntegerFromRange(result - 20, result + 20);
             } while (falseResult == result && falseResult < 0);
 
-            results[i] = falseResult;
+            results.add(i, Integer.toString(falseResult));
         }
-        results[getRandomIntergerFromRange(0, 3)] = result;
+        results.add(getRandomIntegerFromRange(0, 3), Integer.toString(result));
     }
 
-    private int getRandomIntergerFromRange(int min, int max) {
+    private int getRandomIntegerFromRange(int min, int max) {
         return randomGenerator.nextInt(max - min + 1) + min;
     }
 
-    public int getResult() {
-        return result;
+    public String getResult() {
+        return Integer.toString(result);
     }
 
-    public int[] getResults() {
+    public List<String> getResults() {
         return results;
     }
 

@@ -3,7 +3,7 @@ package com.principal.projetolivia.com.principal.projetolivia.util;
 /**
  * Created by roosq on 16/12/2015.
  */
-enum MathOperator {
+public enum MathOperator {
 
     PLUS("+"), MINUS("-"), MULTIPLIER("*"), DIVIDER("/");
 
