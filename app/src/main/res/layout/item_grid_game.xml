@@ -5,15 +5,24 @@
     android:minHeight="100dp"
     android:minWidth="100dp"
     android:orientation="vertical"
-    android:background="@color/normal_magenta"
+    android:layout_margin="20dp"
     >
+    <RelativeLayout
+        android:id="@+id/lytRoundBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/round_background_normal">
+        <TextView
+            android:id="@+id/textAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:ems="10"
+            android:gravity="center"
+            android:textColor="@color/normal_white"/>
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/textAnswer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:textColor="@color/normal_white" />
+
 
 
 </RelativeLayout>
