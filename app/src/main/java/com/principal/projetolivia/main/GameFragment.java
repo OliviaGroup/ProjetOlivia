@@ -15,8 +15,6 @@ import com.principal.projetolivia.com.principal.projetolivia.util.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class GameFragment extends Fragment {
@@ -24,10 +22,12 @@ public class GameFragment extends Fragment {
     private GridView gridGame;
 
     private TextView txtTimer;
-    private TextView txtScore;
+    private TextView txtGoodAnswers;
+    private TextView txtBadAnswers;
 
-    private int Score;
-    private int goodAnswer;
+    private int goodAnswerScore;
+    private int badAnswerScore;
+    private int goodAnswerID;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,7 +35,12 @@ public class GameFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_game, container, false);
 
         txtTimer = (TextView) rootView.findViewById(R.id.txtTimer);
-        txtScore = (TextView) rootView.findViewById(R.id.txtScore);
+        txtGoodAnswers = (TextView) rootView.findViewById(R.id.txtGoodAnswers);
+        txtBadAnswers = (TextView) rootView.findViewById(R.id.txtBadAnswers);
+
+        goodAnswerScore = 0;
+        badAnswerScore = 0;
+        updateScore();
 
 
         question = (TextView) rootView.findViewById(R.id.question);
@@ -49,12 +54,14 @@ public class GameFragment extends Fragment {
                 RelativeLayout layoutParent = (RelativeLayout) view;
                 RelativeLayout lytRoundBackground = (RelativeLayout) layoutParent.findViewById(R.id.lytRoundBackground);
 
-                if (position == goodAnswer) {
+                if (position + 1 == goodAnswerID) {
                     if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
                         lytRoundBackground.setBackgroundDrawable(getResources().getDrawable(R.drawable.round_background_green));
                     } else {
                         lytRoundBackground.setBackground(getResources().getDrawable(R.drawable.round_background_green));
                     }
+                    goodAnswerScore ++;
+                    updateScore();
 
                     refreshQuestions(rootView);
                 } else {
@@ -63,12 +70,20 @@ public class GameFragment extends Fragment {
                     } else {
                         lytRoundBackground.setBackground(getResources().getDrawable(R.drawable.round_background_red));
                     }
+
+                    badAnswerScore ++;
+                    updateScore();
                 }
             }
         });
 
 
         return rootView;
+    }
+
+    private void updateScore() {
+        txtGoodAnswers.setText(getString(R.string.profile_rightAnswers) + " " + goodAnswerScore);
+        txtBadAnswers.setText(getString(R.string.profile_wrongAnswers) + " " + badAnswerScore);
     }
 
 
@@ -80,12 +95,12 @@ public class GameFragment extends Fragment {
             mathGenerator.calculationGenerator();
             question.setText(mathGenerator.getOperation());
             answersList = mathGenerator.getResults();
-            goodAnswer = mathGenerator.getGoodAnswer();
+            goodAnswerID = mathGenerator.getGoodAnswer();
         } else {
             Question randomQuestion = MainActivity.getOneQuestionOnSubject(MainActivity.userList.get(MainActivity.currentUser).getSubjectList().get(MainActivity.currentSubject).getName());
             question.setText(randomQuestion.getQuestion());
             answersList = randomQuestion.getAnswers();
-            goodAnswer = randomQuestion.getGoodAnswer();
+            goodAnswerID = randomQuestion.getGoodAnswer();
         }
 
         ItemGameAdapter adapter = new ItemGameAdapter(getActivity(), R.layout.item_grid_game, answersList);

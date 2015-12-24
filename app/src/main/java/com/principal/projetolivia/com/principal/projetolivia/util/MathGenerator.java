@@ -47,8 +47,8 @@ public class MathGenerator {
             if (operator == MathOperator.DIVIDER) {
                 if (leftNumber < rightNumber) {
                     do {
-                        leftNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
-                        rightNumber = getRandomIntegerFromRange(minQuestionElementValueSumSub, maxQuestionElementValueSumSub);
+                        leftNumber = getRandomIntegerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
+                        rightNumber = getRandomIntegerFromRange(minQuestionElementValueMulDiv, maxQuestionElementValueMulDiv);
                     } while (leftNumber < rightNumber);
                 }
                 double tempResultDouble = leftNumber / rightNumber;
@@ -75,12 +75,12 @@ public class MathGenerator {
             int falseResult;
             do {
                 falseResult = getRandomIntegerFromRange(result - 20, result + 20);
-            } while (falseResult == result && falseResult < 0);
+            } while (falseResult == result || falseResult < 0);
 
             results.add(i, Integer.toString(falseResult));
         }
-        goodAnswer = getRandomIntegerFromRange(0, 3);
-        results.add(goodAnswer, Integer.toString(result));
+        goodAnswer = getRandomIntegerFromRange(1, 4);
+        results.add(goodAnswer - 1, Integer.toString(result));
     }
 
     private int getRandomIntegerFromRange(int min, int max) {

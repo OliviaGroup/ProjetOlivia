@@ -56,10 +56,15 @@
                         android:layout_height="wrap_content"
                         android:text="Temps : 10s"/>
                     <TextView
-                        android:id="@+id/txtScore"
+                        android:id="@+id/txtGoodAnswers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Points : 3"/>
+                        android:text="@string/profile_rightAnswers"/>
+                    <TextView
+                        android:id="@+id/txtBadAnswers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/profile_wrongAnswers"/>
                 </LinearLayout>
 
 
