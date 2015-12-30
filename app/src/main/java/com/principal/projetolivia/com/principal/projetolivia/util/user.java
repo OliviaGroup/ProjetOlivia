@@ -54,12 +54,20 @@ public class User implements Serializable {
     }
 
     public int getTotalPercentRightAnswers() {
-        int sum = 0;
+        int rightAnswersSum = 0;
+        int wrongAnswersSum = 0;
         for (Subject subject :
                 subjectList) {
-            sum += subject.getPercentRightAnswers();
+            rightAnswersSum += subject.getRightAnswers();
+            wrongAnswersSum += subject.getWrongAnswers();
         }
-        return sum / subjectList.size();
+        int totalAnswers = rightAnswersSum + wrongAnswersSum;
+        if (totalAnswers != 0) {
+            return rightAnswersSum * 100 / totalAnswers;
+        } else {
+            return 0;
+        }
+
     }
 
     public void setDateOfBirth(Calendar dateOfBirth) {
