@@ -1,6 +1,5 @@
 package com.principal.projetolivia.main;
 
-import android.graphics.Matrix;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -8,13 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.gc.materialdesign.views.ButtonFloat;
-import com.gc.materialdesign.widgets.Dialog;
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
+import com.principal.projetolivia.com.principal.projetolivia.util.DataContainer;
 import com.principal.projetolivia.com.principal.projetolivia.util.fileConnector;
 
 import java.io.InputStream;
@@ -40,50 +37,40 @@ public class MainActivityFragment extends Fragment {
         InputStream is = getResources().openRawResource(R.raw.questions);
 
         fileConnector fileConnector = new fileConnector(is);
-        if (MainActivity.userList != null) {
-            fileConnector.setProfileList(getActivity(), MainActivity.userList);
+
+        if (MainActivity.dataContainer != null) {
+            FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
+            ft.addToBackStack(getTag());
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            ft.commit();
+        } else {
+            MainActivity.dataContainer = new DataContainer();
         }
 
-        MainActivity.questionList = fileConnector.getQuestionList();
 
-        MainActivity.userList = fileConnector.getProfileList(getActivity());
+        if (MainActivity.dataContainer.getUserList() != null) {
+            fileConnector.setProfileList(getActivity(), MainActivity.dataContainer.getUserList());
+        }
+
+        MainActivity.dataContainer.setQuestionList(fileConnector.getQuestionList());
+
+        MainActivity.dataContainer.setUserList(fileConnector.getProfileList(getActivity()));
 
 
-        final ItemProfileAdapter adapter = new ItemProfileAdapter(getActivity(), R.layout.item_list_profiles, MainActivity.userList);
+        final ItemProfileAdapter adapter = new ItemProfileAdapter(getActivity(), R.layout.item_list_profiles, MainActivity.dataContainer.getUserList());
         //listViewProfiles.setEmptyView(rootView.findViewById(R.id.textIfListEmpty));
         listViewProfiles.setAdapter(adapter);
 
         listViewProfiles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.currentUser = position;
+                MainActivity.dataContainer.setCurrentUser(position);
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
                 ft.addToBackStack(getTag());
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
         });
-
-        listViewProfiles.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, final int position, long id) {
-                Dialog dialog = new Dialog(getActivity(), getString(R.string.delete), getString(R.string.delete_message));
-                /*ButtonFlat acceptButton = dialog.getButtonAccept();
-                ButtonFlat cancelButton = dialog.getButtonCancel();
-                acceptButton.setText(getString(R.string.ok));
-                cancelButton.setText(getString(R.string.cancel));*/
-                dialog.setOnAcceptButtonClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        MainActivity.userList.remove(position);
-                        adapter.notifyDataSetChanged();
-                    }
-                });
-
-                return false;
-            }
-        });
-
 
         buttonAddProfile = (ButtonFloat) rootView.findViewById(R.id.buttonCreateProfile);
         buttonAddProfile.setOnClickListener(new View.OnClickListener() {

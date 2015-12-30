@@ -19,7 +19,6 @@ import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -87,7 +86,7 @@ public class NewProfileFragment extends Fragment {
                     snackBar.show();
                 } else {
                     User newUser = new User(textName.getText().toString(), myCalendar);
-                    MainActivity.userList.add(newUser);
+                    MainActivity.dataContainer.getUserList().add(newUser);
 
                     View view = getActivity().getCurrentFocus();
                     if (view != null) {

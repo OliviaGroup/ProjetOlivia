@@ -1,8 +1,7 @@
 package com.principal.projetolivia.main;
 
-import android.app.FragmentTransaction;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -11,7 +10,7 @@ import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.DataContainer;
 
-public class MainActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
     public static DataContainer dataContainer;
 
     @Override
@@ -21,14 +20,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new MainActivityFragment())
+                    .add(R.id.gameContainer, new GameFragment())
                     .commit();
-            setContentView(R.layout.activity_main);
         }
+        setContentView(R.layout.activity_game);
 
-        CropImageView mainBackground = (CropImageView) (ImageView) this.findViewById(R.id.mainBackground);
-        mainBackground.setOffset(1, 1);
+        CropImageView gameBackground = (CropImageView) (ImageView) this.findViewById(R.id.gameBackground);
+        gameBackground.setOffset(1, 1);
     }
-
-
 }

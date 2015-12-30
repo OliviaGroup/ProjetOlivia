@@ -1,7 +1,9 @@
 package com.principal.projetolivia.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.GridView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonRectangle;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.*;
 
@@ -24,6 +27,7 @@ public class GameFragment extends Fragment {
     private TextView txtTimer;
     private TextView txtGoodAnswers;
     private TextView txtBadAnswers;
+    private ButtonRectangle btnStopGame;
 
     private int goodAnswerScore;
     private int badAnswerScore;
@@ -37,6 +41,7 @@ public class GameFragment extends Fragment {
         txtTimer = (TextView) rootView.findViewById(R.id.txtTimer);
         txtGoodAnswers = (TextView) rootView.findViewById(R.id.txtGoodAnswers);
         txtBadAnswers = (TextView) rootView.findViewById(R.id.txtBadAnswers);
+        btnStopGame = (ButtonRectangle) rootView.findViewById(R.id.btnStopGame);
 
         goodAnswerScore = 0;
         badAnswerScore = 0;
@@ -47,6 +52,20 @@ public class GameFragment extends Fragment {
         gridGame = (GridView) rootView.findViewById(R.id.gridGame);
 
         refreshQuestions(rootView);
+
+        btnStopGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Subject currentSubject = MainActivity.dataContainer.getCurrentSubject();
+                currentSubject.setRightAnswers(currentSubject.getRightAnswers() + goodAnswerScore);
+                currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
+                currentSubject.setPlayedGames(currentSubject.getPlayedGames() + goodAnswerScore + badAnswerScore);
+
+                Intent mainActivity = new Intent(getActivity(), MainActivity.class);
+                MainActivity.dataContainer = GameActivity.dataContainer;
+                startActivity(mainActivity);
+            }
+        });
 
         gridGame.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -60,7 +79,7 @@ public class GameFragment extends Fragment {
                     } else {
                         lytRoundBackground.setBackground(getResources().getDrawable(R.drawable.round_background_green));
                     }
-                    goodAnswerScore ++;
+                    goodAnswerScore++;
                     updateScore();
 
                     refreshQuestions(rootView);
@@ -71,7 +90,7 @@ public class GameFragment extends Fragment {
                         lytRoundBackground.setBackground(getResources().getDrawable(R.drawable.round_background_red));
                     }
 
-                    badAnswerScore ++;
+                    badAnswerScore++;
                     updateScore();
                 }
             }
@@ -90,14 +109,14 @@ public class GameFragment extends Fragment {
     private void refreshQuestions(View view) {
         List<String> answersList = new ArrayList<>();
         answersList.clear();
-        if (MainActivity.userList.get(MainActivity.currentUser).getSubjectList().get(MainActivity.currentSubject).getName() == SubjectName.mathematics) {
+        if (MainActivity.dataContainer.getCurrentSubject().getName() == SubjectName.mathematics) {
             MathGenerator mathGenerator = new MathGenerator();
             mathGenerator.calculationGenerator();
             question.setText(mathGenerator.getOperation());
             answersList = mathGenerator.getResults();
             goodAnswerID = mathGenerator.getGoodAnswer();
         } else {
-            Question randomQuestion = MainActivity.getOneQuestionOnSubject(MainActivity.userList.get(MainActivity.currentUser).getSubjectList().get(MainActivity.currentSubject).getName());
+            Question randomQuestion = MainActivity.dataContainer.getOneQuestionOnSubject(MainActivity.dataContainer.getCurrentSubject().getName());
             question.setText(randomQuestion.getQuestion());
             answersList = randomQuestion.getAnswers();
             goodAnswerID = randomQuestion.getGoodAnswer();

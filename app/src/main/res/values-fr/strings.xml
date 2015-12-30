@@ -23,4 +23,5 @@
     <string name="profile_hiScore">Meilleure partie :</string>
     <string name="profile_rightAnswers">Réponses justes :</string>
     <string name="profile_wrongAnswers">Réponses fausses :</string>
+    <string name="stop_game">Arrêter le jeu</string>
 </resources>
