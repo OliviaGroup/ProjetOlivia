@@ -102,7 +102,6 @@ public class NewProfileFragment extends Fragment {
             }
         });
 
-
         return rootView;
     }
 
