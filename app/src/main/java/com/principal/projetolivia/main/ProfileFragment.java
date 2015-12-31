@@ -42,8 +42,6 @@ public class ProfileFragment extends Fragment {
         profileAgeText.setText(currentUser.getAge() + " ans");
 
         gridProfile = (GridView) rootView.findViewById(R.id.gridProfile);
-        currentUser.getSubjectList().get(3).setRightAnswers(3);
-        currentUser.getSubjectList().get(3).setWrongAnswers(7);
 
         List<Subject> subjectsListByScoreOrder = new ArrayList<Subject>();
         for (Subject subject : currentUser.getSubjectList()){

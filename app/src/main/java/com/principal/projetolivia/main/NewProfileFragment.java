@@ -65,7 +65,7 @@ public class NewProfileFragment extends Fragment {
                 DatePicker datePicker = datePickerDialog.getDatePicker();
 
                 datePicker.setMaxDate(Calendar.getInstance().getTimeInMillis());
-                datePicker.setCalendarViewShown(false);
+                //datePicker.setCalendarViewShown(false);
 
                 datePickerDialog.show();
             }
