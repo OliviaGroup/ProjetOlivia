@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.container, new MainActivityFragment())
                     .commit();
-            setContentView(R.layout.activity_main);
         }
+        setContentView(R.layout.activity_main);
 
         CropImageView mainBackground = (CropImageView) (ImageView) this.findViewById(R.id.mainBackground);
         mainBackground.setOffset(1, 1);
