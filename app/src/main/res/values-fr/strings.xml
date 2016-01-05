@@ -24,4 +24,7 @@
     <string name="profile_rightAnswers">Réponses justes :</string>
     <string name="profile_wrongAnswers">Réponses fausses :</string>
     <string name="stop_game">Arrêter le jeu</string>
+    <string name="date_naissance">Date de naissance</string>
+    <string name="nameError">N\'oublie pas d\'entrer ton nom !</string>
+    <string name="ageError">N\'oublie pas d\'entrer ta date de naissance !</string>
 </resources>

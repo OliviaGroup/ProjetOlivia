@@ -26,4 +26,7 @@
     <string name="profile_rightAnswers">Right answers:</string>
     <string name="profile_wrongAnswers">Wrong answers:</string>
     <string name="stop_game">Stop the game</string>
+    <string name="date_naissance">Date of birth</string>
+    <string name="nameError">Don\'t forget to enter your name!</string>
+    <string name="ageError">Don\'t forget to enter your date of birth!</string>
 </resources>

@@ -5,15 +5,16 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.ButtonRectangle;
-import com.gc.materialdesign.widgets.SnackBar;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
@@ -55,35 +56,54 @@ public class NewProfileFragment extends Fragment {
                 updateLabel();
             }
         };
-        buttonChangeDate = (ButtonFlat) rootView.findViewById(R.id.buttonChangeDate);
 
-        buttonChangeDate.setOnClickListener(new View.OnClickListener() {
+        textAge.setOnTouchListener(new View.OnTouchListener() {
             @Override
-            public void onClick(View v) {
-                DatePickerDialog datePickerDialog = new DatePickerDialog(rootView.getContext(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+            public boolean onTouch(View v, MotionEvent event) {
+                if (MotionEvent.ACTION_UP == event.getAction()) {
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(rootView.getContext(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
 
-                DatePicker datePicker = datePickerDialog.getDatePicker();
+                    DatePicker datePicker = datePickerDialog.getDatePicker();
 
-                datePicker.setMaxDate(Calendar.getInstance().getTimeInMillis());
-                //datePicker.setCalendarViewShown(false);
+                    datePicker.setMaxDate(Calendar.getInstance().getTimeInMillis());
+                    //datePicker.setCalendarViewShown(false);
 
-                datePickerDialog.show();
+                    datePickerDialog.show();
+                }
+                return true; // return is important...
             }
         });
+
+//        buttonChangeDate = (ButtonFlat) rootView.findViewById(R.id.buttonChangeDate);
+//
+//        buttonChangeDate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DatePickerDialog datePickerDialog = new DatePickerDialog(rootView.getContext(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+//
+//                DatePicker datePicker = datePickerDialog.getDatePicker();
+//
+//                datePicker.setMaxDate(Calendar.getInstance().getTimeInMillis());
+//                //datePicker.setCalendarViewShown(false);
+//
+//                datePickerDialog.show();
+//            }
+//        });
 
         buttonValidation = (ButtonRectangle) rootView.findViewById(R.id.buttonValidation);
         buttonValidation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (textName.getText().toString().matches("") && textAge.getText().toString().matches("")) {
-                    View.OnClickListener onClickListener = new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                if (textName.getText().toString().matches("") || textAge.getText().toString().matches("")) {
 
-                        }
-                    };
-                    SnackBar snackBar = new SnackBar(getActivity(), getResources().getString(R.string.new_profile_error), null, onClickListener);
-                    snackBar.show();
+                    if (textName.getText().toString().matches("")){
+                        Toast.makeText(getContext(), getContext().getString(R.string.nameError), Toast.LENGTH_LONG).show();
+                    }
+                    if (textAge.getText().toString().matches("")){
+                        Toast.makeText(getContext(), getContext().getString(R.string.ageError), Toast.LENGTH_LONG).show();
+                    }
+
+                    return;
                 } else {
                     User newUser = new User(textName.getText().toString(), myCalendar);
                     MainActivity.userList.add(newUser);

@@ -22,7 +22,9 @@
             android:layout_marginLeft="5dp"
             android:layout_marginTop="10dp"
             android:hint="@string/name"
-            android:inputType="textPersonName"/>
+            android:inputType="textCapWords"
+            android:maxLength="30"
+            android:imeOptions="actionDone"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,21 +39,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/age"
+                android:hint="@string/date_naissance"
                 android:paddingLeft="10dp"
                 android:minHeight="48dp"
                 android:layout_weight="1"/>
 
-            <com.gc.materialdesign.views.ButtonFlat
-                android:id="@+id/buttonChangeDate"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/app_orange"
-                android:text="@string/change"
-                android:layout_gravity="right"
-                android:padding="5dp"
-                android:layout_weight="3"
-                />
+            <!--<com.gc.materialdesign.views.ButtonFlat-->
+                <!--android:id="@+id/buttonChangeDate"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@color/app_orange"-->
+                <!--android:text="@string/change"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:padding="5dp"-->
+                <!--android:layout_weight="3"-->
+                <!--/>-->
         </LinearLayout>
 
 
