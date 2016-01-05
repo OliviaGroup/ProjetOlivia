@@ -33,7 +33,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_profile, container, false);
 
-        User currentUser = MainActivity.dataContainer.getCurrentUser();
+        User currentUser = MainActivity.getCurrentUser();
 
         TextView profileNametext = (TextView) rootView.findViewById(R.id.profileNameText);
         profileNametext.setText(currentUser.getName());

@@ -57,12 +57,12 @@ public class GameFragment extends Fragment {
         btnStopGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Subject currentSubject = MainActivity.dataContainer.getCurrentSubject();
+                Subject currentSubject = MainActivity.getCurrentSubject();
                 currentSubject.setRightAnswers(currentSubject.getRightAnswers() + goodAnswerScore);
                 currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
                 currentSubject.setPlayedGames(currentSubject.getPlayedGames() + goodAnswerScore + badAnswerScore);
 
-                MainActivity.dataContainer.fileConnector.setProfileList(getContext(), MainActivity.dataContainer.getUserList());
+                MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
                 ft.addToBackStack(getTag());
@@ -115,14 +115,14 @@ public class GameFragment extends Fragment {
     private void refreshQuestions(View view) {
         List<String> answersList = new ArrayList<>();
         answersList.clear();
-        if (MainActivity.dataContainer.getCurrentSubject().getName() == SubjectName.mathematics) {
+        if (MainActivity.getCurrentSubject().getName() == SubjectName.mathematics) {
             MathGenerator mathGenerator = new MathGenerator();
             mathGenerator.calculationGenerator();
             question.setText(mathGenerator.getOperation());
             answersList = mathGenerator.getResults();
             goodAnswerID = mathGenerator.getGoodAnswer();
         } else {
-            Question randomQuestion = MainActivity.dataContainer.getOneQuestionOnSubject(MainActivity.dataContainer.getCurrentSubject().getName());
+            Question randomQuestion = MainActivity.getOneQuestionOnSubject(MainActivity.getCurrentSubject().getName());
             question.setText(randomQuestion.getQuestion());
             answersList = randomQuestion.getAnswers();
             goodAnswerID = randomQuestion.getGoodAnswer();

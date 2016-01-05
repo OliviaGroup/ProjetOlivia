@@ -39,11 +39,11 @@ public class SubjectsFragment extends Fragment {
             }
         });
 
-        final ItemSubjectAdapter adapter = new ItemSubjectAdapter(getActivity(), R.layout.item_grid_subjects, MainActivity.dataContainer.getCurrentUser().getSubjectList());
+        final ItemSubjectAdapter adapter = new ItemSubjectAdapter(getActivity(), R.layout.item_grid_subjects, MainActivity.getCurrentUser().getSubjectList());
         gridViewSubjects.setAdapter(adapter);
 
         TextView userName = (TextView) rootView.findViewById(R.id.userName);
-        userName.setText(MainActivity.dataContainer.getCurrentUser().getName());
+        userName.setText(MainActivity.getCurrentUser().getName());
         userName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

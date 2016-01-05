@@ -11,7 +11,6 @@ import android.widget.ListView;
 
 import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.DataContainer;
 import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
 
 import java.io.InputStream;
@@ -38,34 +37,25 @@ public class MainActivityFragment extends Fragment {
 
 
 
-        if (MainActivity.dataContainer != null) {
-            FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
-            ft.addToBackStack(getTag());
-            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-            ft.commit();
-        } else {
-            MainActivity.dataContainer = new DataContainer();
+       MainActivity.fileConnector = new FileConnector(is);
+
+        if (MainActivity.userList != null) {
+            MainActivity.fileConnector.setProfileList(getActivity(), MainActivity.userList);
         }
 
-        MainActivity.dataContainer.fileConnector = new FileConnector(is);
+        MainActivity.questionList = MainActivity.fileConnector.getQuestionList();
 
-        if (MainActivity.dataContainer.getUserList() != null) {
-            MainActivity.dataContainer.fileConnector.setProfileList(getActivity(), MainActivity.dataContainer.getUserList());
-        }
-
-        MainActivity.dataContainer.setQuestionList(MainActivity.dataContainer.fileConnector.getQuestionList());
-
-        MainActivity.dataContainer.setUserList(MainActivity.dataContainer.fileConnector.getProfileList(getActivity()));
+        MainActivity.userList = MainActivity.fileConnector.getProfileList(getActivity());
 
 
-        final ItemProfileAdapter adapter = new ItemProfileAdapter(getActivity(), R.layout.item_list_profiles, MainActivity.dataContainer.getUserList());
+        final ItemProfileAdapter adapter = new ItemProfileAdapter(getActivity(), R.layout.item_list_profiles, MainActivity.userList);
         //listViewProfiles.setEmptyView(rootView.findViewById(R.id.textIfListEmpty));
         listViewProfiles.setAdapter(adapter);
 
         listViewProfiles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.dataContainer.setCurrentUser(position);
+                MainActivity.currentUser = position;
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
                 ft.addToBackStack(getTag());
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
