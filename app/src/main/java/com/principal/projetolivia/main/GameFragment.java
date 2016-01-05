@@ -1,6 +1,7 @@
 package com.principal.projetolivia.main;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -61,9 +62,12 @@ public class GameFragment extends Fragment {
                 currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
                 currentSubject.setPlayedGames(currentSubject.getPlayedGames() + goodAnswerScore + badAnswerScore);
 
-                Intent mainActivity = new Intent(getActivity(), MainActivity.class);
-                MainActivity.dataContainer = GameActivity.dataContainer;
-                startActivity(mainActivity);
+                MainActivity.dataContainer.fileConnector.setProfileList(getContext(), MainActivity.dataContainer.getUserList());
+
+                FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
+                ft.addToBackStack(getTag());
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.commit();
             }
         });
 
@@ -74,23 +78,25 @@ public class GameFragment extends Fragment {
                 RelativeLayout lytRoundBackground = (RelativeLayout) layoutParent.findViewById(R.id.lytRoundBackground);
 
                 if (position + 1 == goodAnswerID) {
-                    if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
-                        lytRoundBackground.setBackgroundDrawable(getResources().getDrawable(R.drawable.round_background_green));
-                    } else {
-                        lytRoundBackground.setBackground(getResources().getDrawable(R.drawable.round_background_green));
-                    }
+
                     goodAnswerScore++;
                     updateScore();
 
                     refreshQuestions(rootView);
                 } else {
+                    if (!lytRoundBackground.getBackground().getConstantState().equals(getResources().getDrawable(R.drawable.round_background_red).getConstantState())) {
+                        badAnswerScore++;
+                    }
                     if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN) {
                         lytRoundBackground.setBackgroundDrawable(getResources().getDrawable(R.drawable.round_background_red));
                     } else {
                         lytRoundBackground.setBackground(getResources().getDrawable(R.drawable.round_background_red));
                     }
 
-                    badAnswerScore++;
+
+
+
+
                     updateScore();
                 }
             }

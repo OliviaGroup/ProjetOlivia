@@ -12,7 +12,7 @@ import android.widget.ListView;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.DataContainer;
-import com.principal.projetolivia.com.principal.projetolivia.util.fileConnector;
+import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
 
 import java.io.InputStream;
 
@@ -36,7 +36,7 @@ public class MainActivityFragment extends Fragment {
 
         InputStream is = getResources().openRawResource(R.raw.questions);
 
-        fileConnector fileConnector = new fileConnector(is);
+
 
         if (MainActivity.dataContainer != null) {
             FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
@@ -47,14 +47,15 @@ public class MainActivityFragment extends Fragment {
             MainActivity.dataContainer = new DataContainer();
         }
 
+        MainActivity.dataContainer.fileConnector = new FileConnector(is);
 
         if (MainActivity.dataContainer.getUserList() != null) {
-            fileConnector.setProfileList(getActivity(), MainActivity.dataContainer.getUserList());
+            MainActivity.dataContainer.fileConnector.setProfileList(getActivity(), MainActivity.dataContainer.getUserList());
         }
 
-        MainActivity.dataContainer.setQuestionList(fileConnector.getQuestionList());
+        MainActivity.dataContainer.setQuestionList(MainActivity.dataContainer.fileConnector.getQuestionList());
 
-        MainActivity.dataContainer.setUserList(fileConnector.getProfileList(getActivity()));
+        MainActivity.dataContainer.setUserList(MainActivity.dataContainer.fileConnector.getProfileList(getActivity()));
 
 
         final ItemProfileAdapter adapter = new ItemProfileAdapter(getActivity(), R.layout.item_list_profiles, MainActivity.dataContainer.getUserList());

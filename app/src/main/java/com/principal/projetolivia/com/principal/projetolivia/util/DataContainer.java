@@ -12,6 +12,7 @@ public class DataContainer {
     private List<User> userList;
     private int currentUser;
     private int currentSubject;
+    public FileConnector fileConnector;
 
     public List<User> getUserList() {
         return userList;

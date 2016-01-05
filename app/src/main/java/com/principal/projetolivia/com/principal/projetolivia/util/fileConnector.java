@@ -29,14 +29,14 @@ import java.util.List;
 /**
  * Created by roosq on 03/12/2015.
  */
-public class fileConnector {
+public class FileConnector {
 
     private final String fileUserData = "data";
     private InputStream fileQuestion;
 
     private static final String ns = null;
 
-    public fileConnector(InputStream fileQuestion) {
+    public FileConnector(InputStream fileQuestion) {
         this.fileQuestion = fileQuestion;
     }
 
