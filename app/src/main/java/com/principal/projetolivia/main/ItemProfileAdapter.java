@@ -9,8 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.principal.projetolivia.R;
 
-import com.principal.projetolivia.com.principal.projetolivia.util.User;
-
 import java.util.List;
 
 /**
