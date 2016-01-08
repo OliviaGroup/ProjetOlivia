@@ -1,5 +1,6 @@
 package com.principal.projetolivia.main;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -26,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public static int currentUser;
     public static int currentSubject;
     public static FileConnector fileConnector;
+    private static CropImageView mainBackground;
+    private static Resources resources ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_main);
 
-        CropImageView mainBackground = (CropImageView) (ImageView) this.findViewById(R.id.mainBackground);
+        resources = getResources();
+
+        mainBackground = (CropImageView) (ImageView) this.findViewById(R.id.mainBackground);
         mainBackground.setOffset(1, 1);
     }
 
@@ -56,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
         Random random = new Random();
 
         return subjectQuestions.get(random.nextInt(subjectQuestions.size()));
+    }
+
+    public static void changeBackground(int idBackground) {
+        mainBackground.setImageDrawable(resources.getDrawable(idBackground));
     }
 
     public static Subject getCurrentSubject() {

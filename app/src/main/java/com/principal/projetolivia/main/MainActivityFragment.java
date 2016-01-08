@@ -31,6 +31,8 @@ public class MainActivityFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_main, container, false);
 
+        MainActivity.changeBackground(R.drawable.background);
+
         listViewProfiles = (ListView) rootView.findViewById(R.id.listViewProfiles);
 
         InputStream is = getResources().openRawResource(R.raw.questions);

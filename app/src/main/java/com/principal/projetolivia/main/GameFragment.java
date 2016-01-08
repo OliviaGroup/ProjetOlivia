@@ -1,5 +1,6 @@
 package com.principal.projetolivia.main;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -38,6 +39,8 @@ public class GameFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_game, container, false);
+
+        MainActivity.changeBackground(MainActivity.getCurrentSubject().getName().getImageQuestionId(getContext()));
 
         txtTimer = (TextView) rootView.findViewById(R.id.txtTimer);
         txtGoodAnswers = (TextView) rootView.findViewById(R.id.txtGoodAnswers);

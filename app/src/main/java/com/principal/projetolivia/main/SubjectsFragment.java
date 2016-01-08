@@ -28,6 +28,8 @@ public class SubjectsFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_subjects, container, false);
 
+        MainActivity.changeBackground(R.drawable.subjects_background);
+
         gridViewSubjects = (GridView) rootView.findViewById(R.id.gridSubjects);
         gridViewSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
