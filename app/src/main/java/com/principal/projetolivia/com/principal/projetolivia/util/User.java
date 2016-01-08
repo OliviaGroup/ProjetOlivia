@@ -45,8 +45,27 @@ public class User implements Serializable {
     }
 
     public int getAge() {
-        int temp = Calendar.getInstance().get(Calendar.YEAR) - dateOfBirth.get(Calendar.YEAR);
-        return temp;
+        int age = 0;
+        int yeardiff = Calendar.getInstance().get(Calendar.YEAR) - dateOfBirth.get(Calendar.YEAR);
+        int monthdiff = Calendar.getInstance().get(Calendar.MONTH) - dateOfBirth.get(Calendar.MONTH);
+        int daydiff = Calendar.getInstance().get(Calendar.DATE) - dateOfBirth.get(Calendar.DATE);
+
+        if (monthdiff < 0) {
+            age = yeardiff - 1;
+        }
+        else if (monthdiff == 0){
+            if (daydiff < 0){
+                age = yeardiff - 1;
+            }
+            else {
+                age = yeardiff;
+            }
+        }
+        else {
+            age = yeardiff;
+        }
+
+        return age;
     }
 
     public List<Subject> getSubjectList() {

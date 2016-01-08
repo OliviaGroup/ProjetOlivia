@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

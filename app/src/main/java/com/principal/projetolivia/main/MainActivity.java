@@ -3,8 +3,6 @@ package com.principal.projetolivia.main;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -15,7 +13,6 @@ import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectName;
-import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.ArrayList;
 import java.util.List;
