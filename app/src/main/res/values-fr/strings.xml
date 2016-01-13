@@ -27,4 +27,5 @@
     <string name="date_naissance">Date de naissance</string>
     <string name="nameError">N\'oublie pas d\'entrer ton nom !</string>
     <string name="ageError">N\'oublie pas d\'entrer ta date de naissance !</string>
+    <string name="time">Temps : </string>
 </resources>

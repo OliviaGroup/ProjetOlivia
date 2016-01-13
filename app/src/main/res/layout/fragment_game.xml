@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context="com.principal.projetolivia.main.GameFragment">
 
 
@@ -17,13 +18,24 @@
             android:orientation="vertical"
             android:weightSum="3">
 
-            <TextView
+            <com.principal.projetolivia.com.principal.projetolivia.util.AutoResizeTextView
                 android:id="@+id/question"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="20dp"
                 android:layout_weight="2"
-                android:background="@color/green" />
+                android:background="@drawable/round_background_normal"
+                android:textColor="@color/normal_white"/>
+                />
+
+            <!--<TextView
+                android:id="@+id/question"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="2"
+                android:background="@drawable/round_background_normal"
+                android:textColor="@color/normal_white"/>-->
 
             <GridView
                 android:id="@+id/gridGame"
@@ -54,7 +66,7 @@
                     android:id="@+id/txtTimer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Temps : 10s" />
+                    android:text="@string/time" />
 
                 <TextView
                     android:id="@+id/txtGoodAnswers"
@@ -67,6 +79,21 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/profile_wrongAnswers" />
+
+                <com.github.lzyzsd.circleprogress.CircleProgress
+                    android:id="@+id/prgTimer"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    custom:circle_max="60"
+                    custom:circle_suffix_text="@string/min_seconds"
+                    custom:circle_finished_color="@color/app_pink"
+                    custom:circle_unfinished_color="@color/app_gray"
+                    custom:circle_text_color="@color/normal_white"
+                    custom:circle_text_size="20dp"
+                    custom:circle_progress="60"
+
+                    />
             </LinearLayout>
 
             <com.gc.materialdesign.views.ButtonRectangle
@@ -79,6 +106,13 @@
                 android:background="@color/app_pink"
                 android:padding="20dp"
                 android:text="@string/stop_game" />
+
+            <ImageView
+                android:id="@+id/imgOlivia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/olivia_simple"
+                android:layout_alignParentBottom="true" />
 
 
         </RelativeLayout>

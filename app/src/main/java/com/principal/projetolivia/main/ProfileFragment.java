@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
+import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,6 +32,8 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_profile, container, false);
+
+        MainActivity.changeBackground(R.drawable.stats_olivia);
 
         User currentUser = MainActivity.getCurrentUser();
 
