@@ -31,4 +31,6 @@
     <string name="ageError">Don\'t forget to enter your date of birth!</string>
     <string name="time">Time :</string>
     <string name="min_seconds" translatable="false"> s</string>
+    <string name="change_profile">Change profile</string>
+    <string name="delete_profile">Delete profile</string>
 </resources>

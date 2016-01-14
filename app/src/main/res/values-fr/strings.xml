@@ -28,4 +28,6 @@
     <string name="nameError">N\'oublie pas d\'entrer ton nom !</string>
     <string name="ageError">N\'oublie pas d\'entrer ta date de naissance !</string>
     <string name="time">Temps : </string>
+    <string name="change_profile">Modifier le profil</string>
+    <string name="delete_profile">Supprimer le profil</string>
 </resources>
