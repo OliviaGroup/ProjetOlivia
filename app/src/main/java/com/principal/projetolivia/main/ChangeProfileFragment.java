@@ -105,6 +105,7 @@ public class ChangeProfileFragment extends Fragment {
         } else {
             MainActivity.getCurrentUser().setDateOfBirth(myCalendar);
             MainActivity.getCurrentUser().setName(textName.getText().toString());
+            MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);
 
             getFragmentManager().popBackStackImmediate();
             getFragmentManager().popBackStackImmediate();

@@ -17,8 +17,7 @@
     <string name="biology">Biology</string>
     <string name="astronomy">Astronomy</string>
     <string name="no_profiles_found">No profiles found, create a new one !</string>
-    <string name="delete">Delete profile ?</string>
-    <string name="delete_message">Do you want to delete the selected profile ?</string>
+    <string name="delete_message">Do you really want to delete this profile?</string>
     <string name="cancel">Cancel</string>
     <string name="change">Change</string>
     <string name="profile_playedGames">Played:</string>
@@ -33,4 +32,5 @@
     <string name="min_seconds" translatable="false"> s</string>
     <string name="change_profile">Change profile</string>
     <string name="delete_profile">Delete profile</string>
+    <string name="delete">Delete</string>
 </resources>

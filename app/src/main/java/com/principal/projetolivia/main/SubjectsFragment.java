@@ -71,18 +71,14 @@ public class SubjectsFragment extends Fragment {
                 ft.addToBackStack("SubjectsToOptions");
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
-                update();
             }
         });
 
         return rootView;
     }
 
+
     private void update(){
         userNameText.setText(MainActivity.getCurrentUser().getName());
-    }
-
-    private void closeFragment(){
-        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
     }
 }

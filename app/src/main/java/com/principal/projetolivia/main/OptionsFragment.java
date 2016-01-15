@@ -1,6 +1,8 @@
 package com.principal.projetolivia.main;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -39,7 +41,53 @@ public class OptionsFragment extends Fragment {
             }
         });
 
+        RelativeLayout deleteProfile = (RelativeLayout) rootView.findViewById(R.id.deleteProfile);
+        deleteProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog diaBox = AskOption();
+                diaBox.show();
+            }
+        });
+
       return rootView;
     }
 
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(getContext())
+                //set message, title, and icon
+                .setTitle(getContext().getString(R.string.delete_profile))
+                .setMessage(getContext().getString(R.string.delete_message))
+
+                .setPositiveButton(getContext().getString(R.string.delete), new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+
+                        MainActivity.userList.remove(MainActivity.getCurrentUser());
+                        MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);
+
+                        dialog.dismiss();
+                        getFragmentManager().popBackStackImmediate();
+                        getFragmentManager().popBackStackImmediate();
+                        closeFragment();
+                    }
+
+                })
+
+
+
+                .setNegativeButton(getContext().getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        return myQuittingDialogBox;
+
+    }
+
+    private void closeFragment(){
+        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+    }
 }
