@@ -6,6 +6,7 @@
 
     // normal colors
     <color name="normal_white">#ffffff</color>
+    <color name="normal_white_50percent">#80ffffff</color>
     <color name="normal_black">#000000</color>
     <color name="normal_red">#ff0000</color>
     <color name="normal_green">#00ff00</color>
@@ -20,6 +21,9 @@
     <color name="app_purple">#c82b87</color>
     <color name="app_pink">#e5007d</color>
     <color name="app_orange">#f3952b</color>
+    <color name="app_orange_dark">#ed6f1c</color>
+    <color name="app_purple_dark">#ad1557</color>
+    <color name="app_brown">#a38140</color>
 
     <color name="app_gray_light">#b1b1b1</color>
     <color name="app_gray">#848484</color>

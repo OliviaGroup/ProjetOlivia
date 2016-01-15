@@ -5,6 +5,7 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="buttonAddProject_Diameter">66dp</dimen>
     <dimen name="subjects_options_vertical_padding">5dp</dimen>
+    <dimen name="score_diameter">80dp</dimen>
 
     <dimen name="subjects_button_size">250dp</dimen>
 </resources>

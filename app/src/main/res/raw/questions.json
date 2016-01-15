@@ -2,7 +2,7 @@
   "question": [
     {
       "good_answer": "3",
-      "key": "Qu’est ce qui stock les données ?",
+      "key": "Qu’est-ce qui stock les données ?",
       "subject": "informatics",
       "answer": [
         "Ecran",
@@ -18,13 +18,13 @@
       "answer": [
         "USB",
         "Lecteur CD",
-        "Camera",
+        "Caméra",
         "Micro"
       ]
     },
     {
       "good_answer": "1",
-      "key": "Avec quoi un PC se connectetil à internet ?",
+      "key": "Avec quoi un PC se connecte-t-il à internet ?",
       "subject": "informatics",
       "answer": [
         "Wifi",
@@ -79,7 +79,7 @@
     },
     {
       "good_answer": "3",
-      "key": "Qu’estce qui te tiens au sol ?",
+      "key": "Qu’est-ce qui te tiens au sol ?",
       "subject": "physics",
       "answer": [
         "Le magnétisme",
@@ -90,7 +90,7 @@
     },
     {
       "good_answer": "2",
-      "key": "Une pile peut être considérer comme :",
+      "key": "Une pile peut être considérée comme :",
       "subject": "physics",
       "answer": [
         "Un condensateur",
@@ -145,7 +145,7 @@
     },
     {
       "good_answer": "2",
-      "key": "Qu’estce qui tombe au sol lorsque les nuages sont trop lourds ?",
+      "key": "Qu’est-ce qui tombe au sol lorsque les nuages sont trop lourds ?",
       "subject": "chemistry",
       "answer": [
         "Le ciel",
@@ -255,7 +255,7 @@
     },
     {
       "good_answer": "2",
-      "key": "Qu’est ce que la Lune",
+      "key": "Qu’est-ce que la Lune",
       "subject": "astronomy",
       "answer": [
         "Une planète",

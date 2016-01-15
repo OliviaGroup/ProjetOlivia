@@ -28,4 +28,7 @@
     <string name="nameError">N\'oublie pas d\'entrer ton nom !</string>
     <string name="ageError">N\'oublie pas d\'entrer ta date de naissance !</string>
     <string name="time">Temps : </string>
+    <string name="score_win">Bien joué !</string>
+    <string name="score_loose">Essaie encore !</string>
+    <string name="score_hiScore">Félicitations !</string>
 </resources>

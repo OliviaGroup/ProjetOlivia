@@ -1,8 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     tools:context=".main.MainActivityFragment">
 
     <LinearLayout
@@ -14,18 +14,18 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="70"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/logo_olivia"
-                android:layout_marginTop="50dp"/>
+                android:layout_marginTop="50dp"
+                android:src="@drawable/logo_olivia" />
 
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TextView
                     android:id="@+id/textView1"
@@ -42,7 +42,7 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="30" >
+            android:layout_weight="30">
 
             <FrameLayout
                 android:id="@+id/frameLayout1"
@@ -51,18 +51,16 @@
                 android:layout_marginBottom="50dp"
                 android:layout_marginLeft="300dp"
                 android:layout_marginRight="300dp"
-                android:layout_marginTop="50dp" >
+                android:layout_marginTop="50dp">
+
                 <ListView
                     android:id="@+id/listViewProfiles"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:divider="@null"
-                    android:dividerHeight="0dp">
-                </ListView>
+                    android:dividerHeight="0dp"></ListView>
 
             </FrameLayout>
-
-
         </RelativeLayout>
     </LinearLayout>
 
@@ -70,11 +68,11 @@
         android:id="@+id/buttonCreateProfile"
         android:layout_width="@dimen/buttonAddProject_Diameter"
         android:layout_height="@dimen/buttonAddProject_Diameter"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="24dp"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="24dp"
+        android:layout_marginRight="24dp"
         materialdesign:animate="false"
-        materialdesign:iconDrawable="@drawable/ic_input_add"/>
+        materialdesign:iconDrawable="@drawable/ic_input_add" />
 
 </RelativeLayout>
