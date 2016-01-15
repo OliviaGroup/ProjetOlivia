@@ -4,6 +4,7 @@ package com.principal.projetolivia.main;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,18 +33,13 @@ public class OptionsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction().add(R.id.container, new ChangeProfileFragment());
-                ft.addToBackStack(getTag());
+                ft.addToBackStack("OptionsToChangeProfile");
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
         });
 
-        return rootView;
+      return rootView;
     }
 
-
-
-    private void closeFragment(){
-        getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
-    }
 }

@@ -1,9 +1,11 @@
 package com.principal.projetolivia.main;
 
 import android.app.DatePickerDialog;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -81,10 +83,10 @@ public class NewProfileFragment extends Fragment {
             public void onClick(View v) {
                 if (textName.getText().toString().matches("") || textAge.getText().toString().matches("")) {
 
-                    if (textName.getText().toString().matches("")){
+                    if (textName.getText().toString().matches("")) {
                         Toast.makeText(getContext(), getContext().getString(R.string.nameError), Toast.LENGTH_LONG).show();
                     }
-                    if (textAge.getText().toString().matches("")){
+                    if (textAge.getText().toString().matches("")) {
                         Toast.makeText(getContext(), getContext().getString(R.string.ageError), Toast.LENGTH_LONG).show();
                     }
 
@@ -100,12 +102,14 @@ public class NewProfileFragment extends Fragment {
 //                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 //                    }
 
-                    FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
+                    getFragmentManager().popBackStackImmediate();
+                    FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new MainActivityFragment());
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                     ft.commit();
                 }
             }
         });
+
 
         return rootView;
     }

@@ -40,7 +40,7 @@ public class SubjectsFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MainActivity.currentSubject = position;
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new GameFragment());
-                ft.addToBackStack(getTag());
+                ft.addToBackStack("SubjectsToGame");
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
@@ -57,7 +57,7 @@ public class SubjectsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new ProfileFragment());
-                ft.addToBackStack(getTag());
+                ft.addToBackStack("SubjectsToProfile");
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
@@ -68,31 +68,10 @@ public class SubjectsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction().add(R.id.container, new OptionsFragment());
-                ft.addToBackStack(getTag());
+                ft.addToBackStack("SubjectsToOptions");
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
                 update();
-            }
-        });
-
-        rootView.setFocusableInTouchMode(true);
-        rootView.requestFocus();
-        rootView.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
-                if (keyCode == KeyEvent.KEYCODE_BACK) {
-
-                    FragmentManager fm = getActivity().getSupportFragmentManager();
-                    for (int i = 0; i < fm.getBackStackEntryCount(); ++i) {
-                        fm.popBackStackImmediate();
-                    }
-
-                    FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new MainActivityFragment());
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    ft.commit();
-                    return true;
-                }
-                return false;
             }
         });
 
