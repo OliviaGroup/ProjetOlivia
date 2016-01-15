@@ -44,6 +44,10 @@ public class User implements Serializable {
         return name;
     }
 
+    public Calendar getDateOfBirth() {
+        return dateOfBirth;
+    }
+
     public int getAge() {
         int age = 0;
         int yeardiff = Calendar.getInstance().get(Calendar.YEAR) - dateOfBirth.get(Calendar.YEAR);
@@ -93,5 +97,7 @@ public class User implements Serializable {
         this.dateOfBirth = dateOfBirth;
     }
 
-
+    public void setName(String name) {
+        this.name = name;
+    }
 }

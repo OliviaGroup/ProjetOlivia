@@ -1,9 +1,12 @@
 package com.principal.projetolivia.main;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,14 +14,15 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
 
 /**
  * A placeholder fragment containing a simple view.
  */
 public class SubjectsFragment extends Fragment {
-
     GridView gridViewSubjects;
+    TextView userNameText;
 
     public SubjectsFragment() {
     }
@@ -36,7 +40,7 @@ public class SubjectsFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MainActivity.currentSubject = position;
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new GameFragment());
-                ft.addToBackStack(getTag());
+                ft.addToBackStack("SubjectsToGame");
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
@@ -45,13 +49,26 @@ public class SubjectsFragment extends Fragment {
         final ItemSubjectAdapter adapter = new ItemSubjectAdapter(getActivity(), R.layout.item_grid_subjects, MainActivity.getCurrentUser().getSubjectList());
         gridViewSubjects.setAdapter(adapter);
 
-        TextView userName = (TextView) rootView.findViewById(R.id.userName);
-        userName.setText(MainActivity.getCurrentUser().getName());
+        userNameText = (TextView) rootView.findViewById(R.id.userNameText);
+        userNameText.setText(MainActivity.getCurrentUser().getName());
+
+        ButtonFloat userName = (ButtonFloat) rootView.findViewById(R.id.userName);
         userName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new ProfileFragment());
-                ft.addToBackStack(getTag());
+                ft.addToBackStack("SubjectsToProfile");
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.commit();
+            }
+        });
+
+        ButtonFloat buttonOptions = (ButtonFloat) rootView.findViewById(R.id.buttonOptions);
+        buttonOptions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction().add(R.id.container, new OptionsFragment());
+                ft.addToBackStack("SubjectsToOptions");
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
                 ft.commit();
             }
@@ -60,4 +77,8 @@ public class SubjectsFragment extends Fragment {
         return rootView;
     }
 
+
+    private void update(){
+        userNameText.setText(MainActivity.getCurrentUser().getName());
+    }
 }

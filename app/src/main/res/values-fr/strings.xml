@@ -15,8 +15,8 @@
     <string name="informatics">Informatique</string>
     <string name="physics">Physique</string>
     <string name="no_profiles_found">Aucun profil trouvé, Allez en créer un nouveau !</string>
-    <string name="delete_message">Voulez-vous supprimer le profil sélectionné ?</string>
-    <string name="delete">Supprimer le profil ?</string>
+    <string name="delete_message">Veux tu vraiment supprimer ce profil ?</string>
+    <string name="delete">Supprimer</string>
     <string name="cancel">Annuler</string>
     <string name="change">Changer</string>
     <string name="profile_playedGames">Parties jouées :</string>
@@ -31,4 +31,6 @@
     <string name="score_win">Bien joué !</string>
     <string name="score_loose">Essaie encore !</string>
     <string name="score_hiScore">Félicitations !</string>
+    <string name="change_profile">Modifier le profil</string>
+    <string name="delete_profile">Supprimer le profil</string>
 </resources>
