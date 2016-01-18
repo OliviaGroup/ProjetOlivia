@@ -9,9 +9,9 @@ public class Question {
     private String question;
     private int goodAnswer;
     private List<String> answers;
-    private SubjectName subject;
+    private SubjectEnum subject;
 
-    public Question(String question, int goodAnswer, List<String> answers, SubjectName subject) {
+    public Question(String question, int goodAnswer, List<String> answers, SubjectEnum subject) {
         this.question = question;
         this.goodAnswer = goodAnswer;
         this.answers = answers;
@@ -42,11 +42,11 @@ public class Question {
         this.answers = answers;
     }
 
-    public SubjectName getSubject() {
+    public SubjectEnum getSubject() {
         return subject;
     }
 
-    public void setSubject(SubjectName subject) {
+    public void setSubject(SubjectEnum subject) {
         this.subject = subject;
     }
 }

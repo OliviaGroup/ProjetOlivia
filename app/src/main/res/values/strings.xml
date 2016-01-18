@@ -30,6 +30,10 @@
     <string name="ageError">Don\'t forget to enter your date of birth!</string>
     <string name="time">Time :</string>
     <string name="min_seconds" translatable="false"> s</string>
+    <string name="score_win">Good game !</string>
+    <string name="score_loose">Try again !</string>
+    <string name="score_hi_score">Congratulation !</string>
+    <string name="min_percent" translatable="false">%</string>
     <string name="change_profile">Change profile</string>
     <string name="delete_profile">Delete profile</string>
     <string name="delete">Delete</string>

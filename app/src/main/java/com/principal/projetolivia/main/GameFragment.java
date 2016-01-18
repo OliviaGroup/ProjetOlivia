@@ -19,7 +19,7 @@ import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.MathGenerator;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
-import com.principal.projetolivia.com.principal.projetolivia.util.SubjectName;
+import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -56,6 +56,15 @@ public class GameFragment extends Fragment {
         prgTimer = (CircleProgress) rootView.findViewById(R.id.prgTimer);
         imgOlivia = (ImageView) rootView.findViewById(R.id.imgOlivia);
 
+        btnStopGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new ScoreFragment(goodAnswerScore, badAnswerScore));
+                ft.addToBackStack(getTag());
+                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                ft.commit();
+            }
+        });
 
         goodAnswerScore = 0;
         badAnswerScore = 0;
@@ -71,13 +80,6 @@ public class GameFragment extends Fragment {
         refreshQuestions(rootView);
 
         imgOlivia.setImageDrawable(getResources().getDrawable(MainActivity.getCurrentSubject().getName().getImageOliviaId(getContext())));
-
-        btnStopGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                stopTheGame();
-            }
-        });
 
         gridGame.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -117,14 +119,14 @@ public class GameFragment extends Fragment {
     }
 
     private void stopTheGame () {
-        Subject currentSubject = MainActivity.getCurrentSubject();
+        /*Subject currentSubject = MainActivity.getCurrentSubject();
         currentSubject.setRightAnswers(currentSubject.getRightAnswers() + goodAnswerScore);
         currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
         currentSubject.setPlayedGames(currentSubject.getPlayedGames() + goodAnswerScore + badAnswerScore);
 
-        MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);
+        MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);*/
 
-        FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new SubjectsFragment());
+        FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new ScoreFragment(goodAnswerScore, badAnswerScore));
         ft.addToBackStack(getTag());
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         ft.commit();
@@ -134,7 +136,7 @@ public class GameFragment extends Fragment {
     private void refreshQuestions(View view) {
         List<String> answersList = new ArrayList<>();
         answersList.clear();
-        if (MainActivity.getCurrentSubject().getName() == SubjectName.mathematics) {
+        if (MainActivity.getCurrentSubject().getName() == SubjectEnum.mathematics) {
             MathGenerator mathGenerator = new MathGenerator();
             mathGenerator.calculationGenerator();
             question.setText(mathGenerator.getOperation());

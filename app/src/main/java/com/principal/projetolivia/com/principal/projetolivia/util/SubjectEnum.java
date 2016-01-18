@@ -8,7 +8,7 @@ import com.principal.projetolivia.main.MainActivity;
 /**
  * Created by roosq on 03/12/2015.
  */
-public enum SubjectName {
+public enum SubjectEnum {
     mathematics,
     informatics,
     physics,

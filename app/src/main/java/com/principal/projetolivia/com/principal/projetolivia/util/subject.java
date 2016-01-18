@@ -6,14 +6,14 @@ import java.io.Serializable;
  * Created by roosq on 30/11/2015.
  */
 public class Subject implements Serializable, java.lang.Comparable{
-    private SubjectName name;
+    private SubjectEnum name;
 
     private int playedGames;
     private int hiScore;
     private int rightAnswers;
     private int wrongAnswers;
 
-    public Subject(SubjectName name, int playedGames, int hiScore, int rightAnswers, int wrongAnswers) {
+    public Subject(SubjectEnum name, int playedGames, int hiScore, int rightAnswers, int wrongAnswers) {
         this.name = name;
         this.playedGames = playedGames;
         this.hiScore = hiScore;
@@ -21,7 +21,7 @@ public class Subject implements Serializable, java.lang.Comparable{
         this.wrongAnswers = wrongAnswers;
     }
 
-    public Subject(SubjectName name) {
+    public Subject(SubjectEnum name) {
         this.name = name;
         this.playedGames = 0;
         this.hiScore = 0;
@@ -70,11 +70,11 @@ public class Subject implements Serializable, java.lang.Comparable{
         }
     }
 
-    public SubjectName getName() {
+    public SubjectEnum getName() {
         return name;
     }
 
-    public void setName(SubjectName name) {
+    public void setName(SubjectEnum name) {
         this.name = name;
     }
 

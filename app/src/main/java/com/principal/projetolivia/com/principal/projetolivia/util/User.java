@@ -25,9 +25,9 @@ public class User implements Serializable {
         this.subjectList = new ArrayList<Subject>();
         subjectList.clear();
 
-        for (SubjectName tempSubjectName :
-                SubjectName.values()) {
-            Subject tempSubject = new Subject(tempSubjectName);
+        for (SubjectEnum tempSubjectEnum :
+                SubjectEnum.values()) {
+            Subject tempSubject = new Subject(tempSubjectEnum);
             subjectList.add(tempSubject);
         }
     }

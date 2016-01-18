@@ -1,28 +1,20 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.util.Log;
-import android.util.Xml;
-
-import com.principal.projetolivia.main.MainActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -103,7 +95,7 @@ public class FileConnector {
                 JSONObject jsonObject = questionJSON.getJSONObject(i);
                 String tempQuestion = jsonObject.getString("key");
                 int tempGoodAnswer = Integer.parseInt(jsonObject.getString("good_answer"));
-                SubjectName tempSubjectName = SubjectName.valueOf(jsonObject.getString("subject"));
+                SubjectEnum tempSubjectEnum = SubjectEnum.valueOf(jsonObject.getString("subject"));
                 JSONArray answerJSON = jsonObject.getJSONArray("answer");
                 List<String> tempAnswers = new ArrayList<>();
                 tempAnswers.clear();
@@ -111,7 +103,7 @@ public class FileConnector {
                     String tempAnswer = answerJSON.getString(j);
                     tempAnswers.add(tempAnswer);
                 }
-                Question question = new Question(tempQuestion, tempGoodAnswer, tempAnswers, tempSubjectName);
+                Question question = new Question(tempQuestion, tempGoodAnswer, tempAnswers, tempSubjectEnum);
                 questions.add(question);
             }
         } catch (JSONException e) {

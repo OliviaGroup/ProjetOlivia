@@ -13,7 +13,7 @@ import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
-import com.principal.projetolivia.com.principal.projetolivia.util.SubjectName;
+import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.ArrayList;
@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity {
         mainBackground.setOffset(1, 1);
     }
 
-    public static Question getOneQuestionOnSubject(SubjectName subjectName) {
+    public static Question getOneQuestionOnSubject(SubjectEnum subjectEnum) {
         List<Question> subjectQuestions = new ArrayList<>();
         subjectQuestions.clear();
 
         for (Question question : questionList) {
-            if (question.getSubject() == subjectName) {
+            if (question.getSubject() == subjectEnum) {
                 subjectQuestions.add(question);
             }
         }
