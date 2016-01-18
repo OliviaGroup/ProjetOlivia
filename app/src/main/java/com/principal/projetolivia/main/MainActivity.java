@@ -1,5 +1,6 @@
 package com.principal.projetolivia.main;
 
+import android.app.Fragment;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -20,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ChangeProfileFragment.OnChange {
     public static List<Question> questionList;
     public static List<User> userList;
     public static int currentUser;
@@ -72,5 +73,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static User getCurrentUser() {
         return userList.get(currentUser);
+    }
+
+    @Override
+    public void onProfileChanged() {
+        SubjectsFragment subjectsFragment = (SubjectsFragment) getSupportFragmentManager().getFragments().get(1);
+
+        if (subjectsFragment != null){
+            subjectsFragment.update();
+        }
     }
 }

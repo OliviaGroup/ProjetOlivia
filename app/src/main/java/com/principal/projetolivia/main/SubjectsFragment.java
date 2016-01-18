@@ -78,7 +78,7 @@ public class SubjectsFragment extends Fragment {
     }
 
 
-    private void update(){
+    public void update(){
         userNameText.setText(MainActivity.getCurrentUser().getName());
     }
 }
