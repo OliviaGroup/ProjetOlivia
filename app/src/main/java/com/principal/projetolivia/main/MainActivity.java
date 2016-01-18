@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         resources = getResources();
 
-        mainBackground = (CropImageView) (ImageView) this.findViewById(R.id.mainBackground);
+        mainBackground = (CropImageView) this.findViewById(R.id.mainBackground);
         mainBackground.setOffset(1, 1);
     }
 
