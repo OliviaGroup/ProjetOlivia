@@ -16,6 +16,7 @@ import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
 
 import java.io.InputStream;
+import java.util.Locale;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -37,7 +38,15 @@ public class MainActivityFragment extends Fragment {
 
         listViewProfiles = (ListView) rootView.findViewById(R.id.listViewProfiles);
 
-        InputStream is = getResources().openRawResource(R.raw.questions);
+        int idQuestionsFile;
+
+        if (Locale.getDefault().getDisplayLanguage().toString() == "français") {
+            idQuestionsFile = R.raw.questions;
+        } else {
+            idQuestionsFile = R.raw.questions_eng;
+        }
+
+        InputStream is = getResources().openRawResource(idQuestionsFile);
 
 
 

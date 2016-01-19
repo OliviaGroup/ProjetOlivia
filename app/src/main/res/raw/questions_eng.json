@@ -1,0 +1,290 @@
+{
+  "question": [
+    {
+      "good_answer": "3",
+      "key": "Where are the data being stock ?",
+      "subject": "informatics",
+      "answer": [
+        "In the screen",
+        "In the mouse",
+        "In a hard drive",
+        "In a keyboard"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Witch of this element is a port ?",
+      "subject": "informatics",
+      "answer": [
+        "USB",
+        "CD reader",
+        "Camera",
+        "Headphone"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Through what does a computer connect to the internet ?",
+      "subject": "informatics",
+      "answer": [
+        "Wifi",
+        "Bluetooth",
+        "Infra-red frequenses",
+        "Google"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "In computer science, a virus is a program :",
+      "subject": "informatics",
+      "answer": [
+        "That send e-mails",
+        "Malware",
+        "Sick",
+        "That repairs the computer"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "What is the name of the bar placed down of the screen ?",
+      "subject": "informatics",
+      "answer": [
+        "The spacebar",
+        "The taskbar",
+        "The down bar",
+        "The iron bar"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "If I don't have internet on my computer :",
+      "subject": "informatics",
+      "answer": [
+        "Wright a text",
+        "Listen to music",
+        "Watch a TV show",
+        "Do a research"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Witch one is one of the 5 elements ?",
+      "subject": "physics",
+      "answer": [
+        "Water",
+        "Salt",
+        "Aluminium",
+        "Sugrar"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "What maintain us on the ground ?",
+      "subject": "physics",
+      "answer": [
+        "The magnetism",
+        "Your feets",
+        "The gravity",
+        "The sun"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "A battery can be considered as :",
+      "subject": "physics",
+      "answer": [
+        "A condensator",
+        "A générator",
+        "A resistance",
+        "A transistor"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "In physic, the weight is :",
+      "subject": "physics",
+      "answer": [
+        "A force",
+        "A weakness",
+        "A unit",
+        "A plant"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "What is the meaning of L.E.D ?",
+      "subject": "physics",
+      "answer": [
+        "Light-Emitting Diode",
+        "Large Elements Distance",
+        "Luxury Emotionnal Deal",
+        "Laser Electronics Diskstation"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "The citrus juice is :",
+      "subject": "chemistry",
+      "answer": [
+        "Neutral",
+        "Basic",
+        "Metallic",
+        "Acid"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "NaCl is :",
+      "subject": "chemistry",
+      "answer": [
+        "Chemical formula",
+        "An equation",
+        "An anagram",
+        "An electron"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "What falls on the ground when the clouds are too much heavy ?",
+      "subject": "chemistry",
+      "answer": [
+        "The sky",
+        "The rain",
+        "The rumble",
+        "Cords"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "The solid state of water is :",
+      "subject": "chemistry",
+      "answer": [
+        "Ice",
+        "Cristal",
+        "Liquid",
+        "Condensation"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "At an ambient temperature, the water is :",
+      "subject": "chemistry",
+      "answer": [
+        "Sludgy",
+        "Solid",
+        "Gazeuse",
+        "Liquid"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "The fishes breath through :",
+      "subject": "biology",
+      "answer": [
+        "Lungs",
+        "Gills",
+        "Nose",
+        "Scales"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "What does the polinate flowers of the trees produce ?",
+      "subject": "biology",
+      "answer": [
+        "Leafs",
+        "Thorn",
+        "Fruits",
+        "Honey"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "The feather of the birds are usefull to them for :",
+      "subject": "biology",
+      "answer": [
+        "To be soft",
+        "To protect from cold",
+        "To be heavier",
+        "To hold on trees"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "The frogs are :",
+      "subject": "biology",
+      "answer": [
+        "Amphibians",
+        "Dust mites",
+        "Reptiles",
+        "Marsians"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "Humans are :",
+      "subject": "biology",
+      "answer": [
+        "Reptiles",
+        "Oviparous",
+        "Viviparous",
+        "Vampires"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "What is the nickname of the Earth ?",
+      "subject": "astronomy",
+      "answer": [
+        "The blue planet",
+        "The human planet",
+        "The mother of the moon",
+        "The red planet"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "What is the name of the planet that have rings ?",
+      "subject": "astronomy",
+      "answer": [
+        "Jupiter",
+        "Mercure",
+        "Venus",
+        "Saturn"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "What is the moon ?",
+      "subject": "astronomy",
+      "answer": [
+        "A planet",
+        "A satellite",
+        "A comet",
+        "A star"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "What is the name of our galaxy ?",
+      "subject": "astronomy",
+      "answer": [
+        "The milkyway",
+        "The railway",
+        "The skyway",
+        "The enchanted way"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "In astronomy, the big dipper is :",
+      "subject": "astronomy",
+      "answer": [
+        "An alien that has crossed-eyed",
+        "A container",
+        "A constellation",
+        "A galaxy"
+      ]
+    }
+  ]
+}

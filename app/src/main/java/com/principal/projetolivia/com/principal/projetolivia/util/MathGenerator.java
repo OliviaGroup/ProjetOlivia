@@ -75,7 +75,7 @@ public class MathGenerator {
             int falseResult;
             do {
                 falseResult = getRandomIntegerFromRange(result - 20, result + 20);
-            } while (falseResult == result || falseResult < 0);
+            } while (falseResult == result || falseResult < 0 || results.equals(falseResult));
 
             results.add(i, Integer.toString(falseResult));
         }
