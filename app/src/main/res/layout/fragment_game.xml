@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:orientation="vertical"
             android:weightSum="3">
 
@@ -25,7 +25,10 @@
                 android:layout_margin="20dp"
                 android:layout_weight="2"
                 android:background="@drawable/round_background_normal"
-                android:textColor="@color/normal_white"/>
+                android:textColor="@color/normal_white"
+                android:textSize="30dp"
+                android:padding="10dp"
+                android:gravity="center"/>
                 />
 
             <!--<TextView
@@ -52,37 +55,35 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="2">
+            android:layout_weight="3">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_margin="20dp"
+                android:layout_margin="40dp"
                 android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txtTimer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/time" />
-
                 <TextView
                     android:id="@+id/txtGoodAnswers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile_rightAnswers" />
+                    android:text="@string/profile_rightAnswers"
+                    android:textColor="@color/normal_white"
+                    android:textSize="30dp"
+                    android:layout_gravity="right"/>
 
                 <TextView
                     android:id="@+id/txtBadAnswers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/profile_wrongAnswers" />
+                    android:text="@string/profile_wrongAnswers"
+                    android:textColor="@color/normal_white"
+                    android:textSize="30dp"
+                    android:layout_gravity="right"/>
 
                 <com.github.lzyzsd.circleprogress.CircleProgress
                     android:id="@+id/prgTimer"
-                    android:layout_marginLeft="50dp"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     custom:circle_max="60"
@@ -92,20 +93,10 @@
                     custom:circle_text_color="@color/normal_white"
                     custom:circle_text_size="20dp"
                     custom:circle_progress="60"
+                    android:layout_gravity="center_horizontal"
 
-                    />
+                    android:layout_margin="10dp" />
             </LinearLayout>
-
-            <com.gc.materialdesign.views.ButtonRectangle
-                android:id="@+id/btnStopGame"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_margin="20dp"
-                android:background="@color/app_pink"
-                android:padding="20dp"
-                android:text="@string/stop_game" />
 
             <ImageView
                 android:id="@+id/imgOlivia"

@@ -33,7 +33,6 @@ public class GameFragment extends Fragment {
     private TextView txtTimer;
     private TextView txtGoodAnswers;
     private TextView txtBadAnswers;
-    private ButtonRectangle btnStopGame;
     private CircleProgress prgTimer;
     private ImageView imgOlivia;
 
@@ -49,22 +48,11 @@ public class GameFragment extends Fragment {
 
         MainActivity.changeBackground(MainActivity.getCurrentSubject().getName().getImageQuestionId(getContext()));
 
-        txtTimer = (TextView) rootView.findViewById(R.id.txtTimer);
         txtGoodAnswers = (TextView) rootView.findViewById(R.id.txtGoodAnswers);
         txtBadAnswers = (TextView) rootView.findViewById(R.id.txtBadAnswers);
-        btnStopGame = (ButtonRectangle) rootView.findViewById(R.id.btnStopGame);
         prgTimer = (CircleProgress) rootView.findViewById(R.id.prgTimer);
         imgOlivia = (ImageView) rootView.findViewById(R.id.imgOlivia);
 
-        btnStopGame.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new ScoreFragment(goodAnswerScore, badAnswerScore));
-                ft.addToBackStack(getTag());
-                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                ft.commit();
-            }
-        });
 
         goodAnswerScore = 0;
         badAnswerScore = 0;
