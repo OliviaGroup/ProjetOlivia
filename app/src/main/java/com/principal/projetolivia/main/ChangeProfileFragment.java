@@ -1,6 +1,7 @@
 package com.principal.projetolivia.main;
 
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -32,16 +33,27 @@ public class ChangeProfileFragment extends Fragment {
     private Calendar myCalendar = Calendar.getInstance();
     RelativeLayout buttonValidation;
 
+    OnChange mCallback;
+
+    public interface OnChange{
+        public void onProfileChanged();
+    }
 
     public ChangeProfileFragment() {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View rootView =  inflater.inflate(R.layout.fragment_change_profile, container, false);
+
+        try{
+            mCallback =(OnChange) getActivity();
+        } catch (ClassCastException e){
+            throw new ClassCastException(getActivity().toString()
+                    + " must implement OnChange");
+        }
 
         textName = (EditText) rootView.findViewById(R.id.textNameChangeProfile);
         textName.setText(MainActivity.getCurrentUser().getName());
@@ -106,6 +118,8 @@ public class ChangeProfileFragment extends Fragment {
             MainActivity.getCurrentUser().setDateOfBirth(myCalendar);
             MainActivity.getCurrentUser().setName(textName.getText().toString());
             MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);
+
+            mCallback.onProfileChanged();
 
             getFragmentManager().popBackStackImmediate();
             getFragmentManager().popBackStackImmediate();
