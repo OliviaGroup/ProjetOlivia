@@ -1,13 +1,12 @@
 package com.principal.projetolivia.main;
 
 import android.app.DatePickerDialog;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
@@ -20,10 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-/**
- * A placeholder fragment containing a simple view.
- */
-public class NewProfileFragment extends Fragment {
+public class NewProfileActivity extends AppCompatActivity {
 
     private EditText textName;
     private EditText textAge;
@@ -31,16 +27,14 @@ public class NewProfileFragment extends Fragment {
 
     private RelativeLayout buttonValidation;
 
-    public NewProfileFragment() {
-    }
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_new_profile, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_new_profile);
 
-        textName = (EditText) rootView.findViewById(R.id.textNameProfile);
-        textAge = (EditText) rootView.findViewById(R.id.textAgeProfile);
+
+        textName = (EditText) findViewById(R.id.textNameProfile);
+        textAge = (EditText) findViewById(R.id.textAgeProfile);
         textAge.setKeyListener(null);
 
 
@@ -58,7 +52,7 @@ public class NewProfileFragment extends Fragment {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (MotionEvent.ACTION_UP == event.getAction()) {
-                    DatePickerDialog datePickerDialog = new DatePickerDialog(rootView.getContext(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
+                    DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(), date, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH), myCalendar.get(Calendar.DAY_OF_MONTH));
 
                     DatePicker datePicker = datePickerDialog.getDatePicker();
 
@@ -72,17 +66,17 @@ public class NewProfileFragment extends Fragment {
         });
 
 
-        buttonValidation = (RelativeLayout) rootView.findViewById(R.id.buttonValidation);
+        buttonValidation = (RelativeLayout) findViewById(R.id.buttonValidation);
         buttonValidation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (textName.getText().toString().matches("") || textAge.getText().toString().matches("")) {
 
                     if (textName.getText().toString().matches("")) {
-                        Toast.makeText(getContext(), getContext().getString(R.string.nameError), Toast.LENGTH_LONG).show();
+                        Toast.makeText(v.getContext(), getString(R.string.nameError), Toast.LENGTH_LONG).show();
                     }
                     if (textAge.getText().toString().matches("")) {
-                        Toast.makeText(getContext(), getContext().getString(R.string.ageError), Toast.LENGTH_LONG).show();
+                        Toast.makeText(v.getContext(), getString(R.string.ageError), Toast.LENGTH_LONG).show();
                     }
 
                     return;
@@ -97,16 +91,11 @@ public class NewProfileFragment extends Fragment {
 //                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 //                    }
 
-                    getFragmentManager().popBackStackImmediate();
-                    FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new MainActivityFragment());
-                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-                    ft.commit();
+                    Intent newActivity = new Intent(v.getContext(), MainActivity.class);
+                    startActivity(newActivity);
                 }
             }
         });
-
-
-        return rootView;
     }
 
     private void updateLabel() {

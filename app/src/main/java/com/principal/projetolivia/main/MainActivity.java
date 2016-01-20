@@ -1,14 +1,20 @@
 package com.principal.projetolivia.main;
 
+import android.app.Activity;
 import android.app.Fragment;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ListView;
 
+import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
@@ -17,8 +23,10 @@ import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements ChangeProfileFragment.OnChange {
@@ -29,23 +37,73 @@ public class MainActivity extends AppCompatActivity implements ChangeProfileFrag
     public static FileConnector fileConnector;
     private static CropImageView mainBackground;
     private static Resources resources ;
+    ButtonFloat buttonAddProfile;
+    ListView listViewProfiles;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new MainActivityFragment())
-                    .commit();
-        }
         setContentView(R.layout.activity_main);
 
         resources = getResources();
 
         mainBackground = (CropImageView) this.findViewById(R.id.mainBackground);
         mainBackground.setOffset(1, 1);
+
+
+
+
+        changeBackground(R.drawable.background);
+
+        listViewProfiles = (ListView) findViewById(R.id.listViewProfiles);
+
+        int idQuestionsFile;
+
+        if (Locale.getDefault().getDisplayLanguage().toString() == "français") {
+            idQuestionsFile = R.raw.questions;
+        } else {
+            idQuestionsFile = R.raw.questions_eng;
+        }
+
+        InputStream is = getResources().openRawResource(idQuestionsFile);
+
+
+
+        fileConnector = new FileConnector(is);
+
+        if (userList != null) {
+            fileConnector.setProfileList(this, userList);
+        }
+
+        questionList = fileConnector.getQuestionList();
+
+        userList = fileConnector.getProfileList(this);
+
+
+        final ItemProfileAdapter adapter = new ItemProfileAdapter(this, R.layout.item_list_profiles, userList);
+        //listViewProfiles.setEmptyView(findViewById(R.id.textIfListEmpty));
+        listViewProfiles.setAdapter(adapter);
+
+        listViewProfiles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                currentUser = position;
+                // TODO : SubjectsFragment
+            }
+        });
+
+        buttonAddProfile = (ButtonFloat) findViewById(R.id.buttonCreateProfile);
+        buttonAddProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO : NewProfileActivity
+
+                Intent newActivity = new Intent(v.getContext(), NewProfileActivity.class);
+                startActivity(newActivity);
+            }
+        });
     }
 
     public static Question getOneQuestionOnSubject(SubjectEnum subjectEnum) {

@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/profile">
+
+        <GridView
+            android:id="@+id/gridSubjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:columnWidth="@dimen/subjects_button_size"
+            android:gravity="center"
+            android:numColumns="3"
+            android:stretchMode="spacingWidthUniform">
+
+        </GridView>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#7aa552"
+        android:paddingBottom="@dimen/subjects_options_vertical_padding"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="@dimen/subjects_options_vertical_padding">
+
+
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/buttonOptions"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            materialdesign:animate="false"
+            materialdesign:iconDrawable="@drawable/options" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true">
+
+            <TextView
+                android:id="@+id/userNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="20dp"
+                android:text="User"
+                android:textColor="@color/normal_white"
+                android:textSize="20dp" />
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/userName"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                materialdesign:animate="false"
+                materialdesign:iconDrawable="@drawable/ombre_blanche_olivia" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
