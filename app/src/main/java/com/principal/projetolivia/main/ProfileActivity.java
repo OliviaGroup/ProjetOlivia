@@ -1,48 +1,60 @@
 package com.principal.projetolivia.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.GridView;
-import android.widget.TextView;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
+import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
-import com.principal.projetolivia.com.principal.projetolivia.util.User;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 
 /**
- * Created by roosq on 19/01/2016.
+ * Created by roosq on 20/01/2016.
  */
-public class ProfileActivity extends AppCompatActivity {
-    private GridView gridProfile;
-    private TextView profileNameText;
+public class ProfileActivity extends AppCompatActivity{
+
+    private static CropImageView mainBackground;
+    private ButtonFloat buttonAddProfile;
+    private ListView listViewProfiles;
 
     protected void onCreate(Bundle savedInstanceState) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        MainActivity.changeBackground(R.drawable.stats_olivia);
+        mainBackground = (CropImageView) findViewById(R.id.mainBackground);
+        mainBackground.setOffset(1, 1);
+        mainBackground.setImageDrawable(getResources().getDrawable(R.drawable.background));
 
-        User currentUser = MainActivity.getCurrentUser();
+        listViewProfiles = (ListView) findViewById(R.id.listViewProfiles);
 
-        profileNameText = (TextView) findViewById(R.id.profileNameText);
-        profileNameText.setText(currentUser.getName());
+        final ItemProfileAdapter adapter = new ItemProfileAdapter(this, R.layout.item_list_profiles, MainActivity.userList);
+        //listViewProfiles.setEmptyView(findViewById(R.id.textIfListEmpty));
+        listViewProfiles.setAdapter(adapter);
 
-        TextView profileAgeText = (TextView) findViewById(R.id.profileAgeText);
-        profileAgeText.setText(currentUser.getAge() + " ans");
+        listViewProfiles.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MainActivity.currentUser = position;
+                Intent newActivity = new Intent(view.getContext(), SubjectsActivity.class);
+                startActivity(newActivity);
+            }
+        });
 
-        gridProfile = (GridView) findViewById(R.id.gridProfile);
+        buttonAddProfile = (ButtonFloat) findViewById(R.id.buttonCreateProfile);
+        buttonAddProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        List<Subject> subjectsListByScoreOrder = new ArrayList<Subject>();
-        for (Subject subject : currentUser.getSubjectList()) {
-            subjectsListByScoreOrder.add(subject);
-        }
-
-        Collections.sort(subjectsListByScoreOrder);
-        final ItemSubjectDataAdapter adapter = new ItemSubjectDataAdapter(this, R.layout.item_grid_subject_data, subjectsListByScoreOrder);
-        gridProfile.setAdapter(adapter);
+                Intent newActivity = new Intent(v.getContext(), NewProfileActivity.class);
+                startActivity(newActivity);
+            }
+        });
     }
 }

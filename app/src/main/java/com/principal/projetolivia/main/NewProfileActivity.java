@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.text.SimpleDateFormat;
@@ -24,6 +25,7 @@ public class NewProfileActivity extends AppCompatActivity {
     private EditText textName;
     private EditText textAge;
     private Calendar myCalendar = Calendar.getInstance();
+    private CropImageView newProfileBackground;
 
     private RelativeLayout buttonValidation;
 
@@ -32,6 +34,9 @@ public class NewProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_profile);
 
+        newProfileBackground = (CropImageView) findViewById(R.id.newProfileBackground);
+        newProfileBackground.setOffset(1, 1);
+        newProfileBackground.setImageDrawable(getResources().getDrawable(R.drawable.background));
 
         textName = (EditText) findViewById(R.id.textNameProfile);
         textAge = (EditText) findViewById(R.id.textAgeProfile);
@@ -91,7 +96,7 @@ public class NewProfileActivity extends AppCompatActivity {
 //                        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
 //                    }
 
-                    Intent newActivity = new Intent(v.getContext(), MainActivity.class);
+                    Intent newActivity = new Intent(v.getContext(), ProfileActivity.class);
                     startActivity(newActivity);
                 }
             }

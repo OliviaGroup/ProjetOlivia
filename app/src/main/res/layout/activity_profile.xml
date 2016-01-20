@@ -1,76 +1,89 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.principal.projetolivia.com.principal.projetolivia.util.CropImageView
+        android:id="@+id/mainBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:scaleType="matrix" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="50dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp">
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/bandeau_gauche"
-                android:scaleType="fitXY"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:background="#e6007e"
-                android:paddingLeft="25dp"
-                android:paddingRight="25dp">
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="70"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/profileNameText"
-                    android:text="UserName"
-                    android:textSize="25sp"
-                    android:gravity="center"
-                    android:textColor="@color/normal_white"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:src="@drawable/logo_olivia" />
 
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_margin="10dp"
+                        android:text="Version 0.1"
+                        android:textColor="@color/app_blue" />
+                </RelativeLayout>
             </LinearLayout>
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/bandeau_droite"/>
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="30">
 
-            <TextView
-                android:id="@+id/profileAgeText"
-                android:layout_marginLeft="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="22 ans"
-                android:textSize="15sp"
-                android:gravity="center"/>
+                <FrameLayout
+                    android:id="@+id/frameLayout1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginLeft="300dp"
+                    android:layout_marginRight="300dp"
+                    android:layout_marginTop="50dp">
+
+                    <ListView
+                        android:id="@+id/listViewProfiles"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:divider="@null"
+                        android:dividerHeight="0dp"></ListView>
+
+                </FrameLayout>
+            </RelativeLayout>
         </LinearLayout>
 
+        <com.gc.materialdesign.views.ButtonFloat
+            android:id="@+id/buttonCreateProfile"
+            android:layout_width="@dimen/buttonAddProject_Diameter"
+            android:layout_height="@dimen/buttonAddProject_Diameter"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="24dp"
+            android:layout_marginRight="24dp"
+            materialdesign:animate="false"
+            materialdesign:iconDrawable="@drawable/ic_input_add" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    </RelativeLayout>
 
-            <GridView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:numColumns="2"
-                android:columnWidth="400dp"
-                android:id="@+id/gridProfile"
-                android:stretchMode="spacingWidthUniform"
-                android:layout_centerInParent="true"
-                android:gravity="center"
-                ></GridView>
-        </RelativeLayout>
-    </LinearLayout>
-
-</RelativeLayout>
+</FrameLayout>

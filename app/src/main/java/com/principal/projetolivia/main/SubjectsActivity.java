@@ -2,7 +2,6 @@ package com.principal.projetolivia.main;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,21 +10,26 @@ import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 
 /**
  * Created by roosq on 19/01/2016.
  */
 public class SubjectsActivity extends AppCompatActivity {
 
-    GridView gridViewSubjects;
-    TextView userNameText;
+    private GridView gridViewSubjects;
+    private TextView userNameText;
+    private CropImageView subjectsBackground;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects);
 
-        MainActivity.changeBackground(R.drawable.subjects_background);
+        subjectsBackground = (CropImageView) findViewById(R.id.subjectsBackground);
+        subjectsBackground.setOffset(1, 1);
+        subjectsBackground.setImageDrawable(getResources().getDrawable(R.drawable.subjects_background));
 
         gridViewSubjects = (GridView) findViewById(R.id.gridSubjects);
         gridViewSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -47,7 +51,7 @@ public class SubjectsActivity extends AppCompatActivity {
         userName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newActivity = new Intent(v.getContext(), ProfileActivity.class);
+                Intent newActivity = new Intent(v.getContext(), StatsActivity.class);
                 startActivity(newActivity);
             }
         });

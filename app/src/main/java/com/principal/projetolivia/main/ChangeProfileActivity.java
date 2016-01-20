@@ -24,9 +24,9 @@ public class ChangeProfileActivity extends AppCompatActivity {
     private EditText textName;
     private EditText textAge;
     private Calendar myCalendar = Calendar.getInstance();
-    RelativeLayout buttonValidation;
+    private RelativeLayout buttonValidation;
 
-    OnChange mCallback;
+    private OnChange mCallback;
 
     public interface OnChange{
         public void onProfileChanged();
@@ -34,7 +34,7 @@ public class ChangeProfileActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_change_profile);
 
         try{
             mCallback =(OnChange) this;

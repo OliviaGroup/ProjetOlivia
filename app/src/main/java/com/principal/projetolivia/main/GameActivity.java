@@ -3,7 +3,6 @@ package com.principal.projetolivia.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,6 +13,7 @@ import android.widget.TextView;
 
 import com.github.lzyzsd.circleprogress.CircleProgress;
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.MathGenerator;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
@@ -28,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 public class GameActivity extends AppCompatActivity {
     private TextView question;
     private GridView gridGame;
+    private CropImageView gameBackground;
 
     private TextView txtGoodAnswers;
     private TextView txtBadAnswers;
@@ -40,9 +41,11 @@ public class GameActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_game);
 
-        MainActivity.changeBackground(MainActivity.getCurrentSubject().getName().getImageQuestionId(this));
+        gameBackground = (CropImageView) findViewById(R.id.gameBackground);
+        gameBackground.setOffset(1, 1);
+        gameBackground.setImageDrawable(getResources().getDrawable(MainActivity.getCurrentSubject().getName().getImageQuestionId(this)));
 
         txtGoodAnswers = (TextView) findViewById(R.id.txtGoodAnswers);
         txtBadAnswers = (TextView) findViewById(R.id.txtBadAnswers);
@@ -99,7 +102,7 @@ public class GameActivity extends AppCompatActivity {
         txtBadAnswers.setText(getString(R.string.profile_wrongAnswers) + " " + badAnswerScore);
     }
 
-    private void stopTheGame () {
+    private void stopTheGame() {
         /*Subject currentSubject = MainActivity.getCurrentSubject();
         currentSubject.setRightAnswers(currentSubject.getRightAnswers() + goodAnswerScore);
         currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
@@ -108,6 +111,8 @@ public class GameActivity extends AppCompatActivity {
         MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);*/
 
         Intent newActivity = new Intent(this, ScoreActivity.class);
+        newActivity.putExtra("goodAnswerScore", goodAnswerScore);
+        newActivity.putExtra("badAnswerScore", badAnswerScore);
         startActivity(newActivity);
     }
 
