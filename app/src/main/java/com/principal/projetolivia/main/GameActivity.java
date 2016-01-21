@@ -1,36 +1,35 @@
 package com.principal.projetolivia.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.view.LayoutInflater;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.gc.materialdesign.views.ButtonRectangle;
 import com.github.lzyzsd.circleprogress.CircleProgress;
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.MathGenerator;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
-import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-
-public class GameFragment extends Fragment {
+/**
+ * Created by roosq on 20/01/2016.
+ */
+public class GameActivity extends AppCompatActivity {
     private TextView question;
     private GridView gridGame;
+    private CropImageView gameBackground;
 
-    private TextView txtTimer;
     private TextView txtGoodAnswers;
     private TextView txtBadAnswers;
     private CircleProgress prgTimer;
@@ -40,18 +39,18 @@ public class GameFragment extends Fragment {
     private int badAnswerScore;
     private int goodAnswerID;
 
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_game);
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        final View rootView = inflater.inflate(R.layout.fragment_game, container, false);
+        gameBackground = (CropImageView) findViewById(R.id.gameBackground);
+        gameBackground.setOffset(1, 1);
+        gameBackground.setImageDrawable(getResources().getDrawable(MainActivity.getCurrentSubject().getName().getImageQuestionId(this)));
 
-        MainActivity.changeBackground(MainActivity.getCurrentSubject().getName().getImageQuestionId(getContext()));
-
-        txtGoodAnswers = (TextView) rootView.findViewById(R.id.txtGoodAnswers);
-        txtBadAnswers = (TextView) rootView.findViewById(R.id.txtBadAnswers);
-        prgTimer = (CircleProgress) rootView.findViewById(R.id.prgTimer);
-        imgOlivia = (ImageView) rootView.findViewById(R.id.imgOlivia);
+        txtGoodAnswers = (TextView) findViewById(R.id.txtGoodAnswers);
+        txtBadAnswers = (TextView) findViewById(R.id.txtBadAnswers);
+        prgTimer = (CircleProgress) findViewById(R.id.prgTimer);
+        imgOlivia = (ImageView) findViewById(R.id.imgOlivia);
 
 
         goodAnswerScore = 0;
@@ -62,12 +61,12 @@ public class GameFragment extends Fragment {
         timer.start();
 
 
-        question = (TextView) rootView.findViewById(R.id.question);
-        gridGame = (GridView) rootView.findViewById(R.id.gridGame);
+        question = (TextView) findViewById(R.id.question);
+        gridGame = (GridView) findViewById(R.id.gridGame);
 
-        refreshQuestions(rootView);
+        refreshQuestions();
 
-        imgOlivia.setImageDrawable(getResources().getDrawable(MainActivity.getCurrentSubject().getName().getImageOliviaId(getContext())));
+        imgOlivia.setImageDrawable(getResources().getDrawable(MainActivity.getCurrentSubject().getName().getImageOliviaId(this)));
 
         gridGame.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -80,7 +79,7 @@ public class GameFragment extends Fragment {
                     goodAnswerScore++;
                     updateScore();
 
-                    refreshQuestions(rootView);
+                    refreshQuestions();
                 } else {
                     if (!lytRoundBackground.getBackground().getConstantState().equals(getResources().getDrawable(R.drawable.round_background_red).getConstantState())) {
                         badAnswerScore++;
@@ -96,9 +95,6 @@ public class GameFragment extends Fragment {
                 }
             }
         });
-
-
-        return rootView;
     }
 
     private void updateScore() {
@@ -106,7 +102,7 @@ public class GameFragment extends Fragment {
         txtBadAnswers.setText(getString(R.string.profile_wrongAnswers) + " " + badAnswerScore);
     }
 
-    private void stopTheGame () {
+    private void stopTheGame() {
         /*Subject currentSubject = MainActivity.getCurrentSubject();
         currentSubject.setRightAnswers(currentSubject.getRightAnswers() + goodAnswerScore);
         currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
@@ -114,24 +110,14 @@ public class GameFragment extends Fragment {
 
         MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);*/
 
-        FragmentTransaction ft = getFragmentManager().beginTransaction().add(R.id.container, new ScoreFragment(goodAnswerScore, badAnswerScore));
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        ft.commit();
-    }
-
-    public void replay(){
-        FragmentTransaction ft = getFragmentManager().beginTransaction().replace(R.id.container, new GameFragment());
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        ft.commit();
-    }
-
-    public void backToMenu(){
-        getFragmentManager().popBackStackImmediate();
-
+        Intent newActivity = new Intent(this, ScoreActivity.class);
+        newActivity.putExtra("goodAnswerScore", goodAnswerScore);
+        newActivity.putExtra("badAnswerScore", badAnswerScore);
+        startActivity(newActivity);
     }
 
 
-    private void refreshQuestions(View view) {
+    private void refreshQuestions() {
         List<String> answersList = new ArrayList<>();
         answersList.clear();
         if (MainActivity.getCurrentSubject().getName() == SubjectEnum.mathematics) {
@@ -147,7 +133,7 @@ public class GameFragment extends Fragment {
             goodAnswerID = randomQuestion.getGoodAnswer();
         }
 
-        ItemGameAdapter adapter = new ItemGameAdapter(getActivity(), R.layout.item_grid_game, answersList);
+        ItemGameAdapter adapter = new ItemGameAdapter(this, R.layout.item_grid_game, answersList);
         gridGame.setAdapter(adapter);
     }
 
@@ -169,4 +155,3 @@ public class GameFragment extends Fragment {
         }
     }
 }
-
