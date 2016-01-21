@@ -25,11 +25,13 @@ public class FileConnector {
 
     private final String fileUserData = "data";
     private InputStream fileQuestion;
+    private InputStream fileSuccess;
 
     private static final String ns = null;
 
-    public FileConnector(InputStream fileQuestion) {
+    public FileConnector(InputStream fileQuestion, InputStream fileSuccess) {
         this.fileQuestion = fileQuestion;
+        this.fileSuccess = fileSuccess;
     }
 
 
@@ -113,5 +115,54 @@ public class FileConnector {
 
 
         return questions;
+    }
+
+    public List<Success> getSuccessList() {
+        List<Success> successList = new ArrayList<>();
+        String json = null;
+        JSONObject jObj = null;
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(fileSuccess, "UTF-8"), 8);
+            StringBuilder sb = new StringBuilder();
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                sb.append(line + "\n");
+            }
+            fileSuccess.close();
+            json = sb.toString();
+        } catch (Exception e) {
+            Log.e("Buffer Error",
+                    "Error converting result " + e.toString());
+        }
+
+        try {
+            jObj = new JSONObject(json);
+        } catch (Exception e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+        }
+
+        try {
+            JSONArray successJSON = jObj.getJSONArray("success");
+
+            successList.clear();
+            for (int i = 0; i < successJSON.length(); i++) {
+                JSONObject jsonObject = successJSON.getJSONObject(i);
+                int tempId = Integer.parseInt(jsonObject.getString("id"));
+                String tempTitle = jsonObject.getString("title");
+                String tempDescription = jsonObject.getString("description");
+                SuccessTypeEnum tempType = SuccessTypeEnum.valueOf("type");
+                SubjectEnum tempSubject = SubjectEnum.valueOf("subject");
+                SuccessLevelEnum tempLevel = SuccessLevelEnum.valueOf("level");
+                int tempObjective = Integer.parseInt(jsonObject.getString("objective"));
+
+                Success success = new Success(tempId, tempTitle, tempDescription, tempType, tempSubject, tempLevel, tempObjective);
+                successList.add(success);
+            }
+        } catch (JSONException e) {
+            Log.e("JSON Parser", "Error parsing data " + e.toString());
+            e.printStackTrace();
+        }
+
+        return successList;
     }
 }
