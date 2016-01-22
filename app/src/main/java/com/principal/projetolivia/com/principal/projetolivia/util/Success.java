@@ -1,6 +1,8 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
 
+import android.content.Context;
+import android.content.res.Resources;
 
 /**
  * Created by roosq on 21/01/2016.
@@ -82,5 +84,17 @@ public class Success {
 
     public void setObjective(int objective) {
         this.objective = objective;
+    }
+
+    public int getImageResourceId (Context context) {
+        Resources res = context.getResources();
+
+        int resId = res.getIdentifier(type.name() + "_" + subject.name() + "_" + level.name(), "drawable", context.getPackageName());
+
+        if (0 != resId) {
+            return resId;
+        }
+
+        return res.getIdentifier("error_button", "drawable", context.getPackageName());
     }
 }
