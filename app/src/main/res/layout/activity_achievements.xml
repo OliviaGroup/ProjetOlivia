@@ -69,13 +69,12 @@
             <GridView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:numColumns="2"
+                android:numColumns="3"
                 android:columnWidth="400dp"
                 android:id="@+id/gridAchievements"
                 android:stretchMode="spacingWidthUniform"
                 android:layout_centerInParent="true"
-                android:gravity="center"
-                ></GridView>
+                android:gravity="center"></GridView>
         </RelativeLayout>
     </LinearLayout>
 

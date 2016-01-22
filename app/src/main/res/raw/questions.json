@@ -35,7 +35,7 @@
     },
     {
       "good_answer": "2",
-      "key": "En informatique, un virus c’est un programme ",
+      "key": "En informatique, un virus c’est un programme :",
       "subject": "informatics",
       "answer": [
         "Permettant d’envoyer des courriels",
@@ -101,7 +101,7 @@
     },
     {
       "good_answer": "1",
-      "key": "En physique, le poids est",
+      "key": "En physique, le poids est :",
       "subject": "physics",
       "answer": [
         "Une force",
@@ -112,7 +112,7 @@
     },
     {
       "good_answer": "1",
-      "key": "Que signifient les lettres D.E.L",
+      "key": "Que signifient les lettres D.E.L ?",
       "subject": "physics",
       "answer": [
         "Diode Electro Luminescente",
@@ -121,9 +121,64 @@
         "Déploiement Equilibré de Luxe"
       ]
     },
+	{
+      "good_answer": "1",
+      "key": "Sur un circuit où les lampes ne sont pas l'une derrière l'autre, que se passe-t-il si l'une d'entre elle grille ?",
+      "subject": "physics",
+      "answer": [
+        "La deuxième lampe reste allumée",
+        "La deuxième lampe s'éteint",
+        "La deuxième lampe clignote",
+        "La deuxième lampe se moque de la première"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "Dans un circuit électrique, quel est le sens du courant ?",
+      "subject": "physics",
+      "answer": [
+        "Du moins vers le plus",
+        "Le sens importe peu",
+        "Du plus vers le moins",
+        "Du haut vers le bas"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "Dans un circuit électrique, que se passe-t-il si l'interrupteur est ouvert ?",
+      "subject": "physics",
+      "answer": [
+        "On peu entrer dedans",
+        "Le courant ne passe pas",
+        "Le courant passe",
+        "Le circuit explose"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "La lumière colorée est obtenue grâce à:",
+      "subject": "physics",
+      "answer": [
+        "Un prisme",
+        "Un filtre",
+        "De la peinture",
+        "Un effet d'optique"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Quel est l'effet de la Lune sur la Terre?",
+      "subject": "physics",
+      "answer": [
+        "Elle agit sur les marées",
+        "Elle éclaire la nuit",
+        "Elle est amoureuse de la Terre",
+        "Elle produit des séismes"
+      ]
+    },
     {
       "good_answer": "4",
-      "key": "Le jus de citron est",
+      "key": "Le jus de citron est :",
       "subject": "chemistry",
       "answer": [
         "Neutre",
@@ -156,7 +211,7 @@
     },
     {
       "good_answer": "1",
-      "key": "L’état solide de l’eau est",
+      "key": "L’état solide de l’eau est :",
       "subject": "chemistry",
       "answer": [
         "Glacé",
@@ -174,6 +229,61 @@
         "Solide",
         "Gazeuse",
         "Liquide"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Au repos, la surface d'un liquide est toujours :",
+      "subject": "chemistry",
+      "answer": [
+        "Oblique",
+        "Vertical",
+        "Ovale",
+        "Horizontal"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Au contact de quoi l'eau de chaux se trouble-t-elle ?",
+      "subject": "chemistry",
+      "answer": [
+        "Du dioxyde de carbone",
+        "Du lait",
+        "Du dioxygène",
+        "De la neige"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "Dans un mélange, lorsqu'on distingue nettement les deux composants c'est que le mélange est :",
+      "subject": "chemistry",
+      "answer": [
+        "Différencié",
+        "Hétérogène",
+        "Décomposé",
+        "Homogène"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Quelle méthode de purification permettrait de séparer l'eau et l'huile?",
+      "subject": "chemistry",
+      "answer": [
+        "La décantation",
+        "La filtration",
+        "La reposaison",
+        "La chromatographie"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "Que fait-on pour séparer les pâtes de l'eau ?",
+      "subject": "chemistry",
+      "answer": [
+        "La décantation",
+        "La chromatographie",
+        "La distillation",
+        "La filtration"
       ]
     },
     {
@@ -211,7 +321,7 @@
     },
     {
       "good_answer": "1",
-      "key": "Les grenouilles sont des",
+      "key": "Les grenouilles sont des :",
       "subject": "biology",
       "answer": [
         "Batraciens",
@@ -222,7 +332,7 @@
     },
     {
       "good_answer": "3",
-      "key": "Les humains sont",
+      "key": "Les humains sont :",
       "subject": "biology",
       "answer": [
         "Reptiles",
@@ -233,7 +343,7 @@
     },
     {
       "good_answer": "1",
-      "key": "Quel est le surnom de la planète terre",
+      "key": "Quel est le surnom de la planète terre ?",
       "subject": "astronomy",
       "answer": [
         "La planète bleue",
@@ -244,7 +354,7 @@
     },
     {
       "good_answer": "4",
-      "key": "Comment s’appelle la planète qui a des anneaux",
+      "key": "Comment s’appelle la planète qui a des anneaux ?",
       "subject": "astronomy",
       "answer": [
         "Jupiter",
@@ -255,7 +365,7 @@
     },
     {
       "good_answer": "2",
-      "key": "Qu’est-ce que la Lune",
+      "key": "Qu’est-ce que la Lune ?",
       "subject": "astronomy",
       "answer": [
         "Une planète",
@@ -277,13 +387,321 @@
     },
     {
       "good_answer": "3",
-      "key": "En astronomie, la casserole est",
+      "key": "En astronomie, la casserole est :",
       "subject": "astronomy",
       "answer": [
         "Un extraterrestre qui chante mal",
         "Un récipient",
         "Une constellation",
         "Une galaxie"
+      ]
+    },
+	    {
+      "good_answer": "1",
+      "key": "Quel phénomène explique la clarté du jour et l'obscurité de la nuit ?",
+      "subject": "astronomy",
+      "answer": [
+        "La Terre tourne sur elle-même",
+        "La Terre tourne autour du Soleil",
+        "Le Soleil tourne autour de la Terre",
+        "Le Soleil s'éteint"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "Combien de dents possède un adulte ?",
+      "subject": "biology",
+      "answer": [
+        "40",
+        "35",
+        "32",
+        "42"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "Où se trouve la clavicule ?",
+      "subject": "biology",
+      "answer": [
+        "Au pied",
+        "Au genou",
+        "Au dos",
+        "A l'épaule"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "Quels os sont reliés par le genou ?",
+      "subject": "biology",
+      "answer": [
+        "Le radius, le cubitus et le tibia",
+        "Le fémur, le tibia et la rotule",
+        "Le péroné, le tibia et la clavicule",
+        "Le radius, le cubitus et la clavicule"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "Laquelle de ces parties de l'oeil peut prendre différentes couleurs (bleu, marron, vert, etc.) ?",
+      "subject": "biology",
+      "answer": [
+        "Les paupières",
+        "Les cils",
+        "L'iris",
+        "La cornée"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Où se trouve le talon d'Achille ?",
+      "subject": "biology",
+      "answer": [
+        "Dans le pied",
+        "Au cou",
+        "Au bras",
+        "Dans la tête"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "Qu'est ce que l'auriculaire ?",
+      "subject": "biology",
+      "answer": [
+        "Une partie de l'oeil",
+        "Un type de dent",
+        "Un des doigts de la main",
+        "Un organe"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "Lequel de ces éléments retrouve-t-on dans l'oreille ?",
+      "subject": "biology",
+      "answer": [
+        "Le larynx",
+        "Le tympan",
+        "La bile",
+        "La langue"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "Comment appelle-t-on les os qui constituent la colonne vertébrale ?",
+      "subject": "biology",
+      "answer": [
+        "Les cartilages",
+        "Les vertèbres",
+        "Les artères",
+        "Les globules"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "Dans quel liquide baignent les globules blancs et les globules rouges du sang ?",
+      "subject": "biology",
+      "answer": [
+        "La salive",
+        "Le placenta",
+        "Le sérum",
+        "Le plasma"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "Quelle est la particularité de la planète Jupiter ?",
+      "subject": "astronomy",
+      "answer": [
+        "C'est la plus grosse planète du système solaire",
+        "Sa température est la plus froide",
+        "Elle est la plus proche du Soleil",
+        "C'est la plus petite planète du système solaire"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "Lequel de ces instruments est le plus indiqué pour bien observer les objets célestes ?",
+      "subject": "astronomy",
+      "answer": [
+        "Le microscope",
+        "Le téléscope",
+        "La loupe",
+        "Le vidéo-projecteur"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Lequel de ces éléments est une étoile ?",
+      "subject": "astronomy",
+      "answer": [
+        "La Lune",
+        "Pluton",
+        "Mars",
+        "Le Soleil"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "De quels éléments est constituée une comète ?",
+      "subject": "astronomy",
+      "answer": [
+        "L'eau et le feu",
+        "La glace et la poussière",
+        "L'or et le diamant",
+        "L'eau et le métal"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Pourquoi dit-on de Mars qu'elle est la planète rouge ?",
+      "subject": "astronomy",
+      "answer": [
+        "Parce qu'elle est énervée",
+        "Parce qu'elle est recouverte de lave",
+        "Parce qu'il y pousse beaucoup de tomates",
+        "Parce qu'elle contient du fer"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "Combien de temps la Terre met-elle pour faire le tour du Soleil",
+      "subject": "astronomy",
+      "answer": [
+        "365 jours",
+        "24 heures",
+        "Une saison",
+        "6 mois"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?",
+      "subject": "astronomy",
+      "answer": [
+        "1969",
+        "1998",
+        "2000",
+        "1805"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "En quelle unité s'exprime la masse ?",
+      "subject": "physics",
+      "answer": [
+        "Kilomètre",
+        "Kilogramme",
+        "Seconde",
+        "Hertz"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "En quelle unité s'exprime la longueur ?",
+      "subject": "physics",
+      "answer": [
+        "Mètre",
+        "Seconde",
+        "Kelvin",
+        "Ampère"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "En quelle unité s'exprime le temps ?",
+      "subject": "physics",
+      "answer": [
+        "Mètre",
+        "Seconde",
+        "Kelvin",
+        "Newton"
+      ]
+    },
+	{
+      "good_answer": "3",
+      "key": "Qu'est ce qu'un OS ?",
+      "subject": "informatics",
+      "answer": [
+        "Un périphérique",
+        "Un jeu",
+        "Un système d'exploitation",
+        "Un CD-ROM"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "Lequel est un périphérique ?",
+      "subject": "informatics",
+      "answer": [
+        "Une souris",
+        "Une chauve-souris",
+        "Un logiciel",
+        "Un réseau"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Parmis ces réponses laquelle est un logiciel de traitement de texte ?",
+      "subject": "informatics",
+      "answer": [
+        "iTunes",
+        "Internet Explorer",
+        "Skype",
+        "Open Office"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "Que veut dire WWW ?",
+      "subject": "informatics",
+      "answer": [
+        "Wirld Witch Web",
+        "World Wide Web",
+        "World Wide Wit",
+        "Work World Wi"
+      ]
+    },
+	{
+      "good_answer": "3",
+      "key": "Parmis ces réponses laquelle est un moteur de recherche ?",
+      "subject": "informatics",
+      "answer": [
+        "MSN",
+        "Linux",
+        "Google",
+        "Wikipedia"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "Internet a été créé en :",
+      "subject": "informatics",
+      "answer": [
+        "1783",
+        "1972",
+        "1992",
+        "1963"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Windows, Mac et Linux sont :",
+      "subject": "informatics",
+      "answer": [
+        "Des réseaux sociaux",
+        "Des jeux de stratégie en ligne",
+        "Des écrans de plus de 20 pouces",
+        "Des systèmes d'exploitation"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "Quelle marche à suivre doit on faire pour bien éteindre son ordinateur ?",
+      "subject": "informatics",
+      "answer": [
+        "Fermer les programes | Aller dans le menu démarrer ou le menu Pomme | Cliquer sur éteindre | Éteindre l'écran",
+        "Ouvrir le menu démarrer ou Pomme | Ouvrir un programme | Éteindre l'écran",
+        "Presser quelques secondes sur le bouton power",
+        "Le laisser allumer, il s'éteindra sûrement tout seul"
       ]
     }
   ]

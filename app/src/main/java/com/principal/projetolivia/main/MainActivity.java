@@ -22,6 +22,7 @@ import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+
     public static List<Question> questionList;
     public static List<Success> successList;
     public static List<User> userList;
@@ -89,5 +90,9 @@ public class MainActivity extends AppCompatActivity {
 
     public static User getCurrentUser() {
         return userList.get(currentUser);
+    }
+
+    public static List<Success> getSuccessList() {
+        return successList;
     }
 }

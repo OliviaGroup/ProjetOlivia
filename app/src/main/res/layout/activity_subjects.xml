@@ -69,6 +69,14 @@
                 android:layout_height="40dp"
                 materialdesign:animate="false"
                 materialdesign:iconDrawable="@drawable/ombre_blanche_olivia" />
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/achievementsButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                materialdesign:animate="false"
+                materialdesign:iconDrawable="@drawable/achievement_button"
+                android:layout_marginLeft="10dp"/>
         </LinearLayout>
 
 

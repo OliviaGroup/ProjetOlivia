@@ -56,6 +56,15 @@ public class SubjectsActivity extends AppCompatActivity {
             }
         });
 
+        ButtonFloat achievementsButton = (ButtonFloat) findViewById(R.id.achievementsButton);
+        achievementsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newActivity = new Intent(v.getContext(), AchievementsActivity.class);
+                startActivity(newActivity);
+            }
+        });
+
         ButtonFloat buttonOptions = (ButtonFloat) findViewById(R.id.buttonOptions);
         buttonOptions.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,6 +8,7 @@ import android.widget.TextView;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
+import com.principal.projetolivia.com.principal.projetolivia.util.Success;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ public class AchievementsActivity extends AppCompatActivity {
 
         currentUser = MainActivity.getCurrentUser();
 
-        achievementsBackground = (CropImageView) findViewById(R.id.profileBackground);
+        achievementsBackground = (CropImageView) findViewById(R.id.achievementsBackground);
         achievementsBackground.setOffset(1, 1);
         achievementsBackground.setImageDrawable(getResources().getDrawable(R.drawable.stats_olivia));
 
@@ -39,8 +40,10 @@ public class AchievementsActivity extends AppCompatActivity {
         profileAgeTextAchievements = (TextView) findViewById(R.id.profileAgeTextAchievements);
         profileAgeTextAchievements.setText(currentUser.getAge() + " " + getApplicationContext().getString(R.string.years_old));
 
-//        gridAchievements = (GridView) findViewById(R.id.gridAchievements);
-//        final ItemAchievementsAdapter adapter = new ItemAchievementsAdapter(this, R.layout.item_grid_subject_data);
-//        gridAchievements.setAdapter(adapter);
+        List<Success> test = MainActivity.getSuccessList();
+
+        gridAchievements = (GridView) findViewById(R.id.gridAchievements);
+        final ItemAchievementsAdapter adapter = new ItemAchievementsAdapter(this, R.layout.item_grid_achievements, MainActivity.getSuccessList());
+        gridAchievements.setAdapter(adapter);
     }
 }
