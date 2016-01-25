@@ -37,7 +37,7 @@ public class StatsActivity extends AppCompatActivity {
         profileNameText.setText(currentUser.getName());
 
         TextView profileAgeText = (TextView) findViewById(R.id.profileAgeText);
-        profileAgeText.setText(currentUser.getAge() + " ans");
+        profileAgeText.setText(currentUser.getAge() + " " + getApplicationContext().getString(R.string.years_old));
 
         gridProfile = (GridView) findViewById(R.id.gridProfile);
 

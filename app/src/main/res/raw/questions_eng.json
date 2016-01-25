@@ -121,6 +121,61 @@
         "Laser Electronics Diskstation"
       ]
     },
+	{
+      "good_answer": "1",
+      "key": "On an electronic circuit, if the lamps are not following, what occure when one of the lamps break?",
+      "subject": "physics",
+      "answer": [
+        "The second lamp stay switch on",
+        "The second lamp shuts down",
+        "The second lamp blinks",
+        "The second lamp is moking of the first one"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "On an electronic circuit, in witch way does the follow the electric current?",
+      "subject": "physics",
+      "answer": [
+        "From less to plus",
+        "There is no ways for this flow",
+        "From plus to less",
+        "From top to down"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "On an electronic circuit, what occure when a switch is open?",
+      "subject": "physics",
+      "answer": [
+        "We can go through it",
+        "The electric current doesn't pass",
+        "The electric current is established",
+        "The electronic circuit explode"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "",
+      "subject": "physics",
+      "answer": [
+        "",
+        "",
+        "",
+        ""
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "What's the effect of the moon on earth?",
+      "subject": "physics",
+      "answer": [
+        "She affect the tide",
+        "She lights the night",
+        "She is in love with the Earth",
+        "She produces earthquake"
+      ]
+    },
     {
       "good_answer": "4",
       "key": "The citrus juice is :",
@@ -174,6 +229,61 @@
         "Solid",
         "Gazeuse",
         "Liquid"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "At normal factors, the liquids surface is:",
+      "subject": "chemistry",
+      "answer": [
+        "Slanted",
+        "Vertical",
+        "Oval",
+        "Horizontal"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "At contact with witch substance does the limewater become cloudy ",
+      "subject": "chemistry",
+      "answer": [
+        "Of carbon dioxide",
+        "Of Milk",
+        "Of dioxigen",
+        "Of snow"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "If in a mixing we can the the components distinctly, we call the mixing:",
+      "subject": "chemistry",
+      "answer": [
+        "Differentiated",
+        "Heterogeneous",
+        "Decomposed",
+        "Homogeneous"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Witch method is used to separate water and oil?",
+      "subject": "chemistry",
+      "answer": [
+        "The decantation",
+        "The filtration",
+        "The chromatography",
+        "The separatology"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "What method is used to separate the water from pasta?",
+      "subject": "chemistry",
+      "answer": [
+        "The decantation",
+        "The chromatography",
+        "The distillation",
+        "The filtration"
       ]
     },
     {
@@ -284,6 +394,292 @@
         "A container",
         "A constellation",
         "A galaxy"
+      ]
+    },
+		{
+      "good_answer": "1",
+      "key": "What is the reason for night and day?",
+      "subject": "astronomy",
+      "answer": [
+        "Earth is spinning on its own axis",
+        "Earth is spinning around the Sun",
+        "The Sun is spinning around Earth",
+        "The Sun is switched off"
+      ]
+    },
+	 {
+      "good_answer": "3",
+      "key": "How many teeth has an adult?",
+      "subject": "biology",
+      "answer": [
+        "40",
+        "35",
+        "32",
+        "42"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "Where is the collar bone?",
+      "subject": "biology",
+      "answer": [
+        "In the foot",
+        "In the knee",
+        "In the back",
+        "In the shoulder"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "What bones are connected by the knee?",
+      "subject": "biology",
+      "answer": [
+        "The radius, ulna and tibia",
+        "The femur, tibia and kneecap",
+        "The fibula, tibia and collar bone",
+        "The radius, ulna and collar bone"
+      ]
+    },
+    {
+      "good_answer": "3",
+      "key": "What part of the eye can be of several colors (blue, green, etc)?",
+      "subject": "biology",
+      "answer": [
+        "The eyelids",
+        "The eyelashes",
+        "The iris",
+        "The cornea"
+      ]
+    },
+    {
+      "good_answer": "1",
+      "key": "Where is Achilles' heel?",
+      "subject": "biology",
+      "answer": [
+        "In the foot",
+        "In the neck",
+        "In the arm",
+        "In the head"
+      ]
+    },
+    {
+      "good_answer": "2",
+      "key": "The bones in the spinal column are called:",
+      "subject": "biology",
+      "answer": [
+        "Cartilages",
+        "Vertebrae",
+        "Arteries",
+        "Corpuscle"
+      ]
+    },
+    {
+      "good_answer": "4",
+      "key": "In what fluid are white blood cells and red blood cells?",
+      "subject": "biology",
+      "answer": [
+        "Saliva",
+        "Placenta",
+        "Serum",
+        "Plasma"
+      ]
+    },
+		{
+      "good_answer": "1",
+      "key": "What is special about Jupiter?",
+      "subject": "astronomy",
+      "answer": [
+        "It is the biggest planet of the solar system",
+        "It is the coldest planet of the solar system",
+        "It is the closest to the Sun",
+        "It is the smallest planet of the solar system"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "What should you use to look at the stars?",
+      "subject": "astronomy",
+      "answer": [
+        "A microscope",
+        "A telescope",
+        "A magnifying glass",
+        "A projector"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Which one of the following is a star?",
+      "subject": "astronomy",
+      "answer": [
+        "The moon",
+        "Pluto",
+        "Mars",
+        "The Sun"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "What are comets made of?",
+      "subject": "astronomy",
+      "answer": [
+        "Water and fire",
+        "Ice and dust",
+        "Gold and diamond",
+        "Water and metal"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Why is Mars called the red planet?",
+      "subject": "astronomy",
+      "answer": [
+        "Because it is angry",
+        "Because it is covered with lava",
+        "Because there are a lot of tomatoes",
+        "Because it contains iron"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "How long does the Earth need to orbit the Sun?",
+      "subject": "astronomy",
+      "answer": [
+        "365 days",
+        "24 hours",
+        "A season",
+        "6 months"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "When did man walk on the moon?",
+      "subject": "astronomy",
+      "answer": [
+        "1969",
+        "1998",
+        "2000",
+        "1805"
+      ]
+    },
+		{
+      "good_answer": "2",
+      "key": "What is the unit of measure of mass?",
+      "subject": "physics",
+      "answer": [
+        "Kilometers",
+        "Kilograms",
+        "Seconds",
+        "Hertz"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "What is the unit of measure of distance?",
+      "subject": "physics",
+      "answer": [
+        "Meters",
+        "Seconds",
+        "Kelvin",
+        "Amperes"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "What is the unit of measure of time?",
+      "subject": "physics",
+      "answer": [
+        "Meters",
+        "Seconds",
+        "Kelvin",
+        "Newton"
+      ]
+    },
+		{
+      "good_answer": "3",
+      "key": "What is an OS?",
+      "subject": "informatics",
+      "answer": [
+        "A peripheral device",
+        "A game",
+        "An operating system",
+        "A CD-ROM"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "Which of the following is a peripheral device?",
+      "subject": "informatics",
+      "answer": [
+        "A mouse",
+        "A bat",
+        "A software",
+        "A network"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Which of the following is a word processing software?",
+      "subject": "informatics",
+      "answer": [
+        "iTunes",
+        "Internet Explorer",
+        "Skype",
+        "Open Office"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "What does WWW mean?",
+      "subject": "informatics",
+      "answer": [
+        "Wirld Witch Web",
+        "World Wide Web",
+        "World Wide Wit",
+        "Work World Wi"
+      ]
+    },
+	{
+      "good_answer": "3",
+      "key": "Which of the following is a search engine?",
+      "subject": "informatics",
+      "answer": [
+        "MSN",
+        "Linux",
+        "Google",
+        "Wikipedia"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "Internet was created in:",
+      "subject": "informatics",
+      "answer": [
+        "1783",
+        "1972",
+        "1992",
+        "1963"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Windows, Mac and Linux are:",
+      "subject": "informatics",
+      "answer": [
+        "Social networks",
+        "Games",
+        "Big screens",
+        "Operating systems"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "What do you need to do to switch off your computer correctly?",
+      "subject": "informatics",
+      "answer": [
+        "Turn off the softwares | Go into the Windows or Mac start menu | Click on Switch off | Switch off the screen",
+        "Go into the Windows or Mac start menu | Turn on a software | Switch off the screen",
+        "Press the power button for a few seconds",
+        "Leave it, it will switch off by itself eventually"
       ]
     }
   ]
