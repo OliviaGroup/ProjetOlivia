@@ -10,19 +10,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.Success;
+import com.principal.projetolivia.com.principal.projetolivia.util.Achievement;
 
 import java.util.List;
 
 /**
  * Created by Marie on 21/01/2016.
  */
-public class ItemAchievementsAdapter extends ArrayAdapter<Success> {
-    private List<Success> items;
+public class ItemAchievementsAdapter extends ArrayAdapter<Achievement> {
+    private List<Achievement> items;
     private int layoutResourceId;
     private Context context;
 
-    public ItemAchievementsAdapter(Context context, int layoutResourceId, List<Success> items) {
+    public ItemAchievementsAdapter(Context context, int layoutResourceId, List<Achievement> items) {
         super(context, layoutResourceId, items);
         this.context = context;
         this.layoutResourceId = layoutResourceId;
@@ -38,7 +38,7 @@ public class ItemAchievementsAdapter extends ArrayAdapter<Success> {
         row = inflater.inflate(layoutResourceId, parent, false);
 
         holder = new ItemAchievementsHolder();
-        holder.success = items.get(position);
+        holder.achievement = items.get(position);
         holder.title = (TextView) row.findViewById(R.id.achievementTitle);
         holder.description = (TextView) row.findViewById(R.id.achievementDescription);
         holder.image = (ImageView) row.findViewById(R.id.achievementImage);
@@ -50,13 +50,13 @@ public class ItemAchievementsAdapter extends ArrayAdapter<Success> {
     }
 
     private void setupItem(ItemAchievementsHolder holder) {
-        holder.title.setText(holder.success.getTitle());
-        holder.description.setText(holder.success.getDescription());
-//        holder.image.setImageResource(holder.success.getImageResourceId(context));
+        holder.title.setText(holder.achievement.getTitle());
+        holder.description.setText(holder.achievement.getDescription());
+//        holder.image.setImageResource(holder.achievement.getImageResourceId(context));
     }
 
     public static class ItemAchievementsHolder {
-        Success success;
+        Achievement achievement;
         ImageView image;
         TextView title;
         TextView description;

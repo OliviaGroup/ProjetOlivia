@@ -7,20 +7,20 @@ import android.content.res.Resources;
 /**
  * Created by roosq on 21/01/2016.
  */
-public class Success {
+public class Achievement {
     private int id;
     private String title;
     private String description;
-    private SuccessTypeEnum type;
+    private AchievementTypeEnum type;
     private SubjectEnum subject;
-    private SuccessLevelEnum level;
+    private AchievementLevelEnum level;
     private int objective;
 
-    public Success() {
+    public Achievement() {
 
     }
 
-    public Success(int id, String title, String description, SuccessTypeEnum type, SubjectEnum subject, SuccessLevelEnum level, int objective) {
+    public Achievement(int id, String title, String description, AchievementTypeEnum type, SubjectEnum subject, AchievementLevelEnum level, int objective) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -54,11 +54,11 @@ public class Success {
         this.description = description;
     }
 
-    public SuccessTypeEnum getType() {
+    public AchievementTypeEnum getType() {
         return type;
     }
 
-    public void setType(SuccessTypeEnum type) {
+    public void setType(AchievementTypeEnum type) {
         this.type = type;
     }
 
@@ -70,11 +70,11 @@ public class Success {
         this.subject = subject;
     }
 
-    public SuccessLevelEnum getLevel() {
+    public AchievementLevelEnum getLevel() {
         return level;
     }
 
-    public void setLevel(SuccessLevelEnum level) {
+    public void setLevel(AchievementLevelEnum level) {
         this.level = level;
     }
 

@@ -1,21 +1,18 @@
 package com.principal.projetolivia.main;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.Achievement;
 import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
-import com.principal.projetolivia.com.principal.projetolivia.util.Success;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.io.InputStream;
@@ -27,7 +24,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     public static List<Question> questionList;
-    public static List<Success> successList;
+    public static List<Achievement> achievementsList;
     public static List<User> userList;
     public static int currentUser;
     public static int currentSubject;
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         questionList = fileConnector.getQuestionList();
-        successList = fileConnector.getSuccessList();
+        achievementsList = fileConnector.getSuccessList();
 
         userList = fileConnector.getProfileList(this);
 

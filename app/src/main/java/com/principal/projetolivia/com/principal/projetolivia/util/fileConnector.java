@@ -117,8 +117,8 @@ public class FileConnector {
         return questions;
     }
 
-    public List<Success> getSuccessList() {
-        List<Success> successList = new ArrayList<>();
+    public List<Achievement> getSuccessList() {
+        List<Achievement> achievementsList = new ArrayList<>();
         String json = null;
         JSONObject jObj = null;
         try {
@@ -144,25 +144,25 @@ public class FileConnector {
         try {
             JSONArray successJSON = jObj.getJSONArray("success");
 
-            successList.clear();
+            achievementsList.clear();
             for (int i = 0; i < successJSON.length(); i++) {
                 JSONObject jsonObject = successJSON.getJSONObject(i);
                 int tempId = Integer.parseInt(jsonObject.getString("id"));
                 String tempTitle = jsonObject.getString("title");
                 String tempDescription = jsonObject.getString("description");
-                SuccessTypeEnum tempType = SuccessTypeEnum.valueOf(jsonObject.getString("type"));
+                AchievementTypeEnum tempType = AchievementTypeEnum.valueOf(jsonObject.getString("type"));
                 SubjectEnum tempSubject = SubjectEnum.valueOf(jsonObject.getString("subject"));
-                SuccessLevelEnum tempLevel = SuccessLevelEnum.valueOf(jsonObject.getString("level"));
+                AchievementLevelEnum tempLevel = AchievementLevelEnum.valueOf(jsonObject.getString("level"));
                 int tempObjective = Integer.parseInt(jsonObject.getString("objective"));
 
-                Success success = new Success(tempId, tempTitle, tempDescription, tempType, tempSubject, tempLevel, tempObjective);
-                successList.add(success);
+                Achievement achievement = new Achievement(tempId, tempTitle, tempDescription, tempType, tempSubject, tempLevel, tempObjective);
+                achievementsList.add(achievement);
             }
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
             e.printStackTrace();
         }
 
-        return successList;
+        return achievementsList;
     }
 }
