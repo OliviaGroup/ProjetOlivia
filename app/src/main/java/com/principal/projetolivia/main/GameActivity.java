@@ -40,6 +40,7 @@ public class GameActivity extends AppCompatActivity {
     private int goodAnswerID;
 
     protected void onCreate(Bundle savedInstanceState) {
+        MainActivity.RemoveTheBar(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 

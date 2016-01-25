@@ -38,6 +38,7 @@ public class ScoreActivity extends AppCompatActivity {
     private ButtonFloat btnGoToRetry;
 
     protected void onCreate(Bundle savedInstanceState) {
+        MainActivity.RemoveTheBar(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 

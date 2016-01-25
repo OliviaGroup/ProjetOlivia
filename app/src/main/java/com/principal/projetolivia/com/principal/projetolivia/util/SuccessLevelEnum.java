@@ -6,7 +6,8 @@ package com.principal.projetolivia.com.principal.projetolivia.util;
 public enum SuccessLevelEnum {
     gold,
     silver,
-    bronze;
+    bronze,
+    none;
     
 
 }
