@@ -60,6 +60,14 @@
                 android:gravity="center"
                 android:text="22 ans"
                 android:textSize="15sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/general"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+            </RelativeLayout>
         </LinearLayout>
 
         <RelativeLayout

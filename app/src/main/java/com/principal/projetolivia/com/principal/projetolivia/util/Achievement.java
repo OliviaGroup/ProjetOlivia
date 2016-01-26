@@ -4,13 +4,13 @@ package com.principal.projetolivia.com.principal.projetolivia.util;
 import android.content.Context;
 import android.content.res.Resources;
 
+import java.io.Serializable;
+
 /**
  * Created by roosq on 21/01/2016.
  */
-public class Achievement {
-    private int id;
+public class Achievement implements Serializable {
     private String title;
-    private String description;
     private AchievementTypeEnum type;
     private SubjectEnum subject;
     private AchievementLevelEnum level;
@@ -20,10 +20,8 @@ public class Achievement {
 
     }
 
-    public Achievement(int id, String title, String description, AchievementTypeEnum type, SubjectEnum subject, AchievementLevelEnum level, int objective) {
-        this.id = id;
+    public Achievement(String title, AchievementTypeEnum type, SubjectEnum subject, AchievementLevelEnum level, int objective) {
         this.title = title;
-        this.description = description;
         this.type = type;
         this.subject = subject;
         this.level = level;
@@ -44,14 +42,6 @@ public class Achievement {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public AchievementTypeEnum getType() {
@@ -96,5 +86,17 @@ public class Achievement {
         }
 
         return res.getIdentifier("error_button", "drawable", context.getPackageName());
+    }
+
+    public String getDescription (Context context) {
+        Resources res = context.getResources();
+
+
+            int resId = res.getIdentifier(this.name(), "string", context.getPackageName());
+            if (0 != resId) {
+                return (res.getString(resId));
+            }
+            return (name());
+        }
     }
 }

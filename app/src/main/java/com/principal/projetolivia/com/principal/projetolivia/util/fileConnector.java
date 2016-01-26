@@ -142,21 +142,23 @@ public class FileConnector {
         }
 
         try {
-            JSONArray successJSON = jObj.getJSONArray("success");
+            JSONArray achievementsJSON = jObj.getJSONArray("achievement");
 
             achievementsList.clear();
-            for (int i = 0; i < successJSON.length(); i++) {
-                JSONObject jsonObject = successJSON.getJSONObject(i);
-                int tempId = Integer.parseInt(jsonObject.getString("id"));
-                String tempTitle = jsonObject.getString("title");
-                String tempDescription = jsonObject.getString("description");
-                AchievementTypeEnum tempType = AchievementTypeEnum.valueOf(jsonObject.getString("type"));
-                SubjectEnum tempSubject = SubjectEnum.valueOf(jsonObject.getString("subject"));
-                AchievementLevelEnum tempLevel = AchievementLevelEnum.valueOf(jsonObject.getString("level"));
-                int tempObjective = Integer.parseInt(jsonObject.getString("objective"));
-
-                Achievement achievement = new Achievement(tempId, tempTitle, tempDescription, tempType, tempSubject, tempLevel, tempObjective);
-                achievementsList.add(achievement);
+            for (JSONObject achievementJSON : achievementsJSON) {
+                AchievementTypeEnum tempType = AchievementTypeEnum.valueOf(achievementJSON.getString("type"));
+                JSONArray levelsJSON = achievementJSON.getJSONArray("level");
+                for (JSONObject levelJSON : levelsJSON) {
+                    AchievementLevelEnum tempLevel = AchievementLevelEnum.valueOf(levelJSON.getString("level"));
+                    int tempObjective = Integer.parseInt(levelJSON.getString("objective"));
+                    JSONArray itemsJSON = levelJSON.getJSONArray("items");
+                    for (JSONObject itemJSON : itemsJSON) {
+                        String tempTitle = itemJSON.getString("title");
+                        SubjectEnum tempSubject = SubjectEnum.valueOf(itemJSON.getString("subject"));
+                        Achievement achievement = new Achievement(tempTitle, tempType, tempSubject, tempLevel, tempObjective);
+                        achievementsList.add(achievement);
+                    }
+                }
             }
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());

@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (Locale.getDefault().getDisplayLanguage().toString().equals("français")) {
             idQuestionsFile = R.raw.questions;
-            idSuccessFile = R.raw.success;
+            idSuccessFile = R.raw.achievement;
         } else {
             idQuestionsFile = R.raw.questions_eng;
-            idSuccessFile = R.raw.success_eng;
+            idSuccessFile = R.raw.achievement_eng;
         }
 
         InputStream isQuestion = getResources().openRawResource(idQuestionsFile);
@@ -63,8 +63,15 @@ public class MainActivity extends AppCompatActivity {
 
         userList = fileConnector.getProfileList(this);
 
-        Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
-        startActivity(newActivity);
+        if (userList.size() == 0) {
+            Intent newActivity = new Intent(this.getBaseContext(), NewProfileActivity.class);
+            startActivity(newActivity);
+        } else {
+            Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
+            startActivity(newActivity);
+        }
+
+
 
     }
 
