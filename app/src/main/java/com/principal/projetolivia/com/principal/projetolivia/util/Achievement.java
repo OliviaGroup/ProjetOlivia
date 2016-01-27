@@ -28,14 +28,6 @@ public class Achievement implements Serializable {
         this.objective = objective;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -76,7 +68,7 @@ public class Achievement implements Serializable {
         this.objective = objective;
     }
 
-    public int getImageResourceId (Context context) {
+    public int getImageResourceId(Context context) {
         Resources res = context.getResources();
 
         int resId = res.getIdentifier(type.name() + "_" + subject.name() + "_" + level.name(), "drawable", context.getPackageName());
@@ -88,15 +80,22 @@ public class Achievement implements Serializable {
         return res.getIdentifier("error_button", "drawable", context.getPackageName());
     }
 
-    public String getDescription (Context context) {
+    public String getDescription(Context context) {
         Resources res = context.getResources();
 
-
-            int resId = res.getIdentifier(this.name(), "string", context.getPackageName());
-            if (0 != resId) {
-                return (res.getString(resId));
-            }
-            return (name());
+        int resTypeId = res.getIdentifier("type_" + type.name(), "string", context.getPackageName());
+        String typeString;
+        if (0 != resTypeId) {
+            typeString = res.getString(resTypeId);
+        } else {
+            typeString = type.name();
         }
+
+        String prefix = "";
+        if (type == AchievementTypeEnum.highscore) {
+            prefix = res.getString(res.getIdentifier("achievement_prefix", "string", context.getPackageName()));
+        }
+
+        return prefix + " " + objective + " " + typeString + " " + res.getString(res.getIdentifier("achievement_connector", "string", context.getPackageName())) + " " + subject.getLabel(context);
     }
 }

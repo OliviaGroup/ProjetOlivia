@@ -142,17 +142,20 @@ public class FileConnector {
         }
 
         try {
-            JSONArray achievementsJSON = jObj.getJSONArray("achievement");
-
             achievementsList.clear();
-            for (JSONObject achievementJSON : achievementsJSON) {
+
+            JSONArray achievementsJSON = jObj.getJSONArray("achievement");
+            for (int i = 0; i < achievementsJSON.length(); i++) {
+                JSONObject achievementJSON = achievementsJSON.getJSONObject(i);
                 AchievementTypeEnum tempType = AchievementTypeEnum.valueOf(achievementJSON.getString("type"));
                 JSONArray levelsJSON = achievementJSON.getJSONArray("level");
-                for (JSONObject levelJSON : levelsJSON) {
+                for (int j = 0; j < levelsJSON.length(); j++) {
+                    JSONObject levelJSON = levelsJSON.getJSONObject(j);
                     AchievementLevelEnum tempLevel = AchievementLevelEnum.valueOf(levelJSON.getString("level"));
                     int tempObjective = Integer.parseInt(levelJSON.getString("objective"));
                     JSONArray itemsJSON = levelJSON.getJSONArray("items");
-                    for (JSONObject itemJSON : itemsJSON) {
+                    for (int k = 0;k < itemsJSON.length(); k++) {
+                        JSONObject itemJSON = itemsJSON.getJSONObject(k);
                         String tempTitle = itemJSON.getString("title");
                         SubjectEnum tempSubject = SubjectEnum.valueOf(itemJSON.getString("subject"));
                         Achievement achievement = new Achievement(tempTitle, tempType, tempSubject, tempLevel, tempObjective);

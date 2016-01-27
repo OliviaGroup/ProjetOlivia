@@ -21,7 +21,7 @@
     <string name="cancel">Cancel</string>
     <string name="change">Change</string>
     <string name="profile_playedGames">Played:</string>
-    <string name="profile_hiScore">Highscore:</string>
+    <string name="profile_hiScore">High score:</string>
     <string name="profile_rightAnswers">Right answers:</string>
     <string name="profile_wrongAnswers">Wrong answers:</string>
     <string name="stop_game">Stop the game</string>
@@ -38,4 +38,10 @@
     <string name="delete_profile">Delete profile</string>
     <string name="delete">Delete</string>
     <string name="years_old"> years old</string>
+    <string name="achievement_connector">in</string>
+    <string name="type_percent">% Score</string>
+    <string name="type_played">played</string>
+    <string name="type_nofault">played games with no fault</string>
+    <string name="type_highscore">time beat the high score</string>
+    <string name="achievement_prefix">Beat</string>
 </resources>

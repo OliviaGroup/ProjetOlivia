@@ -63,13 +63,13 @@ public class MainActivity extends AppCompatActivity {
 
         userList = fileConnector.getProfileList(this);
 
-        if (userList.size() == 0) {
+        /*if (userList.size() == 0) {
             Intent newActivity = new Intent(this.getBaseContext(), NewProfileActivity.class);
             startActivity(newActivity);
-        } else {
+        } else {*/
             Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
             startActivity(newActivity);
-        }
+        /*}*/
 
 
 

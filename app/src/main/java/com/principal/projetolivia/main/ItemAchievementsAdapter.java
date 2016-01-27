@@ -51,7 +51,7 @@ public class ItemAchievementsAdapter extends ArrayAdapter<Achievement> {
 
     private void setupItem(ItemAchievementsHolder holder) {
         holder.title.setText(holder.achievement.getTitle());
-        holder.description.setText(holder.achievement.getDescription());
+        holder.description.setText(holder.achievement.getDescription(context));
 //        holder.image.setImageResource(holder.achievement.getImageResourceId(context));
     }
 
