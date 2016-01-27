@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="20dp">
+    android:paddingBottom="10dp">
 
     <LinearLayout
         android:background="#CCFFFFFF"
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/achievementDescription"
                 android:textSize="11sp"
-                android:text="Atteignez 80% en mathématiques"
+                android:text="Description"
                 android:textAlignment="center"/>
         </LinearLayout>
 

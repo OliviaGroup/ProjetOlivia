@@ -52,7 +52,7 @@ public class ItemAchievementsAdapter extends ArrayAdapter<Success> {
     private void setupItem(ItemAchievementsHolder holder) {
         holder.title.setText(holder.success.getTitle());
         holder.description.setText(holder.success.getDescription());
-//        holder.image.setImageResource(holder.success.getImageResourceId(context));
+        holder.image.setImageResource(holder.success.getImageResourceId(context));
     }
 
     public static class ItemAchievementsHolder {
