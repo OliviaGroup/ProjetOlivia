@@ -9,9 +9,13 @@ import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.Achievement;
 import com.principal.projetolivia.com.principal.projetolivia.util.GameResultEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.ImproveScoreEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
+import com.principal.projetolivia.com.principal.projetolivia.util.UserAchievement;
+
+import java.util.List;
 
 /**
  * Created by roosq on 20/01/2016.
@@ -38,6 +42,7 @@ public class ScoreActivity extends AppCompatActivity {
     private ButtonFloat btnGoToRetry;
 
     protected void onCreate(Bundle savedInstanceState) {
+        MainActivity.RemoveTheBar(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_score);
 
@@ -83,7 +88,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         currentSubject.setRightAnswers(currentSubject.getRightAnswers() + goodAnswerScore);
         currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
-        currentSubject.setPlayedGames(currentSubject.getPlayedGames() + goodAnswerScore + badAnswerScore);
+        currentSubject.setPlayedGames(currentSubject.getPlayedGames()+ 1);
 
 
         txtNewPercent.setText(currentSubject.getPercentRightAnswers() + getString(R.string.min_percent));
@@ -117,6 +122,20 @@ public class ScoreActivity extends AppCompatActivity {
                 startActivity(newActivity);
             }
         });
+    }
+
+    private void updateAchievments () {
+        List<UserAchievement> userAchievementList = MainActivity.getCurrentUser().getUserAchievementList();
+
+        for (UserAchievement userAchievement:
+             userAchievementList) {
+            Achievement achievement = MainActivity.achievementsList.get(userAchievement.getId());
+
+            switch (achievement.getType()) {
+                case played:
+
+            }
+        }
     }
 
 }

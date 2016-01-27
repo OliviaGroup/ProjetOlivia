@@ -19,6 +19,7 @@ public class OptionsActivity extends AppCompatActivity {
     private RelativeLayout deleteProfile;
 
     protected void onCreate(Bundle savedInstanceState) {
+        MainActivity.RemoveTheBar(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_options);
 

@@ -4,26 +4,24 @@ package com.principal.projetolivia.com.principal.projetolivia.util;
 import android.content.Context;
 import android.content.res.Resources;
 
+import java.io.Serializable;
+
 /**
  * Created by roosq on 21/01/2016.
  */
-public class Success {
-    private int id;
+public class Achievement implements Serializable {
     private String title;
-    private String description;
-    private SuccessTypeEnum type;
+    private AchievementTypeEnum type;
     private SubjectEnum subject;
-    private SuccessLevelEnum level;
+    private AchievementLevelEnum level;
     private int objective;
 
-    public Success() {
+    public Achievement() {
 
     }
 
-    public Success(int id, String title, String description, SuccessTypeEnum type, SubjectEnum subject, SuccessLevelEnum level, int objective) {
-        this.id = id;
+    public Achievement(String title, AchievementTypeEnum type, SubjectEnum subject, AchievementLevelEnum level, int objective) {
         this.title = title;
-        this.description = description;
         this.type = type;
         this.subject = subject;
         this.level = level;
@@ -46,19 +44,11 @@ public class Success {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public SuccessTypeEnum getType() {
+    public AchievementTypeEnum getType() {
         return type;
     }
 
-    public void setType(SuccessTypeEnum type) {
+    public void setType(AchievementTypeEnum type) {
         this.type = type;
     }
 
@@ -70,11 +60,11 @@ public class Success {
         this.subject = subject;
     }
 
-    public SuccessLevelEnum getLevel() {
+    public AchievementLevelEnum getLevel() {
         return level;
     }
 
-    public void setLevel(SuccessLevelEnum level) {
+    public void setLevel(AchievementLevelEnum level) {
         this.level = level;
     }
 
@@ -96,5 +86,17 @@ public class Success {
         }
 
         return res.getIdentifier("error_button", "drawable", context.getPackageName());
+    }
+
+    public String getDescription (Context context) {
+        Resources res = context.getResources();
+
+
+            int resId = res.getIdentifier(this.name(), "string", context.getPackageName());
+            if (0 != resId) {
+                return (res.getString(resId));
+            }
+            return (name());
+        }
     }
 }

@@ -117,8 +117,8 @@ public class FileConnector {
         return questions;
     }
 
-    public List<Success> getSuccessList() {
-        List<Success> successList = new ArrayList<>();
+    public List<Achievement> getSuccessList() {
+        List<Achievement> achievementsList = new ArrayList<>();
         String json = null;
         JSONObject jObj = null;
         try {
@@ -142,27 +142,29 @@ public class FileConnector {
         }
 
         try {
-            JSONArray successJSON = jObj.getJSONArray("success");
+            JSONArray achievementsJSON = jObj.getJSONArray("achievement");
 
-            successList.clear();
-            for (int i = 0; i < successJSON.length(); i++) {
-                JSONObject jsonObject = successJSON.getJSONObject(i);
-                int tempId = Integer.parseInt(jsonObject.getString("id"));
-                String tempTitle = jsonObject.getString("title");
-                String tempDescription = jsonObject.getString("description");
-                SuccessTypeEnum tempType = SuccessTypeEnum.valueOf(jsonObject.getString("type"));
-                SubjectEnum tempSubject = SubjectEnum.valueOf(jsonObject.getString("subject"));
-                SuccessLevelEnum tempLevel = SuccessLevelEnum.valueOf(jsonObject.getString("level"));
-                int tempObjective = Integer.parseInt(jsonObject.getString("objective"));
-
-                Success success = new Success(tempId, tempTitle, tempDescription, tempType, tempSubject, tempLevel, tempObjective);
-                successList.add(success);
+            achievementsList.clear();
+            for (JSONObject achievementJSON : achievementsJSON) {
+                AchievementTypeEnum tempType = AchievementTypeEnum.valueOf(achievementJSON.getString("type"));
+                JSONArray levelsJSON = achievementJSON.getJSONArray("level");
+                for (JSONObject levelJSON : levelsJSON) {
+                    AchievementLevelEnum tempLevel = AchievementLevelEnum.valueOf(levelJSON.getString("level"));
+                    int tempObjective = Integer.parseInt(levelJSON.getString("objective"));
+                    JSONArray itemsJSON = levelJSON.getJSONArray("items");
+                    for (JSONObject itemJSON : itemsJSON) {
+                        String tempTitle = itemJSON.getString("title");
+                        SubjectEnum tempSubject = SubjectEnum.valueOf(itemJSON.getString("subject"));
+                        Achievement achievement = new Achievement(tempTitle, tempType, tempSubject, tempLevel, tempObjective);
+                        achievementsList.add(achievement);
+                    }
+                }
             }
         } catch (JSONException e) {
             Log.e("JSON Parser", "Error parsing data " + e.toString());
             e.printStackTrace();
         }
 
-        return successList;
+        return achievementsList;
     }
 }

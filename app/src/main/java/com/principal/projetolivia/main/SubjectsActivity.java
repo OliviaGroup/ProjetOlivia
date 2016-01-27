@@ -24,6 +24,7 @@ public class SubjectsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        MainActivity.RemoveTheBar(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects);
 

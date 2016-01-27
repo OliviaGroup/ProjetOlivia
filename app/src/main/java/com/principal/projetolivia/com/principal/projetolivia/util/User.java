@@ -15,6 +15,7 @@ public class User implements Serializable {
     private String name;
     private Calendar dateOfBirth;
     private List<Subject> subjectList;
+    private List<UserAchievement> userAchievementList;
 
     // constructors
 
@@ -99,5 +100,17 @@ public class User implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setSubjectList(List<Subject> subjectList) {
+        this.subjectList = subjectList;
+    }
+
+    public List<UserAchievement> getUserAchievementList() {
+        return userAchievementList;
+    }
+
+    public void setUserAchievementList(List<UserAchievement> userAchievementList) {
+        this.userAchievementList = userAchievementList;
     }
 }

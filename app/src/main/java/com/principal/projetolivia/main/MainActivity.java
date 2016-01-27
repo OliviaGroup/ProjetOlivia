@@ -1,18 +1,18 @@
 package com.principal.projetolivia.main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.Achievement;
 import com.principal.projetolivia.com.principal.projetolivia.util.FileConnector;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
-import com.principal.projetolivia.com.principal.projetolivia.util.Success;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
 
 import java.io.InputStream;
@@ -24,7 +24,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
     public static List<Question> questionList;
-    public static List<Success> successList;
+    public static List<Achievement> achievementsList;
     public static List<User> userList;
     public static int currentUser;
     public static int currentSubject;
@@ -32,8 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        RemoveTheBar(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -42,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         if (Locale.getDefault().getDisplayLanguage().toString().equals("français")) {
             idQuestionsFile = R.raw.questions;
-            idSuccessFile = R.raw.success;
+            idSuccessFile = R.raw.achievement;
         } else {
             idQuestionsFile = R.raw.questions_eng;
-            idSuccessFile = R.raw.success_eng;
+            idSuccessFile = R.raw.achievement_eng;
         }
 
         InputStream isQuestion = getResources().openRawResource(idQuestionsFile);
@@ -60,12 +59,19 @@ public class MainActivity extends AppCompatActivity {
         }
 
         questionList = fileConnector.getQuestionList();
-        successList = fileConnector.getSuccessList();
+        achievementsList = fileConnector.getSuccessList();
 
         userList = fileConnector.getProfileList(this);
 
-        Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
-        startActivity(newActivity);
+        if (userList.size() == 0) {
+            Intent newActivity = new Intent(this.getBaseContext(), NewProfileActivity.class);
+            startActivity(newActivity);
+        } else {
+            Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
+            startActivity(newActivity);
+        }
+
+
 
     }
 
@@ -92,7 +98,9 @@ public class MainActivity extends AppCompatActivity {
         return userList.get(currentUser);
     }
 
-    public static List<Success> getSuccessList() {
-        return successList;
+    public static void RemoveTheBar(Activity activity) {
+        activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
     }
 }

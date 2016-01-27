@@ -14,7 +14,8 @@ public enum SubjectEnum {
     physics,
     chemistry,
     biology,
-    astronomy;
+    astronomy,
+    general;
 
     public String getLabel(Context context) {
         Resources res = context.getResources();

@@ -9,24 +9,86 @@
         android:layout_height="match_parent"
         android:scaleType="matrix" />
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/profile">
+        android:orientation="vertical">
 
-        <GridView
-            android:id="@+id/gridSubjects"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:columnWidth="@dimen/subjects_button_size"
-            android:gravity="center"
-            android:numColumns="3"
-            android:stretchMode="spacingWidthUniform">
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
 
-        </GridView>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bandeau_gauche" />
 
-    </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="#e6007e"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp">
+
+                <TextView
+                    android:id="@+id/userNameText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="UserName"
+                    android:textColor="@color/normal_white"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/bandeau_droite" />
+
+            <TextView
+                android:id="@+id/profileAgeText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:gravity="center"
+                android:text="22 ans"
+                android:textSize="15sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/general"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/profile">
+
+            <GridView
+                android:id="@+id/gridSubjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:columnWidth="@dimen/subjects_button_size"
+                android:gravity="center"
+                android:numColumns="3"
+                android:stretchMode="spacingWidthUniform">
+
+            </GridView>
+
+        </RelativeLayout>
+    </LinearLayout>
 
 
     <RelativeLayout
@@ -52,16 +114,6 @@
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_alignParentRight="true">
-
-            <TextView
-                android:id="@+id/userNameText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:paddingRight="20dp"
-                android:text="User"
-                android:textColor="@color/normal_white"
-                android:textSize="20dp" />
 
             <com.gc.materialdesign.views.ButtonFloat
                 android:id="@+id/userName"
