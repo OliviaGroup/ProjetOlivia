@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import com.principal.projetolivia.R;
@@ -25,8 +26,6 @@ public class NewProfileActivity extends AppCompatActivity {
     private EditText textName;
     private EditText textAge;
     private Calendar myCalendar = Calendar.getInstance();
-    private CropImageView newProfileBackground;
-
     private RelativeLayout buttonValidation;
 
     @Override
@@ -35,9 +34,7 @@ public class NewProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_profile);
 
-        newProfileBackground = (CropImageView) findViewById(R.id.newProfileBackground);
-        newProfileBackground.setOffset(1, 1);
-        newProfileBackground.setImageDrawable(getResources().getDrawable(R.drawable.background));
+        getWindow().setBackgroundDrawableResource(R.drawable.stats_olivia);
 
         textName = (EditText) findViewById(R.id.textNameProfile);
         textAge = (EditText) findViewById(R.id.textAgeProfile);

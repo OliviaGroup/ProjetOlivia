@@ -29,7 +29,8 @@
             android:label="@string/app_name"
             android:parentActivityName=".main.ProfileActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.ProfileActivity" />
