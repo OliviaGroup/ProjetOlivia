@@ -3,6 +3,7 @@ package com.principal.projetolivia.main;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -39,6 +40,8 @@ public class GameActivity extends AppCompatActivity {
     private int badAnswerScore;
     private int goodAnswerID;
 
+    private CountTimer timer;
+
     protected void onCreate(Bundle savedInstanceState) {
         MainActivity.RemoveTheBar(this);
         super.onCreate(savedInstanceState);
@@ -58,7 +61,7 @@ public class GameActivity extends AppCompatActivity {
         badAnswerScore = 0;
         updateScore();
 
-        final CountTimer timer = new CountTimer(20000, 1000);
+        timer = new CountTimer(20000, 1000);
         timer.start();
 
 
@@ -111,10 +114,9 @@ public class GameActivity extends AppCompatActivity {
 
         MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);*/
 
-        Intent newActivity = new Intent(this, ScoreActivity.class);
-        newActivity.putExtra("goodAnswerScore", goodAnswerScore);
-        newActivity.putExtra("badAnswerScore", badAnswerScore);
-        startActivity(newActivity);
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction().add(R.id.containerGame, new ScoreFragment());
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+        ft.commit();
     }
 
 
@@ -154,5 +156,22 @@ public class GameActivity extends AppCompatActivity {
         public void onFinish() {
             stopTheGame();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        timer.cancel();
+        Intent newActivity = new Intent(this.getBaseContext(), SubjectsActivity.class);
+        this.finish();
+        startActivity(newActivity);
+        return;
+    }
+
+    public int getGoodAnswerScore() {
+        return goodAnswerScore;
+    }
+
+    public int getBadAnswerScore() {
+        return badAnswerScore;
     }
 }

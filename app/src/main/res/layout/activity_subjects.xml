@@ -1,5 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/containerSubjects"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -53,12 +54,11 @@
                 android:src="@drawable/bandeau_droite" />
 
             <TextView
-                android:id="@+id/profileAgeText"
+                android:id="@+id/profileAgeTextSubjects"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
                 android:gravity="center"
-                android:text="22 ans"
                 android:textSize="15sp" />
 
         </LinearLayout>
@@ -113,7 +113,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 materialdesign:animate="false"
-                materialdesign:iconDrawable="@drawable/ombre_blanche_olivia" />
+                materialdesign:iconDrawable="@drawable/stats_white_icon" />
 
             <com.gc.materialdesign.views.ButtonFloat
                 android:id="@+id/achievementsButton"

@@ -109,4 +109,12 @@ public class NewProfileActivity extends AppCompatActivity {
 
         textAge.setText(simpleDateFormat.format(myCalendar.getTime()));
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
+        this.finish();
+        startActivity(newActivity);
+        return;
+    }
 }

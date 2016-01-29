@@ -1,5 +1,6 @@
 package com.principal.projetolivia.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.GridView;
@@ -49,5 +50,13 @@ public class StatsActivity extends AppCompatActivity {
         Collections.sort(subjectsListByScoreOrder);
         final ItemSubjectDataAdapter adapter = new ItemSubjectDataAdapter(this, R.layout.item_grid_subject_data, subjectsListByScoreOrder);
         gridProfile.setAdapter(adapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent newActivity = new Intent(this.getBaseContext(), SubjectsActivity.class);
+        this.finish();
+        startActivity(newActivity);
+        return;
     }
 }
