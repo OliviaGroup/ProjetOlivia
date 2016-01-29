@@ -25,8 +25,6 @@ public class ProfileActivity extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         MainActivity.RemoveTheBar(this);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 

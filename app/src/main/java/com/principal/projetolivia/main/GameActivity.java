@@ -61,7 +61,7 @@ public class GameActivity extends AppCompatActivity {
         badAnswerScore = 0;
         updateScore();
 
-        timer = new CountTimer(20000, 1000);
+        timer = new CountTimer(60000, 1000);
         timer.start();
 
 
