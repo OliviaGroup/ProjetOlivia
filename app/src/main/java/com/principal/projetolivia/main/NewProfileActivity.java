@@ -84,9 +84,10 @@ public class NewProfileActivity extends AppCompatActivity {
 
                     return;
                 } else {
-                    User newUser = new User(textName.getText().toString(), myCalendar);
+                    User newUser = new User(textName.getText().toString(), myCalendar, MainActivity.achievementsList.size());
                     MainActivity.userList.add(newUser);
                     MainActivity.currentUser = MainActivity.userList.size() - 1;
+                    MainActivity.fileConnector.setProfileList(v.getContext(), MainActivity.userList);
 
 //                    View view = getActivity().getCurrentFocus();
 //                    if (view != null) {

@@ -8,12 +8,14 @@ import java.io.Serializable;
 public class UserAchievement implements Serializable {
     private int id;
     private int value;
+    private int percent;
     private boolean achievementReceived;
 
-    public UserAchievement(int id, int value, boolean achievementReceived) {
+    public UserAchievement(int id) {
         this.id = id;
-        this.value = value;
-        this.achievementReceived = achievementReceived;
+        this.value = 0;
+        this.percent = 0;
+        this.achievementReceived = false;
     }
 
     public int getId() {
@@ -38,5 +40,22 @@ public class UserAchievement implements Serializable {
 
     public void setAchievementReceived(boolean achievementReceived) {
         this.achievementReceived = achievementReceived;
+    }
+
+    public int getPercent() {
+        if (achievementReceived == true) {
+            return 100;
+        } else {
+            return percent;
+        }
+
+    }
+
+    public void setPercent(int value, int objective) {
+        this.percent = value * 100 / objective;
+    }
+
+    public void setPercent(int percent) {
+        this.percent = percent;
     }
 }

@@ -27,8 +27,6 @@ public class FileConnector {
     private InputStream fileQuestion;
     private InputStream fileSuccess;
 
-    private static final String ns = null;
-
     public FileConnector(InputStream fileQuestion, InputStream fileSuccess) {
         this.fileQuestion = fileQuestion;
         this.fileSuccess = fileSuccess;
@@ -36,7 +34,7 @@ public class FileConnector {
 
 
     public List<User> getProfileList(Context context) {
-        List<User> returnObject = new ArrayList<User>();
+        List<User> returnObject = new ArrayList<>();
         returnObject.clear();
         try {
             FileInputStream fis = context.openFileInput(fileUserData);

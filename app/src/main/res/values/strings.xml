@@ -44,4 +44,5 @@
     <string name="type_nofault">played games with no fault</string>
     <string name="type_highscore">time beat the high score</string>
     <string name="achievement_prefix">Beat</string>
+    <string name="achievement_easter_egg">Find the mysterious secret</string>
 </resources>

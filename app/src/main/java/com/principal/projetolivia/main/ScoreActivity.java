@@ -13,6 +13,7 @@ import com.principal.projetolivia.com.principal.projetolivia.util.Achievement;
 import com.principal.projetolivia.com.principal.projetolivia.util.GameResultEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.ImproveScoreEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
+import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.UserAchievement;
 
 import java.util.List;
@@ -29,6 +30,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     private GameResultEnum currentGameResult;
     private ImproveScoreEnum currentImproveScore;
+    private Subject currentSubject;
 
     private TextView txtScoreTitle;
     private TextView txtHiScore;
@@ -49,7 +51,7 @@ public class ScoreActivity extends AppCompatActivity {
         goodAnswerScore = (int) getIntent().getSerializableExtra("goodAnswerScore");
         badAnswerScore = (int) getIntent().getSerializableExtra("badAnswerScore");
 
-        Subject currentSubject = MainActivity.getCurrentSubject();
+        currentSubject = MainActivity.getCurrentSubject();
         oldPercentScore = currentSubject.getPercentRightAnswers();
         oldHiScore = currentSubject.getHiScore();
 
@@ -70,6 +72,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         if (oldHiScore < goodAnswerScore) {
             currentGameResult = GameResultEnum.hi_score;
+            currentSubject.setTimesBeatHiScore(currentSubject.getTimesBeatHiScore() + 1);
             currentSubject.setHiScore(goodAnswerScore);
         } else {
             if (badAnswerScore <= goodAnswerScore) {
@@ -83,12 +86,11 @@ public class ScoreActivity extends AppCompatActivity {
         imgOliviaScore.setImageDrawable(getResources().getDrawable(currentGameResult.getImageOliviaId(this)));
 
 
-
         txtOldPercent.setText(oldPercentScore + getString(R.string.min_percent));
 
         currentSubject.setRightAnswers(currentSubject.getRightAnswers() + goodAnswerScore);
         currentSubject.setWrongAnswers(currentSubject.getWrongAnswers() + badAnswerScore);
-        currentSubject.setPlayedGames(currentSubject.getPlayedGames()+ 1);
+        currentSubject.setPlayedGames(currentSubject.getPlayedGames() + 1);
 
 
         txtNewPercent.setText(currentSubject.getPercentRightAnswers() + getString(R.string.min_percent));
@@ -122,20 +124,58 @@ public class ScoreActivity extends AppCompatActivity {
                 startActivity(newActivity);
             }
         });
+
+        updateAchievements();
     }
 
-    private void updateAchievments () {
+    private void updateAchievements() {
         List<UserAchievement> userAchievementList = MainActivity.getCurrentUser().getUserAchievementList();
 
-        for (UserAchievement userAchievement:
-             userAchievementList) {
-            Achievement achievement = MainActivity.achievementsList.get(userAchievement.getId());
+        for (UserAchievement userAchievement :
+                userAchievementList) {
+            if (userAchievement.isAchievementReceived() == false) {
+                Achievement achievement = MainActivity.achievementsList.get(userAchievement.getId() - 1);
 
-            switch (achievement.getType()) {
-                case played:
+                if (currentSubject.getName() == achievement.getSubject() || SubjectEnum.general == achievement.getSubject()) {
+                    int trueObjective = 0;
+                    if (achievement.getSubject() == SubjectEnum.general) {
+                        trueObjective = achievement.getObjective() * 10;
+                    } else {
+                        trueObjective = achievement.getObjective();
+                    }
+                    int value = 0;
+                    switch (achievement.getType()) {
+                        case played:
+                            value = currentSubject.getPlayedGames();
+                            break;
+                        case highscore:
+                            value = currentSubject.getTimesBeatHiScore();
+                            break;
+                        case nofault:
+                            value = currentSubject.getPlayedGamesNoFault();
+                            break;
+                        case percent:
+                            value = currentSubject.getPercentRightAnswers();
+                            break;
+                        case easteregg:
+                            value = -1;
+                            break;
+                    }
 
+                    if (value >= trueObjective) {
+                        userAchievement.setAchievementReceived(true);
+                    } else {
+                        userAchievement.setValue(value);
+                        if (trueObjective == 0) {
+                            userAchievement.setPercent(0);
+                        } else {
+                            userAchievement.setPercent(value, trueObjective);
+                        }
+                    }
+                }
             }
         }
+        MainActivity.fileConnector.setProfileList(this, MainActivity.userList);
     }
 
 }

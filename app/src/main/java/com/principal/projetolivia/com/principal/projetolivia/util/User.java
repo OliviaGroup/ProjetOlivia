@@ -19,17 +19,25 @@ public class User implements Serializable {
 
     // constructors
 
-    public User(String name, Calendar dateOfBirth) {
+    public User(String name, Calendar dateOfBirth, int numberOfAchievement) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
 
-        this.subjectList = new ArrayList<Subject>();
+        this.subjectList = new ArrayList<>();
+        this.userAchievementList = new ArrayList<>();
         subjectList.clear();
 
         for (SubjectEnum tempSubjectEnum :
                 SubjectEnum.values()) {
             Subject tempSubject = new Subject(tempSubjectEnum);
             subjectList.add(tempSubject);
+        }
+
+        userAchievementList.clear();
+
+        for (int i = 1; i <= numberOfAchievement; i++) {
+            UserAchievement userAchievement = new UserAchievement(i);
+            userAchievementList.add(userAchievement);
         }
     }
 

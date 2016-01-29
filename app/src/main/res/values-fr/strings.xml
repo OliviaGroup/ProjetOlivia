@@ -40,4 +40,6 @@
     <string name="type_percent">% du score</string>
     <string name="type_played">parties jouées</string>
     <string name="achievement_prefix">Battre</string>
+    <string name="achievement_easter_egg">Trouve le secret mystère</string>
+
 </resources>

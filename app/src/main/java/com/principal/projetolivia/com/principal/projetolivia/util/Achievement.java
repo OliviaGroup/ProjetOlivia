@@ -96,6 +96,10 @@ public class Achievement implements Serializable {
             prefix = res.getString(res.getIdentifier("achievement_prefix", "string", context.getPackageName()));
         }
 
+        if (type == AchievementTypeEnum.easteregg) {
+            return context.getString(res.getIdentifier("achievement_easter_egg", "string", context.getPackageName()));
+        }
+
         return prefix + " " + objective + " " + typeString + " " + res.getString(res.getIdentifier("achievement_connector", "string", context.getPackageName())) + " " + subject.getLabel(context);
     }
 }

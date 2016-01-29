@@ -9,22 +9,18 @@ public class Subject implements Serializable, java.lang.Comparable{
     private SubjectEnum name;
 
     private int playedGames;
+    private int playedGamesNoFault;
     private int hiScore;
+    private int timesBeatHiScore;
     private int rightAnswers;
     private int wrongAnswers;
-
-    public Subject(SubjectEnum name, int playedGames, int hiScore, int rightAnswers, int wrongAnswers) {
-        this.name = name;
-        this.playedGames = playedGames;
-        this.hiScore = hiScore;
-        this.rightAnswers = rightAnswers;
-        this.wrongAnswers = wrongAnswers;
-    }
 
     public Subject(SubjectEnum name) {
         this.name = name;
         this.playedGames = 0;
+        this.playedGamesNoFault = 0;
         this.hiScore = 0;
+        this.timesBeatHiScore = 0;
         this.rightAnswers = 0;
         this.wrongAnswers = 0;
     }
@@ -35,6 +31,14 @@ public class Subject implements Serializable, java.lang.Comparable{
 
     public void setPlayedGames(int playedGames) {
         this.playedGames = playedGames;
+    }
+
+    public int getPlayedGamesNoFault() {
+        return playedGamesNoFault;
+    }
+
+    public void setPlayedGamesNoFault(int playedGamesNoFault) {
+        this.playedGamesNoFault = playedGamesNoFault;
     }
 
     public int getWrongAnswers() {
@@ -59,6 +63,14 @@ public class Subject implements Serializable, java.lang.Comparable{
 
     public void setHiScore(int hiScore) {
         this.hiScore = hiScore;
+    }
+
+    public int getTimesBeatHiScore() {
+        return timesBeatHiScore;
+    }
+
+    public void setTimesBeatHiScore(int timesBeatHiScore) {
+        this.timesBeatHiScore = timesBeatHiScore;
     }
 
     public int getPercentRightAnswers () {
