@@ -7,13 +7,11 @@ import java.util.List;
  */
 public class Question {
     private String question;
-    private int goodAnswer;
-    private List<String> answers;
+    private List<GameAnswer> answers;
     private SubjectEnum subject;
 
-    public Question(String question, int goodAnswer, List<String> answers, SubjectEnum subject) {
+    public Question(String question, List<GameAnswer> answers, SubjectEnum subject) {
         this.question = question;
-        this.goodAnswer = goodAnswer;
         this.answers = answers;
         this.subject = subject;
     }
@@ -26,19 +24,11 @@ public class Question {
         this.question = question;
     }
 
-    public int getGoodAnswer() {
-        return goodAnswer;
-    }
-
-    public void setGoodAnswer(int goodAnswer) {
-        this.goodAnswer = goodAnswer;
-    }
-
-    public List<String> getAnswers() {
+    public List<GameAnswer> getAnswers() {
         return answers;
     }
 
-    public void setAnswers(List<String> answers) {
+    public void setAnswers(List<GameAnswer> answers) {
         this.answers = answers;
     }
 

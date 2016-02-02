@@ -20,8 +20,7 @@ public class MathGenerator {
     private int rightNumber;
     private MathOperator operator;
     private int result;
-    private int goodAnswer;
-    private List<String> results = new ArrayList<>();
+    private List<GameAnswer> results = new ArrayList<>();
 
     public MathGenerator() {
     }
@@ -77,21 +76,16 @@ public class MathGenerator {
                 falseResult = getRandomIntegerFromRange(result - 20, result + 20);
             } while (falseResult == result || falseResult < 0 || results.equals(falseResult));
 
-            results.add(i, Integer.toString(falseResult));
+            results.add(new GameAnswer(false, Integer.toString(falseResult)));
         }
-        goodAnswer = getRandomIntegerFromRange(1, 4);
-        results.add(goodAnswer - 1, Integer.toString(result));
+        results.add(getRandomIntegerFromRange(1, 4), new GameAnswer(true, Integer.toString(result)));
     }
 
     private int getRandomIntegerFromRange(int min, int max) {
         return randomGenerator.nextInt(max - min + 1) + min;
     }
 
-    public int getGoodAnswer() {
-        return goodAnswer;
-    }
-
-    public List<String> getResults() {
+    public List<GameAnswer> getResults() {
         return results;
     }
 

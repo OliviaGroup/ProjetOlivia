@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.GameAnswer;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 
 import java.util.List;
@@ -17,12 +18,12 @@ import java.util.List;
 /**
  * Created by roosq on 17/12/2015.
  */
-public class ItemGameAdapter extends ArrayAdapter<String> {
-    private List<String> items;
+public class ItemGameAdapter extends ArrayAdapter<GameAnswer> {
+    private List<GameAnswer> items;
     private int layoutResourceId;
     private Context context;
 
-    public ItemGameAdapter(Context context, int layoutResourceId, List<String> items) {
+    public ItemGameAdapter(Context context, int layoutResourceId, List<GameAnswer> items) {
         super(context, layoutResourceId, items);
         this.context = context;
         this.layoutResourceId = layoutResourceId;
@@ -38,7 +39,7 @@ public class ItemGameAdapter extends ArrayAdapter<String> {
         row = inflater.inflate(layoutResourceId, parent, false);
 
         holder = new ItemSubjectHolder();
-        holder.answer = items.get(position);
+        holder.answer = items.get(position).getAnswer();
         holder.textAnswer = (TextView) row.findViewById(R.id.textAnswer);
         row.setTag(holder);
         setupItem(holder);

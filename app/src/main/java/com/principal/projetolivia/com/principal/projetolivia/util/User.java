@@ -86,7 +86,9 @@ public class User implements Serializable {
     }
 
     public int getTotalPercentRightAnswers() {
-        int rightAnswersSum = 0;
+        // Ancien système de notation
+        
+        /*int rightAnswersSum = 0;
         int wrongAnswersSum = 0;
         for (Subject subject :
                 subjectList) {
@@ -98,8 +100,15 @@ public class User implements Serializable {
             return rightAnswersSum * 100 / totalAnswers;
         } else {
             return 0;
+        }*/
+
+        int returnInt = 0;
+        for (Subject subject :
+                subjectList) {
+            returnInt += subject.getPercentRightAnswers();
         }
 
+        return returnInt / subjectList.size();
     }
 
     public void setDateOfBirth(Calendar dateOfBirth) {

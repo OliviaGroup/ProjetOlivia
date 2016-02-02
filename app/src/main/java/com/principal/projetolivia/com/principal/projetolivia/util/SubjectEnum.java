@@ -9,11 +9,11 @@ import com.principal.projetolivia.main.MainActivity;
  * Created by roosq on 03/12/2015.
  */
 public enum SubjectEnum {
-    mathematics,
-    informatics,
-    physics,
-    chemistry,
     biology,
+    mathematics,
+    physics,
+    informatics,
+    chemistry,
     astronomy,
     general;
 

@@ -14,11 +14,14 @@ import android.widget.TextView;
 import com.github.lzyzsd.circleprogress.CircleProgress;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
+import com.principal.projetolivia.com.principal.projetolivia.util.GameAnswer;
 import com.principal.projetolivia.com.principal.projetolivia.util.MathGenerator;
 import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -37,7 +40,7 @@ public class GameActivity extends AppCompatActivity {
 
     private int goodAnswerScore;
     private int badAnswerScore;
-    private int goodAnswerID;
+    private List<GameAnswer> gameAnswerList;
 
     protected void onCreate(Bundle savedInstanceState) {
         MainActivity.RemoveTheBar(this);
@@ -75,8 +78,7 @@ public class GameActivity extends AppCompatActivity {
                 RelativeLayout layoutParent = (RelativeLayout) view;
                 RelativeLayout lytRoundBackground = (RelativeLayout) layoutParent.findViewById(R.id.lytRoundBackground);
 
-                if (position + 1 == goodAnswerID) {
-
+                if (gameAnswerList.get(position).isGoodAnswer()) {
                     goodAnswerScore++;
                     updateScore();
 
@@ -119,22 +121,21 @@ public class GameActivity extends AppCompatActivity {
 
 
     private void refreshQuestions() {
-        List<String> answersList = new ArrayList<>();
-        answersList.clear();
+        gameAnswerList = new ArrayList<>();
         if (MainActivity.getCurrentSubject().getName() == SubjectEnum.mathematics) {
             MathGenerator mathGenerator = new MathGenerator();
             mathGenerator.calculationGenerator();
             question.setText(mathGenerator.getOperation());
-            answersList = mathGenerator.getResults();
-            goodAnswerID = mathGenerator.getGoodAnswer();
+            gameAnswerList = mathGenerator.getResults();
         } else {
             Question randomQuestion = MainActivity.getOneQuestionOnSubject(MainActivity.getCurrentSubject().getName());
             question.setText(randomQuestion.getQuestion());
-            answersList = randomQuestion.getAnswers();
-            goodAnswerID = randomQuestion.getGoodAnswer();
+            gameAnswerList = randomQuestion.getAnswers();
+
+            Collections.shuffle(gameAnswerList);
         }
 
-        ItemGameAdapter adapter = new ItemGameAdapter(this, R.layout.item_grid_game, answersList);
+        ItemGameAdapter adapter = new ItemGameAdapter(this, R.layout.item_grid_game, gameAnswerList);
         gridGame.setAdapter(adapter);
     }
 

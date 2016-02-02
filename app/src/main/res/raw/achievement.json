@@ -388,7 +388,7 @@
       "level": [
         {
           "level": "gold",
-          "objective": "25",
+          "objective": "90",
           "items": [
             {
               "id": "1",
@@ -429,7 +429,7 @@
         },
         {
           "level": "silver",
-          "objective": "10",
+          "objective": "80",
           "items": [
             {
               "id": "2",
@@ -470,7 +470,7 @@
         },
         {
           "level": "bronze",
-          "objective": "5",
+          "objective": "65",
           "items": [
             {
               "id": "3",

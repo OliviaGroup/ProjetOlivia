@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.Achievement;
+import com.principal.projetolivia.com.principal.projetolivia.util.AchievementTypeEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.GameResultEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.ImproveScoreEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
@@ -138,7 +139,7 @@ public class ScoreActivity extends AppCompatActivity {
 
                 if (currentSubject.getName() == achievement.getSubject() || SubjectEnum.general == achievement.getSubject()) {
                     int trueObjective = 0;
-                    if (achievement.getSubject() == SubjectEnum.general) {
+                    if (achievement.getSubject() == SubjectEnum.general && achievement.getType() != AchievementTypeEnum.percent) {
                         trueObjective = achievement.getObjective() * 10;
                     } else {
                         trueObjective = achievement.getObjective();

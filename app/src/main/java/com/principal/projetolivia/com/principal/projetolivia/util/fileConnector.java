@@ -97,13 +97,15 @@ public class FileConnector {
                 int tempGoodAnswer = Integer.parseInt(jsonObject.getString("good_answer"));
                 SubjectEnum tempSubjectEnum = SubjectEnum.valueOf(jsonObject.getString("subject"));
                 JSONArray answerJSON = jsonObject.getJSONArray("answer");
-                List<String> tempAnswers = new ArrayList<>();
+                List<GameAnswer> tempAnswers = new ArrayList<>();
                 tempAnswers.clear();
                 for (int j = 0; j < answerJSON.length(); j++) {
-                    String tempAnswer = answerJSON.getString(j);
+                    GameAnswer tempAnswer = new GameAnswer(false, answerJSON.getString(j));
                     tempAnswers.add(tempAnswer);
                 }
-                Question question = new Question(tempQuestion, tempGoodAnswer, tempAnswers, tempSubjectEnum);
+                int  idGoodAnswer = Integer.parseInt(jsonObject.getString("good_answer"));
+                tempAnswers.get(idGoodAnswer - 1).setGoodAnswer(true);
+                Question question = new Question(tempQuestion, tempAnswers, tempSubjectEnum);
                 questions.add(question);
             }
         } catch (JSONException e) {
