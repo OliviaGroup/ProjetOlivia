@@ -1,5 +1,6 @@
 package com.principal.projetolivia.main;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -24,8 +25,6 @@ public class ProfileActivity extends AppCompatActivity{
 
     protected void onCreate(Bundle savedInstanceState) {
         MainActivity.RemoveTheBar(this);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
@@ -57,5 +56,11 @@ public class ProfileActivity extends AppCompatActivity{
                 startActivity(newActivity);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+        return;
     }
 }
