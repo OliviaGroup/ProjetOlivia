@@ -4,58 +4,55 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
+import android.view.ViewGroup;
+import android.widget.ActionMenuView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.gc.materialdesign.views.ButtonFloat;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.principal.projetolivia.R;
-import com.principal.projetolivia.com.principal.projetolivia.util.CropImageView;
+import com.principal.projetolivia.com.principal.projetolivia.util.MarginOlivia;
 
 /**
  * Created by roosq on 19/01/2016.
  */
-public class SubjectsActivity extends AppCompatActivity {
+public class StoryActivity extends AppCompatActivity {
 
-    private GridView gridViewSubjects;
     private TextView userNameText;
     private TextView profileAgeText;
-    private ButtonRectangle btnSwitchToStory;
-    private CropImageView subjectsBackground;
+    private ButtonRectangle btnSwitchToQuiz;
+    private ImageView imgOliviaStory;
+
+    private final MarginOlivia marginPosition1 = new MarginOlivia(380, 430);
+    private final MarginOlivia marginPosition2 = new MarginOlivia(370, 100);
+    private final MarginOlivia marginPosition3 = new MarginOlivia(600, 180);
+    private final MarginOlivia marginPosition4 = new MarginOlivia(890, 130);
+    private final MarginOlivia marginPosition5 = new MarginOlivia(810, 280);
+    private final MarginOlivia marginPosition6 = new MarginOlivia(760, 470);
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         MainActivity.RemoveTheBar(this);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subjects);
+        setContentView(R.layout.activity_story);
 
-        subjectsBackground = (CropImageView) findViewById(R.id.subjectsBackground);
-        subjectsBackground.setOffset(1, 1);
-        subjectsBackground.setImageDrawable(getResources().getDrawable(R.drawable.subjects_background));
+        imgOliviaStory = (ImageView) findViewById(R.id.imgOliviaStory);
+        RelativeLayout.MarginLayoutParams mlp = new RelativeLayout.MarginLayoutParams(imgOliviaStory.getLayoutParams());
+        mlp.setMargins(marginPosition6.getLeftMargin(), marginPosition6.getTopMargin(), 0, 0);
+        RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mlp);
+        imgOliviaStory.setLayoutParams(lp);
 
-        gridViewSubjects = (GridView) findViewById(R.id.gridSubjects);
-        gridViewSubjects.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MainActivity.currentSubject = position;
-                Intent newActivity = new Intent(view.getContext(), GameActivity.class);
-                startActivity(newActivity);
-            }
-        });
-
-        final ItemSubjectAdapter adapter = new ItemSubjectAdapter(this, R.layout.item_grid_subjects, MainActivity.getCurrentUser().getSubjectList());
-        gridViewSubjects.setAdapter(adapter);
 
         userNameText = (TextView) findViewById(R.id.userNameText);
         userNameText.setText(MainActivity.getCurrentUser().getName());
 
         profileAgeText = (TextView) findViewById(R.id.profileAgeTextSubjects);
         profileAgeText.setText(MainActivity.getCurrentUser().getAge() + " " + getApplicationContext().getString(R.string.years_old));
-
         ButtonFloat userName = (ButtonFloat) findViewById(R.id.userName);
         userName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +71,8 @@ public class SubjectsActivity extends AppCompatActivity {
             }
         });
 
+
+
         ButtonFloat buttonOptions = (ButtonFloat) findViewById(R.id.buttonOptions);
         buttonOptions.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,14 +84,15 @@ public class SubjectsActivity extends AppCompatActivity {
             }
         });
 
-        btnSwitchToStory = (ButtonRectangle) findViewById(R.id.btnSwitchToStory);
-        btnSwitchToStory.setOnClickListener(new View.OnClickListener() {
+        btnSwitchToQuiz = (ButtonRectangle) findViewById(R.id.btnSwitchToQuiz);
+        btnSwitchToQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newActivity = new Intent(v.getContext(), StoryActivity.class);
+                Intent newActivity = new Intent(v.getContext(), AchievementsActivity.class);
                 startActivity(newActivity);
             }
         });
+
     }
 
     public void updateProfileData(){
@@ -114,5 +114,6 @@ public class SubjectsActivity extends AppCompatActivity {
         }
         return;
     }
-
 }
+
+

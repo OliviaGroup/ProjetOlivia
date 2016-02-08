@@ -37,7 +37,19 @@
         </activity>
 
         <activity
-            android:name=".main.SubjectsActivity"
+        android:name=".main.SubjectsActivity"
+        android:configChanges="orientation|keyboardHidden"
+        android:label="@string/app_name"
+        android:parentActivityName=".main.ProfileActivity"
+        android:screenOrientation="landscape"
+        android:theme="@style/AppTheme.NoActionBar" >
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".main.ProfileActivity" />
+    </activity>
+
+        <activity
+            android:name=".main.StoryActivity"
             android:configChanges="orientation|keyboardHidden"
             android:label="@string/app_name"
             android:parentActivityName=".main.ProfileActivity"
@@ -45,8 +57,8 @@
             android:theme="@style/AppTheme.NoActionBar" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".main.ProfileActivity" />
-            </activity>
+                android:value=".main.SubjectsActivity" />
+        </activity>
 
         <activity
             android:name=".main.ProfileActivity"

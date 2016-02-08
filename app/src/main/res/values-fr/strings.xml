@@ -41,5 +41,7 @@
     <string name="type_played">parties jouées</string>
     <string name="achievement_prefix">Battre</string>
     <string name="achievement_easter_egg">Trouve le secret mystère</string>
+    <string name="switch_to_quiz">Mode quiz</string>
+    <string name="switch_to_story">Mode histoire</string>
 
 </resources>

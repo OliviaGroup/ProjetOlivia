@@ -2,13 +2,14 @@
     xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
     android:id="@+id/containerSubjects"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/app_blue_dark">
 
-    <com.principal.projetolivia.com.principal.projetolivia.util.CropImageView
-        android:id="@+id/subjectsBackground"
+    <!--<com.principal.projetolivia.com.principal.projetolivia.util.CropImageView
+        android:id="@+id/storyBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="matrix" />
+        android:scaleType="matrix" />-->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -59,45 +60,41 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
                 android:gravity="center"
-                android:textSize="15sp"
-                android:layout_marginRight="30dp" />
+                android:textSize="15sp" />
 
             <com.gc.materialdesign.views.ButtonRectangle
-                android:id="@+id/btnSwitchToStory"
+                android:id="@+id/btnSwitchToQuiz"
                 android:layout_width="200dp"
                 android:layout_height="match_parent"
                 android:background="@color/app_purple"
-                android:text="@string/switch_to_story" />
+                android:text="@string/switch_to_quiz" />
 
         </LinearLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/profile">
+            android:layout_height="match_parent">
 
-            <GridView
-                android:id="@+id/gridSubjects"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:columnWidth="@dimen/subjects_button_size"
-                android:gravity="center"
-                android:numColumns="3"
-                android:stretchMode="spacingWidthUniform">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/map_pasfini"
+                android:layout_marginBottom="40dp" />
 
-            </GridView>
-
+            <ImageView
+                android:id="@+id/imgOliviaStory"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/olivia_simple" />
         </RelativeLayout>
+
     </LinearLayout>
 
-
     <RelativeLayout
-        android:id="@id/profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#7aa552"
         android:paddingBottom="@dimen/subjects_options_vertical_padding"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
@@ -127,12 +124,13 @@
                 android:id="@+id/achievementsButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
+                android:layout_marginLeft="10dp"
                 materialdesign:animate="false"
-                materialdesign:iconDrawable="@drawable/achievement_button"
-                android:layout_marginLeft="10dp"/>
+                materialdesign:iconDrawable="@drawable/achievement_button" />
         </LinearLayout>
 
 
     </RelativeLayout>
+
 
 </RelativeLayout>

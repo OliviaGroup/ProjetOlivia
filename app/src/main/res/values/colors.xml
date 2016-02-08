@@ -18,6 +18,7 @@
 
     // specific colors app
     <color name="app_blue">#86cabf</color>
+    <color name="app_blue_dark">#8bcfde</color>
     <color name="app_purple">#c82b87</color>
     <color name="app_pink">#e5007d</color>
     <color name="app_orange">#f3952b</color>
@@ -29,6 +30,5 @@
     <color name="app_gray">#848484</color>
     <color name="app_red">#F44336</color>
     <color name="app_green">#4CAF50</color>
-
 
 </resources>
