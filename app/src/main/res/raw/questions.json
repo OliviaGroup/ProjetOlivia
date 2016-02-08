@@ -703,6 +703,127 @@
         "Presser quelques secondes sur le bouton power",
         "Le laisser allumer, il s'éteindra sûrement tout seul"
       ]
+    },
+	{
+      "good_answer": "2",
+      "key": " En France quelle est l’unité de mesure de la température  ?",
+      "subject": "physics",
+      "answer": [
+        "Le degré Faenheit",
+        "Le degré Celsius",
+        "Le bon gré",
+        "Le malgré"
+      ]
+    },
+	{	
+      "good_answer": "4",
+      "key": "Qu’est-ce qu’un sablier ?",
+      "subject": "physics",
+      "answer": [
+        "Un altimètre",
+        "Un décimètre",
+        "Un quasi mètre",
+        " Un chronomètre"
+      ]
+    },
+	{	
+      "good_answer": "3",
+      "key": "Dans quel sens va la lumière ?",
+      "subject": "physics",
+      "answer": [
+        "Vers le Nord",
+        "Dans tous les sens",
+        "En ligne droite",
+        "Vers le Sud"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Qu’indique une boussole  ?",
+      "subject": "physics",
+      "answer": [
+        " Le Sud ",
+        "Où on souhaite aller",
+        "Le soleil",
+        " Le Nord "
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "Quand voit-on la Lune ?",
+      "subject": "astronomy",
+      "answer": [
+        "De jour",
+        "Quand elle est éclairée",
+        "Quand on met des lunettes de lune",
+        "Quand elle nous regarde"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": " Que se passe-t-il lorsque la terre tremble ?",
+      "subject": "physics",
+      "answer": [
+        "Un séisme",
+        "Elle danse",
+        "Elle a froid",
+        "Elle a reçu un nouveau message"
+      ]
+    },
+	{
+      "good_answer": "3",
+      "key": " De quoi ont besoin les graines pour germer ?",
+      "subject": "biologie",
+      "answer": [
+        "D’un repas chaud",
+        "De vent",
+        "De lumière",
+        "D’internet"
+      ]
+    },
+	{
+      "good_answer": "4",
+      "key": "Par quoi les plantes perdent leur eau ?",
+      "subject": "biologie",
+      "answer": [
+        "Leurs racines",
+        "Leurs graines",
+        "Leurs tiges",
+        "Leurs feuilles"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": " Quand on plie les jambes, on effectue une : ",
+      "subject": "biologie",
+      "answer": [
+        "Saut",
+        "Flexion",
+        "Course",
+        "Compétition"
+      ]
+    },
+	{
+      "good_answer": "2",
+      "key": "Quel élément expire-t-on ?",
+      "subject": "chemistry",
+      "answer": [
+        "Du dioxyde de carbone",
+        "De l’air",
+        "Des odeurs",
+        "Des narines"
+      ]
+    },
+	{
+      "good_answer": "1",
+      "key": "Le rythme cardiaque est aussi appelé ?",
+      "subject": "biologie",
+      "answer": [
+        "Le pouls",
+        "Des poux",
+        "Bouh !",
+        "La moue"
+      ]
     }
   ]
 }
