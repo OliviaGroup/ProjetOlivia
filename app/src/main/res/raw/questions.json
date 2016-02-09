@@ -773,7 +773,7 @@
 	{
       "good_answer": "3",
       "key": " De quoi ont besoin les graines pour germer ?",
-      "subject": "biologie",
+      "subject": "biology",
       "answer": [
         "D’un repas chaud",
         "De vent",
@@ -784,7 +784,7 @@
 	{
       "good_answer": "4",
       "key": "Par quoi les plantes perdent leur eau ?",
-      "subject": "biologie",
+      "subject": "biology",
       "answer": [
         "Leurs racines",
         "Leurs graines",
@@ -795,7 +795,7 @@
 	{
       "good_answer": "2",
       "key": " Quand on plie les jambes, on effectue une : ",
-      "subject": "biologie",
+      "subject": "biology",
       "answer": [
         "Saut",
         "Flexion",
@@ -817,7 +817,7 @@
 	{
       "good_answer": "1",
       "key": "Le rythme cardiaque est aussi appelé ?",
-      "subject": "biologie",
+      "subject": "biology",
       "answer": [
         "Le pouls",
         "Des poux",

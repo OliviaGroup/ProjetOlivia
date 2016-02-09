@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ActionMenuView;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -16,6 +13,11 @@ import com.gc.materialdesign.views.ButtonFloat;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.MarginOlivia;
+import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
+import com.principal.projetolivia.com.principal.projetolivia.util.UserStory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by roosq on 19/01/2016.
@@ -26,14 +28,7 @@ public class StoryActivity extends AppCompatActivity {
     private TextView profileAgeText;
     private ButtonRectangle btnSwitchToQuiz;
     private ImageView imgOliviaStory;
-
-    private final MarginOlivia marginPosition1 = new MarginOlivia(380, 430);
-    private final MarginOlivia marginPosition2 = new MarginOlivia(370, 100);
-    private final MarginOlivia marginPosition3 = new MarginOlivia(600, 180);
-    private final MarginOlivia marginPosition4 = new MarginOlivia(890, 130);
-    private final MarginOlivia marginPosition5 = new MarginOlivia(810, 280);
-    private final MarginOlivia marginPosition6 = new MarginOlivia(760, 470);
-
+    private List<ImageView> imgMedalStoryList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +36,28 @@ public class StoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_story);
 
+        imgMedalStoryList = new ArrayList<>();
+
+        for (int i = 0; i < SubjectEnum.values().length; i++) {
+            imgMedalStoryList.add((ImageView) findViewById(getResources().getIdentifier("imgMedalStory" + i, "id", getPackageName())));
+        }
+
+        UserStory userStory = MainActivity.getCurrentStory();
+
+        for (int i = 0; i < imgMedalStoryList.size(); i++) {
+            imgMedalStoryList.get(i).setImageDrawable(getResources().getDrawable(getResources().getIdentifier("story_" + userStory.getMedalLevelList().get(i).name(), "drawable", getPackageName())));
+            RelativeLayout.MarginLayoutParams mlp = new RelativeLayout.MarginLayoutParams(imgMedalStoryList.get(i).getLayoutParams());
+            MarginOlivia marginOlivia = MainActivity.getCurrentStory().getMarginOliviaList().get(i);
+            mlp.setMargins(marginOlivia.getLeftMargin(), marginOlivia.getTopMargin(), 0, 0);
+            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mlp);
+            imgMedalStoryList.get(i).setLayoutParams(lp);
+        }
+
+        MarginOlivia marginOlivia = userStory.getMarginOliviaList().get(userStory.getStage());
+
         imgOliviaStory = (ImageView) findViewById(R.id.imgOliviaStory);
         RelativeLayout.MarginLayoutParams mlp = new RelativeLayout.MarginLayoutParams(imgOliviaStory.getLayoutParams());
-        mlp.setMargins(marginPosition6.getLeftMargin(), marginPosition6.getTopMargin(), 0, 0);
+        mlp.setMargins(marginOlivia.getLeftMargin(), marginOlivia.getTopMargin(), 0, 0);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mlp);
         imgOliviaStory.setLayoutParams(lp);
 

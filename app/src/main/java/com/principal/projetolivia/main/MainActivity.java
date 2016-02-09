@@ -12,6 +12,7 @@ import com.principal.projetolivia.com.principal.projetolivia.util.Question;
 import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.User;
+import com.principal.projetolivia.com.principal.projetolivia.util.UserStory;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             Intent newActivity = new Intent(this.getBaseContext(), NewProfileActivity.class);
             startActivity(newActivity);
         } else {*/
-            Intent newActivity = new Intent(this.getBaseContext(), StoryActivity.class);
+            Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
             startActivity(newActivity);
         /*}*/
 
@@ -95,6 +96,11 @@ public class MainActivity extends AppCompatActivity {
     public static User getCurrentUser() {
         return userList.get(currentUser);
     }
+
+    public static UserStory getCurrentStory() {
+        return getCurrentUser().getUserStory();
+    }
+
 
     public static void RemoveTheBar(Activity activity) {
 //        activity.requestWindowFeature(Window.FEATURE_NO_TITLE);

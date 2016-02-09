@@ -35,11 +35,6 @@
               "id": "16",
               "title": "Nicole Le Douarin !!!",
               "subject": "biology"
-            },
-            {
-              "id": "19",
-              "title": "Scientifique en herbe !!!",
-              "subject": "general"
             }
           ]
         },
@@ -76,11 +71,6 @@
               "id": "17",
               "title": "Bessa Vugo !!",
               "subject": "biology"
-            },
-            {
-              "id": "20",
-              "title": "Olivia, c'est chouette !!",
-              "subject": "general"
             }
           ]
         },
@@ -117,11 +107,6 @@
               "id": "18",
               "title": "Liliane Ackermann !",
               "subject": "biology"
-            },
-            {
-              "id": "21",
-              "title": "Coucou hibou !",
-              "subject": "general"
             }
           ]
         }
@@ -163,11 +148,6 @@
               "id": "16",
               "title": "Geneviève Berger !!!",
               "subject": "biology"
-            },
-            {
-              "id": "19",
-              "title": "Rita Levi-Montalcini !!!",
-              "subject": "general"
             }
           ]
         },
@@ -204,11 +184,6 @@
               "id": "17",
               "title": "Alice Middleton Boring !!",
               "subject": "biology"
-            },
-            {
-              "id": "20",
-              "title": "Barbara McClintock !!",
-              "subject": "general"
             }
           ]
         },
@@ -245,11 +220,6 @@
               "id": "18",
               "title": "Silvia Helena Cardoso !",
               "subject": "biology"
-            },
-            {
-              "id": "21",
-              "title": "Christiane Nüsslein-Volhard !",
-              "subject": "general"
             }
           ]
         }
@@ -291,11 +261,6 @@
               "id": "16",
               "title": "Geneviève Berger !!!",
               "subject": "biology"
-            },
-            {
-              "id": "19",
-              "title": "Rita Levi-Montalcini !!!",
-              "subject": "general"
             }
           ]
         },
@@ -332,11 +297,6 @@
               "id": "17",
               "title": "Alice Middleton Boring !!",
               "subject": "biology"
-            },
-            {
-              "id": "20",
-              "title": "Barbara McClintock !!",
-              "subject": "general"
             }
           ]
         },
@@ -373,11 +333,6 @@
               "id": "18",
               "title": "Silvia Helena Cardoso !",
               "subject": "biology"
-            },
-            {
-              "id": "21",
-              "title": "Christiane Nüsslein-Volhard !",
-              "subject": "general"
             }
           ]
         }
@@ -419,11 +374,6 @@
               "id": "16",
               "title": "Geneviève Berger !!!",
               "subject": "biology"
-            },
-            {
-              "id": "19",
-              "title": "Rita Levi-Montalcini !!!",
-              "subject": "general"
             }
           ]
         },
@@ -460,11 +410,6 @@
               "id": "17",
               "title": "Alice Middleton Boring !!",
               "subject": "biology"
-            },
-            {
-              "id": "20",
-              "title": "Barbara McClintock !!",
-              "subject": "general"
             }
           ]
         },
@@ -501,27 +446,6 @@
               "id": "18",
               "title": "Silvia Helena Cardoso !",
               "subject": "biology"
-            },
-            {
-              "id": "21",
-              "title": "Christiane Nüsslein-Volhard !",
-              "subject": "general"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "type": "easteregg",
-      "level": [
-        {
-          "level": "none",
-          "objective": "0",
-          "items": [
-            {
-              "id": "1",
-              "title": "Mysterious !",
-              "subject": "general"
             }
           ]
         }

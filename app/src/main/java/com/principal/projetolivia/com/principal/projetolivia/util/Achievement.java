@@ -13,14 +13,14 @@ public class Achievement implements Serializable {
     private String title;
     private AchievementTypeEnum type;
     private SubjectEnum subject;
-    private AchievementLevelEnum level;
+    private MedalLevelEnum level;
     private int objective;
 
     public Achievement() {
 
     }
 
-    public Achievement(String title, AchievementTypeEnum type, SubjectEnum subject, AchievementLevelEnum level, int objective) {
+    public Achievement(String title, AchievementTypeEnum type, SubjectEnum subject, MedalLevelEnum level, int objective) {
         this.title = title;
         this.type = type;
         this.subject = subject;
@@ -52,11 +52,11 @@ public class Achievement implements Serializable {
         this.subject = subject;
     }
 
-    public AchievementLevelEnum getLevel() {
+    public MedalLevelEnum getLevel() {
         return level;
     }
 
-    public void setLevel(AchievementLevelEnum level) {
+    public void setLevel(MedalLevelEnum level) {
         this.level = level;
     }
 

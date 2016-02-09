@@ -1,9 +1,11 @@
 package com.principal.projetolivia.com.principal.projetolivia.util;
 
+import java.io.Serializable;
+
 /**
  * Created by roosq on 05/02/2016.
  */
-public class MarginOlivia {
+public class MarginOlivia implements Serializable {
 
     private int leftMargin;
     private int topMargin;

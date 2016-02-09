@@ -147,13 +147,9 @@ public class ScoreFragment extends Fragment {
             if (userAchievement.isAchievementReceived() == false) {
                 Achievement achievement = MainActivity.achievementsList.get(userAchievement.getId() - 1);
 
-                if (currentSubject.getName() == achievement.getSubject() || SubjectEnum.general == achievement.getSubject()) {
-                    int trueObjective = 0;
-                    if (achievement.getSubject() == SubjectEnum.general && achievement.getType() != AchievementTypeEnum.percent) {
-                        trueObjective = achievement.getObjective() * 10;
-                    } else {
-                        trueObjective = achievement.getObjective();
-                    }
+                if (currentSubject.getName() == achievement.getSubject()) {
+                    int trueObjective = achievement.getObjective();
+
                     int value = 0;
                     switch (achievement.getType()) {
                         case played:

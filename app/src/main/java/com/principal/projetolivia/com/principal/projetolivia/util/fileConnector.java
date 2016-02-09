@@ -151,7 +151,7 @@ public class FileConnector {
                 JSONArray levelsJSON = achievementJSON.getJSONArray("level");
                 for (int j = 0; j < levelsJSON.length(); j++) {
                     JSONObject levelJSON = levelsJSON.getJSONObject(j);
-                    AchievementLevelEnum tempLevel = AchievementLevelEnum.valueOf(levelJSON.getString("level"));
+                    MedalLevelEnum tempLevel = MedalLevelEnum.valueOf(levelJSON.getString("level"));
                     int tempObjective = Integer.parseInt(levelJSON.getString("objective"));
                     JSONArray itemsJSON = levelJSON.getJSONArray("items");
                     for (int k = 0;k < itemsJSON.length(); k++) {
