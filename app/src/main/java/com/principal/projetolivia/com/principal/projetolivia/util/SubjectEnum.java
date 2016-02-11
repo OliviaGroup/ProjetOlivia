@@ -9,11 +9,11 @@ import com.principal.projetolivia.main.MainActivity;
  * Created by roosq on 03/12/2015.
  */
 public enum SubjectEnum {
-    biology,
+    chemistry,
     mathematics,
     physics,
     informatics,
-    chemistry,
+    biology,
     astronomy;
 
     public String getLabel(Context context) {

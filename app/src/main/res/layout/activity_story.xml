@@ -60,7 +60,8 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="30dp"
                 android:gravity="center"
-                android:textSize="15sp" />
+                android:textSize="15sp"
+                android:layout_marginRight="30dp" />
 
             <com.gc.materialdesign.views.ButtonRectangle
                 android:id="@+id/btnSwitchToQuiz"
@@ -76,10 +77,20 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="40dp">
 
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/btnReplay"
+                android:layout_width="@dimen/buttonAddProject_Diameter"
+                android:layout_height="@dimen/buttonAddProject_Diameter"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                materialdesign:animate="false"
+                materialdesign:iconDrawable="@drawable/ic_input_prev"/>
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/map_pasfini"
+                android:src="@drawable/map"
                 android:layout_centerHorizontal="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true" />

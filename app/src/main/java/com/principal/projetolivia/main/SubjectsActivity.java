@@ -89,8 +89,13 @@ public class SubjectsActivity extends AppCompatActivity {
         btnSwitchToStory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newActivity = new Intent(v.getContext(), ComicsActivity.class);
-                startActivity(newActivity);
+                if (MainActivity.getCurrentStory().getStage() != 0 ) {
+                    Intent newActivity = new Intent(v.getContext(), StoryActivity.class);
+                    startActivity(newActivity);
+                } else {
+                    Intent newActivity = new Intent(v.getContext(), ComicsActivity.class);
+                    startActivity(newActivity);
+                }
             }
         });
     }

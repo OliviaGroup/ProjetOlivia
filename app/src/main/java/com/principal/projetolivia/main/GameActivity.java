@@ -116,9 +116,17 @@ public class GameActivity extends AppCompatActivity {
 
         MainActivity.fileConnector.setProfileList(getContext(), MainActivity.userList);*/
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction().add(R.id.containerGame, new ScoreFragment());
-        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-        ft.commit();
+        if (MainActivity.isStoryMode() == false) {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction().add(R.id.containerGame, new ScoreFragment());
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            ft.commit();
+        } else {
+
+        }
+
+        Intent newActivity = new Intent(this.getBaseContext(), StoryActivity.class);
+        MainActivity.getCurrentStory().setStage(MainActivity.getCurrentStory().getStage() + 1);
+        startActivity(newActivity);
     }
 
 

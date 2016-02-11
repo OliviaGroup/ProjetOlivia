@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.gc.materialdesign.views.ButtonFloat;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.principal.projetolivia.R;
+import com.principal.projetolivia.com.principal.projetolivia.util.GameAnswer;
 import com.principal.projetolivia.com.principal.projetolivia.util.MarginOlivia;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.UserStory;
@@ -28,6 +29,7 @@ public class StoryActivity extends AppCompatActivity {
     private TextView userNameText;
     private TextView profileAgeText;
     private ButtonRectangle btnSwitchToQuiz;
+    private ButtonFloat btnReplay;
     private ImageView imgOliviaStory;
     private List<ImageView> imgMedalStoryList;
     private List<MarginOlivia> marginOliviaList;
@@ -52,7 +54,7 @@ public class StoryActivity extends AppCompatActivity {
             imgMedalStoryList.add((ImageView) findViewById(getResources().getIdentifier("imgMedalStory" + i, "id", getPackageName())));
         }
 
-        UserStory userStory = MainActivity.getCurrentStory();
+        final UserStory userStory = MainActivity.getCurrentStory();
 
         for (int i = 0; i < imgMedalStoryList.size(); i++) {
             imgMedalStoryList.get(i).setImageDrawable(getResources().getDrawable(getResources().getIdentifier("story_" + userStory.getMedalLevelList().get(i).name(), "drawable", getPackageName())));
@@ -61,6 +63,19 @@ public class StoryActivity extends AppCompatActivity {
             mlp.setMargins(marginOlivia.getLeftMargin(), marginOlivia.getTopMargin(), 0, 0);
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mlp);
             imgMedalStoryList.get(i).setLayoutParams(lp);
+            imgMedalStoryList.get(i).setTag(i);
+
+            imgMedalStoryList.get(i).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (Integer.parseInt(v.getTag().toString()) <= userStory.getStage()) {
+                        MainActivity.currentSubject = Integer.parseInt(v.getTag().toString());
+                        MainActivity.setStoryMode(true);
+                        Intent newActivity = new Intent(v.getContext(), GameActivity.class);
+                        startActivity(newActivity);
+                    }
+                }
+            });
         }
 
         MarginOlivia marginOlivia = marginOliviaList.get(userStory.getStage());
@@ -70,6 +85,15 @@ public class StoryActivity extends AppCompatActivity {
         mlp.setMargins(marginOlivia.getLeftMargin(), marginOlivia.getTopMargin(), 0, 0);
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mlp);
         imgOliviaStory.setLayoutParams(lp);
+
+        btnReplay = (ButtonFloat) findViewById(R.id.btnReplay);
+        btnReplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent newActivity = new Intent(v.getContext(), ComicsActivity.class);
+                startActivity(newActivity);
+            }
+        });
 
 
         userNameText = (TextView) findViewById(R.id.userNameText);

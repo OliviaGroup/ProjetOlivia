@@ -78,7 +78,7 @@ public class MathGenerator {
 
             results.add(new GameAnswer(false, Integer.toString(falseResult)));
         }
-        results.add(getRandomIntegerFromRange(1, 4), new GameAnswer(true, Integer.toString(result)));
+        results.add(getRandomIntegerFromRange(0, 3), new GameAnswer(true, Integer.toString(result)));
     }
 
     private int getRandomIntegerFromRange(int min, int max) {

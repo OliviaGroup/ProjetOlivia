@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public static int currentUser;
     public static int currentSubject;
     public static FileConnector fileConnector;
+    private static boolean StoryMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,5 +107,13 @@ public class MainActivity extends AppCompatActivity {
 //        activity.requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+    }
+
+    public static boolean isStoryMode() {
+        return StoryMode;
+    }
+
+    public static void setStoryMode(boolean storyMode) {
+        StoryMode = storyMode;
     }
 }
