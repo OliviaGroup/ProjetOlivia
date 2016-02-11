@@ -14,6 +14,8 @@ import com.gc.materialdesign.views.ButtonRectangle;
 import com.principal.projetolivia.R;
 import com.principal.projetolivia.com.principal.projetolivia.util.GameAnswer;
 import com.principal.projetolivia.com.principal.projetolivia.util.MarginOlivia;
+import com.principal.projetolivia.com.principal.projetolivia.util.MedalLevelEnum;
+import com.principal.projetolivia.com.principal.projetolivia.util.Subject;
 import com.principal.projetolivia.com.principal.projetolivia.util.SubjectEnum;
 import com.principal.projetolivia.com.principal.projetolivia.util.UserStory;
 
@@ -57,7 +59,12 @@ public class StoryActivity extends AppCompatActivity {
         final UserStory userStory = MainActivity.getCurrentStory();
 
         for (int i = 0; i < imgMedalStoryList.size(); i++) {
-            imgMedalStoryList.get(i).setImageDrawable(getResources().getDrawable(getResources().getIdentifier("story_" + userStory.getMedalLevelList().get(i).name(), "drawable", getPackageName())));
+            if (userStory.getMedalLevelList().get(i) == MedalLevelEnum.none) {
+                imgMedalStoryList.get(i).setImageDrawable(getResources().getDrawable(getResources().getIdentifier("story_" + userStory.getMedalLevelList().get(i).name(), "drawable", getPackageName())));
+            } else {
+                imgMedalStoryList.get(i).setImageDrawable(getResources().getDrawable(getResources().getIdentifier("story_" + SubjectEnum.values()[i].name() + "_" + userStory.getMedalLevelList().get(i).name() + "_small", "drawable", getPackageName())));
+            }
+
             RelativeLayout.MarginLayoutParams mlp = new RelativeLayout.MarginLayoutParams(imgMedalStoryList.get(i).getLayoutParams());
             MarginOlivia marginOlivia = marginOliviaList.get(i);
             mlp.setMargins(marginOlivia.getLeftMargin(), marginOlivia.getTopMargin(), 0, 0);
@@ -101,24 +108,6 @@ public class StoryActivity extends AppCompatActivity {
 
         profileAgeText = (TextView) findViewById(R.id.profileAgeTextSubjects);
         profileAgeText.setText(MainActivity.getCurrentUser().getAge() + " " + getApplicationContext().getString(R.string.years_old));
-        ButtonFloat userName = (ButtonFloat) findViewById(R.id.userName);
-        userName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent newActivity = new Intent(v.getContext(), StatsActivity.class);
-                startActivity(newActivity);
-            }
-        });
-
-        ButtonFloat achievementsButton = (ButtonFloat) findViewById(R.id.achievementsButton);
-        achievementsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent newActivity = new Intent(v.getContext(), AchievementsActivity.class);
-                startActivity(newActivity);
-            }
-        });
-
 
 
         ButtonFloat buttonOptions = (ButtonFloat) findViewById(R.id.buttonOptions);
@@ -154,7 +143,7 @@ public class StoryActivity extends AppCompatActivity {
         int count = getSupportFragmentManager().getBackStackEntryCount();
 
         if (count == 0) {
-            Intent newActivity = new Intent(this.getBaseContext(), ProfileActivity.class);
+            Intent newActivity = new Intent(this.getBaseContext(), SubjectsActivity.class);
             this.finish();
             startActivity(newActivity);
         } else{

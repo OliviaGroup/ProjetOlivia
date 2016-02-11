@@ -47,4 +47,5 @@
     <string name="achievement_easter_egg">Find the mysterious secret</string>
     <string name="switch_to_story">Switch to story mode</string>
     <string name="switch_to_quiz">Switch to quiz mode</string>
+    <string name="story_win_medal">You win :</string>
 </resources>
