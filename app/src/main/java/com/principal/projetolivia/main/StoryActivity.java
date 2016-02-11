@@ -18,6 +18,7 @@ import com.principal.projetolivia.com.principal.projetolivia.util.UserStory;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListResourceBundle;
 
 /**
  * Created by roosq on 19/01/2016.
@@ -29,6 +30,7 @@ public class StoryActivity extends AppCompatActivity {
     private ButtonRectangle btnSwitchToQuiz;
     private ImageView imgOliviaStory;
     private List<ImageView> imgMedalStoryList;
+    private List<MarginOlivia> marginOliviaList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,14 @@ public class StoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_story);
 
         imgMedalStoryList = new ArrayList<>();
+        marginOliviaList = new ArrayList<>();
+
+        marginOliviaList.add(new MarginOlivia(560, 660));
+        marginOliviaList.add(new MarginOlivia(550, 170));
+        marginOliviaList.add(new MarginOlivia(910, 270));
+        marginOliviaList.add(new MarginOlivia(1340, 200));
+        marginOliviaList.add(new MarginOlivia(1210, 430));
+        marginOliviaList.add(new MarginOlivia(1140, 720));
 
         for (int i = 0; i < SubjectEnum.values().length; i++) {
             imgMedalStoryList.add((ImageView) findViewById(getResources().getIdentifier("imgMedalStory" + i, "id", getPackageName())));
@@ -47,13 +57,13 @@ public class StoryActivity extends AppCompatActivity {
         for (int i = 0; i < imgMedalStoryList.size(); i++) {
             imgMedalStoryList.get(i).setImageDrawable(getResources().getDrawable(getResources().getIdentifier("story_" + userStory.getMedalLevelList().get(i).name(), "drawable", getPackageName())));
             RelativeLayout.MarginLayoutParams mlp = new RelativeLayout.MarginLayoutParams(imgMedalStoryList.get(i).getLayoutParams());
-            MarginOlivia marginOlivia = MainActivity.getCurrentStory().getMarginOliviaList().get(i);
+            MarginOlivia marginOlivia = marginOliviaList.get(i);
             mlp.setMargins(marginOlivia.getLeftMargin(), marginOlivia.getTopMargin(), 0, 0);
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(mlp);
             imgMedalStoryList.get(i).setLayoutParams(lp);
         }
 
-        MarginOlivia marginOlivia = userStory.getMarginOliviaList().get(userStory.getStage());
+        MarginOlivia marginOlivia = marginOliviaList.get(userStory.getStage());
 
         imgOliviaStory = (ImageView) findViewById(R.id.imgOliviaStory);
         RelativeLayout.MarginLayoutParams mlp = new RelativeLayout.MarginLayoutParams(imgOliviaStory.getLayoutParams());
@@ -102,7 +112,7 @@ public class StoryActivity extends AppCompatActivity {
         btnSwitchToQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent newActivity = new Intent(v.getContext(), AchievementsActivity.class);
+                Intent newActivity = new Intent(v.getContext(), SubjectsActivity.class);
                 startActivity(newActivity);
             }
         });

@@ -10,23 +10,14 @@ import java.util.List;
 public class UserStory implements Serializable {
     private int stage;
     private List<MedalLevelEnum> medalLevelList;
-    private List<MarginOlivia> marginOliviaList;
 
     public UserStory() {
         stage = 0;
 
         medalLevelList = new ArrayList<>();
-        marginOliviaList = new ArrayList<>();
         for (int i = 0; i < SubjectEnum.values().length; i++) {
             medalLevelList.add(MedalLevelEnum.none);
         }
-
-        marginOliviaList.add(new MarginOlivia(380, 430));
-        marginOliviaList.add(new MarginOlivia(370, 100));
-        marginOliviaList.add(new MarginOlivia(600, 180));
-        marginOliviaList.add(new MarginOlivia(890, 130));
-        marginOliviaList.add(new MarginOlivia(810, 280));
-        marginOliviaList.add(new MarginOlivia(760, 470));
     }
 
 
@@ -44,13 +35,5 @@ public class UserStory implements Serializable {
 
     public void setMedalLevelList(List<MedalLevelEnum> medalLeveList) {
         this.medalLevelList = medalLeveList;
-    }
-
-    public List<MarginOlivia> getMarginOliviaList() {
-        return marginOliviaList;
-    }
-
-    public void setMarginOliviaList(List<MarginOlivia> marginOliviaList) {
-        this.marginOliviaList = marginOliviaList;
     }
 }

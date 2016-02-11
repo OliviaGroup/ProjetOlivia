@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normal_white">
+    <com.gc.materialdesign.views.ButtonFloat
+        android:id="@+id/btnPrev"
+        android:layout_width="@dimen/buttonAddProject_Diameter"
+        android:layout_height="@dimen/buttonAddProject_Diameter"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        materialdesign:animate="false"
+        materialdesign:iconDrawable="@drawable/ic_input_prev"/>
+    <ImageView
+        android:id="@+id/imgComic"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/comics_fra_1"/>
+    <com.gc.materialdesign.views.ButtonFloat
+        android:id="@+id/btnNext"
+        android:layout_width="@dimen/buttonAddProject_Diameter"
+        android:layout_height="@dimen/buttonAddProject_Diameter"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        materialdesign:animate="false"
+        materialdesign:iconDrawable="@drawable/ic_input_next"/>
+</RelativeLayout>

@@ -73,50 +73,59 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="40dp">
 
             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/map_pasfini"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true" />
+
+            <RelativeLayout
+
+                android:id="@+id/imgContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="40dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/map_pasfini" />
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/imgMedalStory0"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                <ImageView
+                    android:id="@+id/imgMedalStory0"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp" />
 
-            <ImageView
-                android:id="@+id/imgMedalStory1"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                <ImageView
+                    android:id="@+id/imgMedalStory1"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp" />
 
-            <ImageView
-                android:id="@+id/imgMedalStory2"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                <ImageView
+                    android:id="@+id/imgMedalStory2"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp" />
 
-            <ImageView
-                android:id="@+id/imgMedalStory3"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                <ImageView
+                    android:id="@+id/imgMedalStory3"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp" />
 
-            <ImageView
-                android:id="@+id/imgMedalStory4"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                <ImageView
+                    android:id="@+id/imgMedalStory4"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp" />
 
-            <ImageView
-                android:id="@+id/imgMedalStory5"
-                android:layout_width="70dp"
-                android:layout_height="70dp" />
+                <ImageView
+                    android:id="@+id/imgMedalStory5"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp" />
 
-            <ImageView
-                android:id="@+id/imgOliviaStory"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:src="@drawable/olivia_simple" />
+                <ImageView
+                    android:id="@+id/imgOliviaStory"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/olivia_simple" />
+            </RelativeLayout>
 
         </RelativeLayout>
 
