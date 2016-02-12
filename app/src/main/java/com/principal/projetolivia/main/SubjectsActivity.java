@@ -33,6 +33,8 @@ public class SubjectsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subjects);
 
+        MainActivity.setStoryMode(false);
+
         subjectsBackground = (CropImageView) findViewById(R.id.subjectsBackground);
         subjectsBackground.setOffset(1, 1);
         subjectsBackground.setImageDrawable(getResources().getDrawable(R.drawable.subjects_background));
