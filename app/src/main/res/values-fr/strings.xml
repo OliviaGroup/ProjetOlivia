@@ -43,5 +43,6 @@
     <string name="achievement_easter_egg">Trouve le secret mystère</string>
     <string name="switch_to_quiz">Mode quiz</string>
     <string name="switch_to_story">Mode histoire</string>
+    <string name="story_win_medal">Tu as gagné :</string>
 
 </resources>

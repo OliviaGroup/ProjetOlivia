@@ -121,12 +121,12 @@ public class GameActivity extends AppCompatActivity {
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             ft.commit();
         } else {
-
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction().add(R.id.containerGame, new StoryFragment());
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+            ft.commit();
         }
 
-        Intent newActivity = new Intent(this.getBaseContext(), StoryActivity.class);
-        MainActivity.getCurrentStory().setStage(MainActivity.getCurrentStory().getStage() + 1);
-        startActivity(newActivity);
+
     }
 
 

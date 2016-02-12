@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:materialdesign="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/normal_white_50percent"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/normal_white"
+        android:alpha="0.5"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/lytScorePopUp"
+        android:layout_width="750dp"
+        android:layout_height="474dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/background_story">
+
+
+        <TextView
+            android:id="@+id/txtStoryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="18dp"
+            android:text="@string/story_win_medal"
+            android:textColor="@color/normal_white"
+            android:textSize="25dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp">
+
+            <ImageView
+                android:layout_width="500dp"
+                android:layout_height="500dp"
+                android:id="@+id/imgStoryMedal"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/story_astronomy_or"/>
+
+            <com.gc.materialdesign.views.ButtonFloat
+                android:id="@+id/btnGoToStory"
+                android:layout_width="@dimen/score_diameter"
+                android:layout_height="@dimen/score_diameter"
+                android:background="@color/app_purple_dark"
+                materialdesign:animate="false"
+                materialdesign:iconDrawable="@drawable/ic_input_menu"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="50dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
